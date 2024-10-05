@@ -11,7 +11,7 @@ class HomeViewDesktopLayout extends StatelessWidget {
     return const Column(
       children: [
         Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Profiling(),
