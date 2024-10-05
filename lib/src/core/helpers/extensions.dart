@@ -15,3 +15,7 @@ extension Translate on BuildContext {
   /// Translate the given [key] to the current locale
   String translate(String key) => AppLocalizations.of(this)!.translate(key)!;
 }
+
+extension CheckDarkThemeActivation on BuildContext {
+  bool get isDarkModeActive => Theme.of(this).brightness == Brightness.dark;
+}

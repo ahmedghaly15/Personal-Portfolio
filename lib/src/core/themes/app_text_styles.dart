@@ -25,4 +25,10 @@ class AppTextStyles {
         fontWeight: FontWeight.w400,
         fontFamily: AppStrings.nunitoFontFamily,
       );
+
+  static TextStyle nunitoFont20Medium(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 20),
+        fontWeight: FontWeight.w500,
+        fontFamily: AppStrings.nunitoFontFamily,
+      );
 }

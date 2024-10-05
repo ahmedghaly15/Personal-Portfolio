@@ -7,4 +7,6 @@ class LangKeys {
   static const String flutterDeveloper = 'flutterDeveloper';
   static const String helloMyNameIs = 'helloMyNameIs';
   static const String myDescription = 'myDescription';
+  static const String downloadCV = 'downloadCV';
+  static const String hireMe = 'hireMe';
 }
