@@ -7,17 +7,21 @@ import 'package:personal_portfolio/src/core/locale/lang_keys.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
+import 'package:personal_portfolio/src/widgets/download_cv_and_hire_me_buttons.dart';
+import 'package:personal_portfolio/src/widgets/locale_and_theme_icon_buttons.dart';
 
-class Profiling extends StatelessWidget {
-  const Profiling({super.key});
+class StartSideSection extends StatelessWidget {
+  const StartSideSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsetsDirectional.only(top: 54.h, start: 120.w),
+      margin: EdgeInsetsDirectional.only(top: 8.h, start: 112.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const LocaleAndThemeIconButtons(),
+          SizedBox(height: context.height * 0.14),
           FadeInLeft(
             child: Text(
               context.translate(LangKeys.flutterDeveloper),
@@ -51,6 +55,10 @@ class Profiling extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
+          ),
+          MySizedBox.height32,
+          FadeInLeft(
+            child: const DownloadCVAndHireMeButtons(),
           ),
         ],
       ),

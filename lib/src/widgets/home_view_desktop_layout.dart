@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/my_image_and_tabs.dart';
-import 'package:personal_portfolio/src/widgets/profiling.dart';
+import 'package:personal_portfolio/src/widgets/start_side_section.dart';
 
 class HomeViewDesktopLayout extends StatelessWidget {
   const HomeViewDesktopLayout({super.key});
@@ -11,10 +11,10 @@ class HomeViewDesktopLayout extends StatelessWidget {
     return const Column(
       children: [
         Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Profiling(),
+              child: StartSideSection(),
             ),
             MySizedBox.width114,
             MyImageAndTabs(),
