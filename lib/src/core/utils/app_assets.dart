@@ -78,8 +78,20 @@ class Assets {
   /// assets/images/black_me.jpg
   static const String imagesBlackMe = "assets/images/black_me.jpg";
 
+  /// Assets for svgsDarkModeIcon
+  /// assets/svgs/dark_mode_icon.svg
+  static const String svgsDarkModeIcon = "assets/svgs/dark_mode_icon.svg";
+
   /// Assets for svgsLavenderBg
   /// assets/svgs/lavender-bg.svg
   static const String svgsLavenderBg = "assets/svgs/lavender-bg.svg";
+
+  /// Assets for svgsLightModeIcon
+  /// assets/svgs/light_mode_icon.svg
+  static const String svgsLightModeIcon = "assets/svgs/light_mode_icon.svg";
+
+  /// Assets for svgsLocaleIcon
+  /// assets/svgs/locale_icon.svg
+  static const String svgsLocaleIcon = "assets/svgs/locale_icon.svg";
 }
 

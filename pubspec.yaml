@@ -21,6 +21,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # Flutter plugin for reading and writing simple key-value pairs for cache
   shared_preferences: ^2.2.3
+  # Contains a collection of cool and beautiful text animations.
+  animated_text_kit: ^4.2.2
+  # For beautiful animations 
+  animate_do: ^3.3.4
 
 dev_dependencies:
   flutter_lints: ^4.0.0
