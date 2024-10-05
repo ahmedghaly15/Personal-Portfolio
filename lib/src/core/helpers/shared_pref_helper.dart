@@ -30,6 +30,13 @@ class SharedPrefHelper {
     return sharedPreferences.getString(key) ?? '';
   }
 
+  /// Gets an int value from SharedPreferences with given [key].
+  static getInt(String key) async {
+    debugPrint('SharedPrefHelper : getInt with key : $key');
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.getInt(key) ?? 0;
+  }
+
   /// Removes a value from SharedPreferences with given [key].
   static removeData(String key) async {
     debugPrint('SharedPrefHelper : data with key : $key has been removed');

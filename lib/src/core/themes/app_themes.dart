@@ -11,4 +11,12 @@ class AppThemes {
         scaffoldBackgroundColor: AppColors.scaffoldLightBackgroundColor,
         brightness: Brightness.light,
       );
+
+  static ThemeData get dark => ThemeData(
+        colorScheme: const ColorScheme.dark(primary: AppColors.primaryColor),
+        primaryColor: AppColors.primaryColor,
+        useMaterial3: true,
+        scaffoldBackgroundColor: AppColors.darkColor,
+        brightness: Brightness.dark,
+      );
 }
