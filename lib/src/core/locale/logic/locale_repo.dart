@@ -5,7 +5,6 @@ import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 
 class LocaleRepo {
   Future<bool> changeLang(String langCode) async {
-    await SharedPrefHelper.removeData(CacheKeys.locale);
     return await SharedPrefHelper.setData(CacheKeys.locale, langCode);
   }
 
