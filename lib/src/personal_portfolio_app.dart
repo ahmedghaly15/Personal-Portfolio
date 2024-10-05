@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/di/di.dart';
 import 'package:personal_portfolio/src/core/locale/app_localizations_setup.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
-import 'package:personal_portfolio/src/core/locale/logic/locale_state.dart';
 import 'package:personal_portfolio/src/core/themes/app_themes.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/views/home_view.dart';
@@ -20,11 +19,11 @@ class PersonalPortfolioApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, __) => BlocProvider<LocaleCubit>(
         create: (_) => getIt.get<LocaleCubit>()..getSavedLang(),
-        child: BlocBuilder<LocaleCubit, LocaleState>(
+        child: BlocBuilder<LocaleCubit, Locale>(
           buildWhen: (previous, current) => previous != current,
           builder: (context, localeState) => MaterialApp(
             debugShowCheckedModeBanner: false,
-            locale: localeState.locale,
+            locale: localeState,
             supportedLocales: AppLocalizationsSetup.supportedLocales,
             localizationsDelegates:
                 AppLocalizationsSetup.localizationsDelegates,
