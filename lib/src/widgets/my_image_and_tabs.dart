@@ -30,7 +30,7 @@ class MyImageAndTabs extends StatelessWidget {
                     children: [
                       TextButton(
                         style: TextButton.styleFrom(
-                          foregroundColor: AppColors.lightModeFontColor,
+                          foregroundColor: Colors.white,
                           textStyle: AppTextStyles.ralewayFont18Medium(context),
                         ),
                         onPressed: () {},
@@ -42,10 +42,10 @@ class MyImageAndTabs extends StatelessWidget {
                       index == 0
                           ? AnimatedContainer(
                               duration: const Duration(milliseconds: 300),
-                              width: context.width * 0.05,
+                              width: context.width * 0.045,
                               child: Divider(
-                                color: AppColors.lightModeFontColor,
-                                thickness: 1.w,
+                                color: Colors.white,
+                                thickness: 2.w,
                                 height: 1.h,
                               ),
                             )

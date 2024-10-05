@@ -64,7 +64,7 @@ class MainButton extends StatelessWidget {
             : border,
       ),
       child: MaterialButton(
-        padding: EdgeInsets.all(20.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(
