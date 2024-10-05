@@ -82,6 +82,22 @@ class Assets {
   /// assets/svgs/dark_mode_icon.svg
   static const String svgsDarkModeIcon = "assets/svgs/dark_mode_icon.svg";
 
+  /// Assets for svgsEmailDarkModeIcon
+  /// assets/svgs/email__dark_mode_icon.svg
+  static const String svgsEmailDarkModeIcon = "assets/svgs/email__dark_mode_icon.svg";
+
+  /// Assets for svgsEmailIcon
+  /// assets/svgs/email_icon.svg
+  static const String svgsEmailIcon = "assets/svgs/email_icon.svg";
+
+  /// Assets for svgsGithubDarkModeIcon
+  /// assets/svgs/github_dark_mode_icon.svg
+  static const String svgsGithubDarkModeIcon = "assets/svgs/github_dark_mode_icon.svg";
+
+  /// Assets for svgsGithubIcon
+  /// assets/svgs/github_icon.svg
+  static const String svgsGithubIcon = "assets/svgs/github_icon.svg";
+
   /// Assets for svgsLavenderBg
   /// assets/svgs/lavender-bg.svg
   static const String svgsLavenderBg = "assets/svgs/lavender-bg.svg";
@@ -90,8 +106,24 @@ class Assets {
   /// assets/svgs/light_mode_icon.svg
   static const String svgsLightModeIcon = "assets/svgs/light_mode_icon.svg";
 
+  /// Assets for svgsLinkedinDarkModeIcon
+  /// assets/svgs/linkedin_dark_mode_icon.svg
+  static const String svgsLinkedinDarkModeIcon = "assets/svgs/linkedin_dark_mode_icon.svg";
+
+  /// Assets for svgsLinkedinIcon
+  /// assets/svgs/linkedin_icon.svg
+  static const String svgsLinkedinIcon = "assets/svgs/linkedin_icon.svg";
+
   /// Assets for svgsLocaleIcon
   /// assets/svgs/locale_icon.svg
   static const String svgsLocaleIcon = "assets/svgs/locale_icon.svg";
+
+  /// Assets for svgsMediumDarkModeIcon
+  /// assets/svgs/medium_dark_mode_icon.svg
+  static const String svgsMediumDarkModeIcon = "assets/svgs/medium_dark_mode_icon.svg";
+
+  /// Assets for svgsMediumIcon
+  /// assets/svgs/medium_icon.svg
+  static const String svgsMediumIcon = "assets/svgs/medium_icon.svg";
 }
 
