@@ -26,6 +26,11 @@ class AppTextStyles {
         fontWeight: FontWeight.bold,
         fontFamily: AppStrings.playfairFontFamily,
       );
+  static TextStyle playfairFont32Bold(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 32),
+        fontWeight: FontWeight.bold,
+        fontFamily: AppStrings.playfairFontFamily,
+      );
   static TextStyle nunitoFont24Regular(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         fontWeight: FontWeight.w400,
@@ -35,6 +40,11 @@ class AppTextStyles {
   static TextStyle nunitoFont20Medium(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         fontWeight: FontWeight.w500,
+        fontFamily: AppStrings.nunitoFontFamily,
+      );
+  static TextStyle nunitoFont16Regular(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 16),
+        fontWeight: FontWeight.w400,
         fontFamily: AppStrings.nunitoFontFamily,
       );
 }

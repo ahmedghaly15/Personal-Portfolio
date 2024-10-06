@@ -96,6 +96,22 @@ class Assets {
   /// assets/images/black_me.jpg
   static const String imagesBlackMe = "assets/images/black_me.jpg";
 
+  /// Assets for imagesIcareIcon
+  /// assets/images/icare_icon.png
+  static const String imagesIcareIcon = "assets/images/icare_icon.png";
+
+  /// Assets for imagesLinkupIcon
+  /// assets/images/linkup_icon.png
+  static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
+
+  /// Assets for imagesRoomeIcon
+  /// assets/images/roome_icon.png
+  static const String imagesRoomeIcon = "assets/images/roome_icon.png";
+
+  /// Assets for imagesStoreifyIcon
+  /// assets/images/storeify_icon.png
+  static const String imagesStoreifyIcon = "assets/images/storeify_icon.png";
+
   /// Assets for svgsDarkModeIcon
   /// assets/svgs/dark_mode_icon.svg
   static const String svgsDarkModeIcon = "assets/svgs/dark_mode_icon.svg";
