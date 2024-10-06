@@ -5,6 +5,7 @@ import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/cubit/app_cubit.dart';
 import 'package:personal_portfolio/src/widgets/about_tab_content.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
+import 'package:personal_portfolio/src/widgets/portfolio_tab_content.dart';
 import 'package:personal_portfolio/src/widgets/skills_tab_content.dart';
 
 class SelectedTabContentBlocBuilder extends StatelessWidget {
@@ -22,6 +23,9 @@ class SelectedTabContentBlocBuilder extends StatelessWidget {
 
           case LangKeys.skills:
             return const SkillsTabContent();
+
+          case LangKeys.portfolio:
+            return const PortfolioTabContent();
 
           default:
             return const Center(

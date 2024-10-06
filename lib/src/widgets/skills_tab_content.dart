@@ -17,8 +17,8 @@ class SkillsTabContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final isArabic = context.watch<LocaleCubit>().isArabic;
     return Container(
-      margin:
-          AppUtils.tabContentMargin(isArabic).add(EdgeInsets.only(top: 32.h)),
+      margin: AppUtils.tabContentEdgeInsets(isArabic)
+          .add(EdgeInsets.only(top: 32.h)),
       child: Wrap(
         children: List.generate(
           AppConstants.skills.length,

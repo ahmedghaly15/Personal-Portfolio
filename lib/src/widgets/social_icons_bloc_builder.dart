@@ -13,7 +13,7 @@ class SocialIconsBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
-      buildWhen: (_, current) => current is ToggleIsHoveredBool,
+      buildWhen: (_, current) => current is ToggleSocialIconIsHoveredBool,
       builder: (context, state) => Wrap(
         children: List.generate(
           AppConstants.socialIcons.length,
@@ -22,10 +22,10 @@ class SocialIconsBlocBuilder extends StatelessWidget {
             delay: Duration(milliseconds: 200 * index),
             child: MouseRegion(
               onEnter: (_) {
-                context.read<AppCubit>().setHovered(index, true);
+                context.read<AppCubit>().setSocialIconHovered(index);
               },
               onExit: (_) {
-                context.read<AppCubit>().setHovered(index, false);
+                context.read<AppCubit>().setSocialIconHovered(index);
               },
               child: IconButton(
                 onPressed: () async => await openUrl(
@@ -33,7 +33,7 @@ class SocialIconsBlocBuilder extends StatelessWidget {
                   isEmail: AppConstants.socialIcons[index].isEmail,
                 ),
                 icon: SvgPicture.asset(
-                  context.read<AppCubit>().isHovered[index]
+                  context.read<AppCubit>().isSocialIconHovered[index]
                       ? AppConstants.socialIcons[index].hoveredIcon
                       : AppConstants.socialIcons[index].icon,
                   height: 32.h,
