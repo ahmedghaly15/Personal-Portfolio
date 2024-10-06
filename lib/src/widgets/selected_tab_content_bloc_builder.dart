@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:personal_portfolio/src/core/locale/lang_keys.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/cubit/app_cubit.dart';
-import 'package:personal_portfolio/src/widgets/introducing_myself_section.dart';
+import 'package:personal_portfolio/src/widgets/about_tab_content.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
+import 'package:personal_portfolio/src/widgets/skills_tab_content.dart';
 
 class SelectedTabContentBlocBuilder extends StatelessWidget {
   const SelectedTabContentBlocBuilder({super.key});
@@ -17,10 +18,10 @@ class SelectedTabContentBlocBuilder extends StatelessWidget {
         final selectedTab = context.watch<AppCubit>().selectedTab;
         switch (AppConstants.headerTitlesKeys[selectedTab]) {
           case LangKeys.about:
-            return const IntroducingMyselfSection();
+            return const AboutTabContent();
 
           case LangKeys.skills:
-            return const Column();
+            return const SkillsTabContent();
 
           default:
             return const Center(
