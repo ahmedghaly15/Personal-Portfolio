@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
+import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/cubit/app_cubit.dart';
 
 class SocialIconsBlocBuilder extends StatelessWidget {
@@ -27,7 +28,10 @@ class SocialIconsBlocBuilder extends StatelessWidget {
                 context.read<AppCubit>().setHovered(index, false);
               },
               child: IconButton(
-                onPressed: AppConstants.socialIcons[index].onPressed,
+                onPressed: () async => await openUrl(
+                  AppConstants.socialIcons[index].url,
+                  isEmail: AppConstants.socialIcons[index].isEmail,
+                ),
                 icon: SvgPicture.asset(
                   context.read<AppCubit>().isHovered[index]
                       ? AppConstants.socialIcons[index].hoveredIcon

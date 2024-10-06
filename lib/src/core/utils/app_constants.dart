@@ -14,30 +14,27 @@ class AppConstants {
     LangKeys.projects,
     LangKeys.contact,
   ];
-  static List<SocialIcon> socialIcons = [
+  static const List<SocialIcon> socialIcons = [
     SocialIcon(
       url: AppStrings.myGmail,
       icon: Assets.svgsEmailIcon,
       hoveredIcon: Assets.svgsEmailDarkModeIcon,
-      onPressed: () {},
+      isEmail: true,
     ),
     SocialIcon(
       url: "https://github.com/ahmedghaly15",
       icon: Assets.svgsGithubIcon,
       hoveredIcon: Assets.svgsGithubDarkModeIcon,
-      onPressed: () {},
     ),
     SocialIcon(
       url: "https://www.linkedin.com/in/ahmed-ghaly15/",
       icon: Assets.svgsLinkedinIcon,
       hoveredIcon: Assets.svgsLinkedinDarkModeIcon,
-      onPressed: () {},
     ),
     SocialIcon(
       url: "https://medium.com/@ahmedghaly15",
       icon: Assets.svgsMediumIcon,
       hoveredIcon: Assets.svgsMediumDarkModeIcon,
-      onPressed: () {},
     ),
   ];
 
