@@ -11,6 +11,7 @@ class AppConstants {
 
   static const List<String> headerTitlesKeys = [
     LangKeys.about,
+    LangKeys.skills,
     LangKeys.projects,
     LangKeys.contact,
   ];

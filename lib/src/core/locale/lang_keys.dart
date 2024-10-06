@@ -9,4 +9,5 @@ class LangKeys {
   static const String myDescription = 'myDescription';
   static const String downloadCV = 'downloadCV';
   static const String hireMe = 'hireMe';
+  static const String skills = 'skills';
 }

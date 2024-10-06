@@ -5,7 +5,7 @@ import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
-  AppCubit() : super(const AppStateInitial());
+  AppCubit() : super(AppStateInitial());
 
   // Track the hover state of each icon
   List<bool> isHovered = List.generate(
@@ -16,5 +16,13 @@ class AppCubit extends Cubit<AppState> {
   void setHovered(int index, bool hovered) {
     isHovered[index] = hovered;
     emit(ToggleIsHoveredBool(isHovered[index]));
+  }
+
+  int selectedTab = 0;
+  void updateSelectedTab(int index) {
+    if (selectedTab != index) {
+      selectedTab = index;
+      emit(UpdateSelectedTab(selectedTab));
+    }
   }
 }
