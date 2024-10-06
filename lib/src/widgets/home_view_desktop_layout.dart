@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/my_image_and_tabs.dart';
-import 'package:personal_portfolio/src/widgets/social_icons.dart';
+import 'package:personal_portfolio/src/widgets/social_icons_bloc_builder.dart';
 import 'package:personal_portfolio/src/widgets/introducing_myself_section.dart';
 
 class HomeViewDesktopLayout extends StatelessWidget {
@@ -47,7 +47,7 @@ class HomeViewDesktopLayout extends StatelessWidget {
               const Spacer(),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 32.h),
-                child: const SocialIcons(),
+                child: const SocialIconsBlocBuilder(),
               ),
             ],
           ),
