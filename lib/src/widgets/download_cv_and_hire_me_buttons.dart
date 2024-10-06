@@ -1,6 +1,7 @@
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:typed_data';
 import 'package:personal_portfolio/src/core/locale/lang_keys.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
@@ -8,6 +9,7 @@ import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
+import 'package:personal_portfolio/src/cubit/app_cubit.dart';
 
 class DownloadCVAndHireMeButtons extends StatelessWidget {
   const DownloadCVAndHireMeButtons({super.key});
@@ -21,13 +23,23 @@ class DownloadCVAndHireMeButtons extends StatelessWidget {
           textKey: LangKeys.downloadCV,
         ),
         MySizedBox.width16,
-        MainButton(
-          isOutlined: true,
-          onPressed: () async => await openUrl(
-            AppStrings.myGmail,
-            isEmail: true,
-          ),
-          textKey: LangKeys.hireMe,
+        BlocBuilder<AppCubit, AppState>(
+          buildWhen: (_, current) => current is ToggleHireMeButtonIsHovered,
+          builder: (context, state) {
+            final bool isHovered = context.watch<AppCubit>().isHireMeHovered;
+            return MouseRegion(
+              onEnter: (_) => context.read<AppCubit>().toggleHireMeHovered(),
+              onExit: (_) => context.read<AppCubit>().toggleHireMeHovered(),
+              child: MainButton(
+                isOutlined: isHovered ? false : true,
+                onPressed: () async => await openUrl(
+                  AppStrings.myGmail,
+                  isEmail: true,
+                ),
+                textKey: LangKeys.hireMe,
+              ),
+            );
+          },
         ),
       ],
     );

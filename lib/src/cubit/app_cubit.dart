@@ -35,4 +35,10 @@ class AppCubit extends Cubit<AppState> {
     isProjectButtonHovered[index] = !isProjectButtonHovered[index];
     emit(ToggleProjectItemButtonIsHovered(isProjectButtonHovered[index]));
   }
+
+  bool isHireMeHovered = false;
+  void toggleHireMeHovered() {
+    isHireMeHovered = !isHireMeHovered;
+    emit(ToggleHireMeButtonIsHovered(isHireMeHovered));
+  }
 }

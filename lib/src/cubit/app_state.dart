@@ -19,3 +19,8 @@ final class ToggleProjectItemButtonIsHovered extends AppState {
   final bool isHovered;
   ToggleProjectItemButtonIsHovered(this.isHovered);
 }
+
+final class ToggleHireMeButtonIsHovered extends AppState {
+  final bool isHovered;
+  ToggleHireMeButtonIsHovered(this.isHovered);
+}

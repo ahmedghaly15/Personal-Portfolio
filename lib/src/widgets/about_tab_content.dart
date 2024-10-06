@@ -1,11 +1,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
+import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_utils.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/download_cv_and_hire_me_buttons.dart';
-import 'package:personal_portfolio/src/widgets/my_description_texts.dart';
 
 class AboutTabContent extends StatelessWidget {
   const AboutTabContent({super.key});
@@ -20,7 +22,28 @@ class AboutTabContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MySizedBox.height140,
-          const MyDescriptionTexts(),
+          ...List.generate(
+            AppConstants.myDescriptionLangKeys.length,
+            (index) => FadeInLeft(
+              duration: const Duration(milliseconds: 1000),
+              delay: Duration(milliseconds: 500 * index),
+              child: Container(
+                margin: EdgeInsets.only(
+                  bottom: AppConstants.myDescriptionTextsBottomMargins[index].h,
+                ),
+                child: Text(
+                  context.translate(
+                    AppConstants.myDescriptionLangKeys[index],
+                  ),
+                  style: AppConstants.myDescriptionTextStyles(context)[index],
+                  textAlign:
+                      index == AppConstants.myDescriptionLangKeys.length - 1
+                          ? TextAlign.justify
+                          : TextAlign.start,
+                ),
+              ),
+            ),
+          ),
           FadeInUp(
             child: const DownloadCVAndHireMeButtons(),
           ),

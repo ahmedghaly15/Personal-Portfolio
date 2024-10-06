@@ -16,7 +16,6 @@ class AppConstants {
     LangKeys.about,
     LangKeys.skills,
     LangKeys.portfolio,
-    LangKeys.contact,
   ];
   static const List<SocialIcon> socialIcons = [
     SocialIcon(

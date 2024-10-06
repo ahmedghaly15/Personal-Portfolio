@@ -3,7 +3,6 @@ class LangKeys {
 
   static const String about = 'about';
   static const String portfolio = 'portfolio';
-  static const String contact = 'contact';
   static const String flutterDeveloper = 'flutterDeveloper';
   static const String helloMyNameIs = 'helloMyNameIs';
   static const String myDescription = 'myDescription';
