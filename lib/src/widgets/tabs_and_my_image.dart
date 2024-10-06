@@ -9,8 +9,8 @@ import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/widgets/header_tabs_bloc_builder.dart';
 import 'package:personal_portfolio/src/widgets/up_and_down_animated_widget.dart';
 
-class Header extends StatelessWidget {
-  const Header({super.key});
+class TabsAndMyImage extends StatelessWidget {
+  const TabsAndMyImage({super.key});
 
   @override
   Widget build(BuildContext context) {

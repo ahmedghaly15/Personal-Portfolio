@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/download_cv_and_hire_me_buttons.dart';
-import 'package:personal_portfolio/src/widgets/locale_and_theme_icon_buttons.dart';
 import 'package:personal_portfolio/src/widgets/my_description_texts.dart';
 
 class IntroducingMyselfSection extends StatelessWidget {
@@ -24,7 +23,6 @@ class IntroducingMyselfSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const LocaleAndThemeIconButtons(),
           MySizedBox.height140,
           const MyDescriptionTexts(),
           FadeInUp(
