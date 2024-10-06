@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
-import 'package:personal_portfolio/src/widgets/my_image_and_tabs.dart';
+import 'package:personal_portfolio/src/widgets/header.dart';
 import 'package:personal_portfolio/src/widgets/social_icons_bloc_builder.dart';
 import 'package:personal_portfolio/src/widgets/introducing_myself_section.dart';
 
@@ -22,7 +22,7 @@ class HomeViewDesktopLayout extends StatelessWidget {
               ? const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MyImageAndTabs(),
+                    Header(),
                     MySizedBox.width114,
                     Expanded(
                       child: IntroducingMyselfSection(),
@@ -36,7 +36,7 @@ class HomeViewDesktopLayout extends StatelessWidget {
                       child: IntroducingMyselfSection(),
                     ),
                     MySizedBox.width114,
-                    MyImageAndTabs(),
+                    Header(),
                   ],
                 ),
         ),
