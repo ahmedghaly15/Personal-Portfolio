@@ -15,8 +15,8 @@ void _setupForRepos() {
 }
 
 void _setupForCubits() {
-  getIt.registerLazySingleton<LocaleCubit>(
+  getIt.registerFactory<LocaleCubit>(
     () => LocaleCubit(getIt<LocaleRepo>()),
   );
-  getIt.registerLazySingleton<ThemingCubit>(() => ThemingCubit());
+  getIt.registerFactory<ThemingCubit>(() => ThemingCubit());
 }

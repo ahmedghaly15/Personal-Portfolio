@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/src/core/utils/size_config.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
@@ -18,9 +19,9 @@ class ResponsiveLayout extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         // Break points are specified according to the design
-        if (constraints.maxWidth < 800) {
+        if (constraints.maxWidth < SizeConfig.tabletBreakPoint) {
           return mobileLayout(context);
-        } else if (constraints.maxWidth < 1200) {
+        } else if (constraints.maxWidth < SizeConfig.desktopBreakPoint) {
           return tabletLayout(context);
         } else {
           return desktopLayout(context);
