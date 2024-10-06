@@ -10,6 +10,12 @@ class AppTextStyles {
         fontWeight: FontWeight.w500,
         fontFamily: AppStrings.ralewayFontFamily,
       );
+
+  static TextStyle ralewayFont20SemiBold(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 20),
+        fontWeight: FontWeight.w600,
+        fontFamily: AppStrings.ralewayFontFamily,
+      );
   static TextStyle nunitoFont20Bold(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         fontWeight: FontWeight.bold,
