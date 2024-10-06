@@ -5,7 +5,7 @@ import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/my_image_and_tabs.dart';
 import 'package:personal_portfolio/src/widgets/social_icons.dart';
-import 'package:personal_portfolio/src/widgets/start_side_section.dart';
+import 'package:personal_portfolio/src/widgets/introducing_myself_section.dart';
 
 class HomeViewDesktopLayout extends StatelessWidget {
   const HomeViewDesktopLayout({super.key});
@@ -18,31 +18,27 @@ class HomeViewDesktopLayout extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: Column(
-            children: [
-              isArabic
-                  ? const Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        MyImageAndTabs(),
-                        MySizedBox.width114,
-                        Expanded(
-                          child: StartSideSection(),
-                        ),
-                      ],
-                    )
-                  : const Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: StartSideSection(),
-                        ),
-                        MySizedBox.width114,
-                        MyImageAndTabs(),
-                      ],
+          child: isArabic
+              ? const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MyImageAndTabs(),
+                    MySizedBox.width114,
+                    Expanded(
+                      child: IntroducingMyselfSection(),
                     ),
-            ],
-          ),
+                  ],
+                )
+              : const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: IntroducingMyselfSection(),
+                    ),
+                    MySizedBox.width114,
+                    MyImageAndTabs(),
+                  ],
+                ),
         ),
         SliverFillRemaining(
           hasScrollBody: false,
