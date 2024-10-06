@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_repo.dart';
 import 'package:personal_portfolio/src/core/themes/themes_cubit.dart';
+import 'package:personal_portfolio/src/cubit/app_cubit.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -15,8 +16,9 @@ void _setupForRepos() {
 }
 
 void _setupForCubits() {
-  getIt.registerFactory<LocaleCubit>(
+  getIt.registerLazySingleton<LocaleCubit>(
     () => LocaleCubit(getIt<LocaleRepo>()),
   );
-  getIt.registerFactory<ThemingCubit>(() => ThemingCubit());
+  getIt.registerLazySingleton<ThemingCubit>(() => ThemingCubit());
+  getIt.registerLazySingleton<AppCubit>(() => AppCubit());
 }

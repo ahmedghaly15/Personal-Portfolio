@@ -7,6 +7,7 @@ import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/themes/app_themes.dart';
 import 'package:personal_portfolio/src/core/themes/themes_cubit.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import 'package:personal_portfolio/src/cubit/app_cubit.dart';
 import 'package:personal_portfolio/src/views/home_view.dart';
 
 class PersonalPortfolioApp extends StatelessWidget {
@@ -25,6 +26,9 @@ class PersonalPortfolioApp extends StatelessWidget {
           ),
           BlocProvider<ThemingCubit>(
             create: (_) => getIt.get<ThemingCubit>(),
+          ),
+          BlocProvider<AppCubit>(
+            create: (_) => getIt.get<AppCubit>(),
           ),
         ],
         child: BlocBuilder<ThemingCubit, ThemeData>(
