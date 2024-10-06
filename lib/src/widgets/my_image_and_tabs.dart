@@ -1,8 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:personal_portfolio/src/core/helpers/extensions.dart';
+import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
@@ -14,12 +16,17 @@ class MyImageAndTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isArabic =
+        context.watch<LocaleCubit>().isArabic; // Watch the locale change here
+
     return Stack(
-      alignment: AlignmentDirectional.topEnd,
+      alignment: isArabic
+          ? AlignmentDirectional.topStart
+          : AlignmentDirectional.topEnd,
       children: [
         BounceInDown(child: SvgPicture.asset(Assets.svgsLavenderBg)),
         Container(
-          margin: EdgeInsetsDirectional.only(top: 14.h),
+          margin: EdgeInsetsDirectional.only(top: 14.h, start: 16.w),
           child: Row(
             children: List.generate(
               AppConstants.headerTitlesKeys.length,
@@ -59,7 +66,8 @@ class MyImageAndTabs extends StatelessWidget {
         ),
         PositionedDirectional(
           top: 0,
-          end: 16.w,
+          end: isArabic ? null : 16.w,
+          start: isArabic ? 16.w : null,
           bottom: 16.h,
           child: UpAndDownAnimatedWidget(
             child: CircleAvatar(

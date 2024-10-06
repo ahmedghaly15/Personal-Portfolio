@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/my_image_and_tabs.dart';
 import 'package:personal_portfolio/src/widgets/social_icons.dart';
@@ -10,21 +12,35 @@ class HomeViewDesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isArabic =
+        context.watch<LocaleCubit>().isArabic; // Watch the locale change here
+
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Column(
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: StartSideSection(),
-                  ),
-                  MySizedBox.width114,
-                  MyImageAndTabs(),
-                ],
-              ),
+              isArabic
+                  ? const Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MyImageAndTabs(),
+                        MySizedBox.width114,
+                        Expanded(
+                          child: StartSideSection(),
+                        ),
+                      ],
+                    )
+                  : const Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: StartSideSection(),
+                        ),
+                        MySizedBox.width114,
+                        MyImageAndTabs(),
+                      ],
+                    ),
             ],
           ),
         ),

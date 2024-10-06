@@ -18,6 +18,7 @@ class LocaleCubit extends Cubit<Locale> {
 
   Future<void> _changeLang(String langCode) async {
     await _localeRepo.changeLang(langCode);
+    emit(Locale(langCode));
   }
 
   void _toEnglish() => _changeLang(AppStrings.englishLangCode);
@@ -29,4 +30,6 @@ class LocaleCubit extends Cubit<Locale> {
         ? _toArabic()
         : _toEnglish();
   }
+
+  bool get isArabic => state.languageCode == AppStrings.arabicLangCode;
 }
