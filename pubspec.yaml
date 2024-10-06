@@ -25,6 +25,8 @@ dependencies:
   animate_do: ^3.3.4
   # For launching a URL
   url_launcher: ^6.3.0
+  # To save files on any platform
+  file_saver: ^0.2.14
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -37,6 +39,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/svgs/
+    - assets/cv/
     - lib/src/core/locale/lang/ar.json
     - lib/src/core/locale/lang/en.json
 

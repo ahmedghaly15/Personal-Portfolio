@@ -1,22 +1,30 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
+  /// Assets for cvAhmed Ghaly
+  /// assets/cv/Ahmed Ghaly.pdf
+  static const String cvAhmedGhaly = "assets/cv/Ahmed Ghaly.pdf";
+
   /// Assets for fontsNunitoNunitoBold
   /// assets/fonts/Nunito/Nunito-Bold.ttf
-  static const String fontsNunitoNunitoBold = "assets/fonts/Nunito/Nunito-Bold.ttf";
+  static const String fontsNunitoNunitoBold =
+      "assets/fonts/Nunito/Nunito-Bold.ttf";
 
   /// Assets for fontsNunitoNunitoMedium
   /// assets/fonts/Nunito/Nunito-Medium.ttf
-  static const String fontsNunitoNunitoMedium = "assets/fonts/Nunito/Nunito-Medium.ttf";
+  static const String fontsNunitoNunitoMedium =
+      "assets/fonts/Nunito/Nunito-Medium.ttf";
 
   /// Assets for fontsNunitoNunitoRegular
   /// assets/fonts/Nunito/Nunito-Regular.ttf
-  static const String fontsNunitoNunitoRegular = "assets/fonts/Nunito/Nunito-Regular.ttf";
+  static const String fontsNunitoNunitoRegular =
+      "assets/fonts/Nunito/Nunito-Regular.ttf";
 
   /// Assets for fontsNunitoNunitoSemiBold
   /// assets/fonts/Nunito/Nunito-SemiBold.ttf
-  static const String fontsNunitoNunitoSemiBold = "assets/fonts/Nunito/Nunito-SemiBold.ttf";
+  static const String fontsNunitoNunitoSemiBold =
+      "assets/fonts/Nunito/Nunito-SemiBold.ttf";
 
   /// Assets for fontsNunitoOFL
   /// assets/fonts/Nunito/OFL.txt
@@ -28,27 +36,33 @@ class Assets {
 
   /// Assets for fontsPlayfairDisplayOFL
   /// assets/fonts/Playfair_Display/OFL.txt
-  static const String fontsPlayfairDisplayOFL = "assets/fonts/Playfair_Display/OFL.txt";
+  static const String fontsPlayfairDisplayOFL =
+      "assets/fonts/Playfair_Display/OFL.txt";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplayBold
   /// assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplayBold = "assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplayBold =
+      "assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplayMedium
   /// assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplayMedium = "assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplayMedium =
+      "assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplayRegular
   /// assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplayRegular = "assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplayRegular =
+      "assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplaySemiBold
   /// assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplaySemiBold = "assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplaySemiBold =
+      "assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf";
 
   /// Assets for fontsPlayfairDisplayREADME
   /// assets/fonts/Playfair_Display/README.txt
-  static const String fontsPlayfairDisplayREADME = "assets/fonts/Playfair_Display/README.txt";
+  static const String fontsPlayfairDisplayREADME =
+      "assets/fonts/Playfair_Display/README.txt";
 
   /// Assets for fontsRalewayOFL
   /// assets/fonts/Raleway/OFL.txt
@@ -60,19 +74,23 @@ class Assets {
 
   /// Assets for fontsRalewayRalewayBold
   /// assets/fonts/Raleway/Raleway-Bold.ttf
-  static const String fontsRalewayRalewayBold = "assets/fonts/Raleway/Raleway-Bold.ttf";
+  static const String fontsRalewayRalewayBold =
+      "assets/fonts/Raleway/Raleway-Bold.ttf";
 
   /// Assets for fontsRalewayRalewayMedium
   /// assets/fonts/Raleway/Raleway-Medium.ttf
-  static const String fontsRalewayRalewayMedium = "assets/fonts/Raleway/Raleway-Medium.ttf";
+  static const String fontsRalewayRalewayMedium =
+      "assets/fonts/Raleway/Raleway-Medium.ttf";
 
   /// Assets for fontsRalewayRalewayRegular
   /// assets/fonts/Raleway/Raleway-Regular.ttf
-  static const String fontsRalewayRalewayRegular = "assets/fonts/Raleway/Raleway-Regular.ttf";
+  static const String fontsRalewayRalewayRegular =
+      "assets/fonts/Raleway/Raleway-Regular.ttf";
 
   /// Assets for fontsRalewayRalewaySemiBold
   /// assets/fonts/Raleway/Raleway-SemiBold.ttf
-  static const String fontsRalewayRalewaySemiBold = "assets/fonts/Raleway/Raleway-SemiBold.ttf";
+  static const String fontsRalewayRalewaySemiBold =
+      "assets/fonts/Raleway/Raleway-SemiBold.ttf";
 
   /// Assets for imagesBlackMe
   /// assets/images/black_me.jpg
@@ -84,7 +102,8 @@ class Assets {
 
   /// Assets for svgsEmailDarkModeIcon
   /// assets/svgs/email__dark_mode_icon.svg
-  static const String svgsEmailDarkModeIcon = "assets/svgs/email__dark_mode_icon.svg";
+  static const String svgsEmailDarkModeIcon =
+      "assets/svgs/email__dark_mode_icon.svg";
 
   /// Assets for svgsEmailIcon
   /// assets/svgs/email_icon.svg
@@ -92,7 +111,8 @@ class Assets {
 
   /// Assets for svgsGithubDarkModeIcon
   /// assets/svgs/github_dark_mode_icon.svg
-  static const String svgsGithubDarkModeIcon = "assets/svgs/github_dark_mode_icon.svg";
+  static const String svgsGithubDarkModeIcon =
+      "assets/svgs/github_dark_mode_icon.svg";
 
   /// Assets for svgsGithubIcon
   /// assets/svgs/github_icon.svg
@@ -108,7 +128,8 @@ class Assets {
 
   /// Assets for svgsLinkedinDarkModeIcon
   /// assets/svgs/linkedin_dark_mode_icon.svg
-  static const String svgsLinkedinDarkModeIcon = "assets/svgs/linkedin_dark_mode_icon.svg";
+  static const String svgsLinkedinDarkModeIcon =
+      "assets/svgs/linkedin_dark_mode_icon.svg";
 
   /// Assets for svgsLinkedinIcon
   /// assets/svgs/linkedin_icon.svg
@@ -120,10 +141,10 @@ class Assets {
 
   /// Assets for svgsMediumDarkModeIcon
   /// assets/svgs/medium_dark_mode_icon.svg
-  static const String svgsMediumDarkModeIcon = "assets/svgs/medium_dark_mode_icon.svg";
+  static const String svgsMediumDarkModeIcon =
+      "assets/svgs/medium_dark_mode_icon.svg";
 
   /// Assets for svgsMediumIcon
   /// assets/svgs/medium_icon.svg
   static const String svgsMediumIcon = "assets/svgs/medium_icon.svg";
 }
-

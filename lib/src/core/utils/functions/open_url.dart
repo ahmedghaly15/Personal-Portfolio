@@ -1,6 +1,6 @@
 import 'package:url_launcher/url_launcher.dart';
 
-void openUrl(String url, {bool isEmail = false}) async {
+Future<void> openUrl(String url, {bool isEmail = false}) async {
   if (isEmail) {
     await launchUrl(
       Uri(
