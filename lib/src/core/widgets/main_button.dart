@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
+import 'package:personal_portfolio/src/core/utils/functions/get_responsive_font_size.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
@@ -51,7 +52,7 @@ class MainButton extends StatelessWidget {
       height: height?.h,
       margin: margin,
       decoration: BoxDecoration(
-        color: _backgroundColor(context),
+        color: backgroundColor ?? _backgroundColor(context),
         borderRadius: BorderRadiusDirectional.circular(
           borderRadius?.r ?? 16.0.r,
         ),
@@ -64,7 +65,8 @@ class MainButton extends StatelessWidget {
             : border,
       ),
       child: MaterialButton(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        padding:
+            padding ?? EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(
@@ -77,7 +79,8 @@ class MainButton extends StatelessWidget {
                 context.translate(textKey!),
                 style: textStyle ??
                     AppTextStyles.nunitoFont20Medium(context).copyWith(
-                      fontSize: fontSize?.sp ?? 20.sp,
+                      fontSize: getResponsiveFontSize(context,
+                          fontSize: fontSize ?? 20),
                       color: isOutlined
                           ? AppColors.primaryColor
                           : textColor ?? Colors.white,
@@ -91,7 +94,7 @@ class MainButton extends StatelessWidget {
   Color _backgroundColor(BuildContext context) {
     return isOutlined
         ? _outlinedBackgroundColor(context)
-        : backgroundColor ?? AppColors.primaryColor;
+        : AppColors.primaryColor;
   }
 
   Color _outlinedBackgroundColor(BuildContext context) =>

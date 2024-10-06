@@ -5,6 +5,7 @@ import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import 'package:personal_portfolio/src/models/project.dart';
 import 'package:personal_portfolio/src/models/skill.dart';
 import 'package:personal_portfolio/src/models/social_icon.dart';
 
@@ -14,7 +15,7 @@ class AppConstants {
   static const List<String> headerTitlesKeys = [
     LangKeys.about,
     LangKeys.skills,
-    LangKeys.projects,
+    LangKeys.portfolio,
     LangKeys.contact,
   ];
   static const List<SocialIcon> socialIcons = [
@@ -76,5 +77,34 @@ class AppConstants {
     Skill(name: 'Clean Architecture', percent: 0.8),
     Skill(name: 'MVVM Pattern', percent: 0.9),
     Skill(name: 'Responsiveness', percent: 0.8),
+  ];
+
+  static const List<Project> portfolio = [
+    Project(
+      name: 'ICare',
+      descriptionKey: LangKeys.icareDescription,
+      image: Assets.imagesIcareIcon,
+      url: "https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file",
+      canBeDownloaded: true,
+    ),
+    Project(
+      name: "Linkup",
+      descriptionKey: LangKeys.linkupDescription,
+      image: Assets.imagesLinkupIcon,
+      url: "https://www.mediafire.com/file/ow4ilvobb6jxb04/Linkup.apk/file",
+      canBeDownloaded: true,
+    ),
+    Project(
+      name: "Storeify",
+      descriptionKey: LangKeys.storeifyDescription,
+      image: Assets.imagesStoreifyIcon,
+      neitherDownloadedNorViewed: true,
+    ),
+    Project(
+      name: "Roome",
+      descriptionKey: LangKeys.roomeDescription,
+      image: Assets.imagesRoomeIcon,
+      url: "https://github.com/ahmedghaly15/Roome",
+    ),
   ];
 }

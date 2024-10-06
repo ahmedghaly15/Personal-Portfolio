@@ -8,14 +8,14 @@ class AppCubit extends Cubit<AppState> {
   AppCubit() : super(AppStateInitial());
 
   // Track the hover state of each icon
-  List<bool> isHovered = List.generate(
+  List<bool> isSocialIconHovered = List.generate(
     AppConstants.socialIcons.length,
     (_) => false,
   );
 
-  void setHovered(int index, bool hovered) {
-    isHovered[index] = hovered;
-    emit(ToggleIsHoveredBool(isHovered[index]));
+  void setSocialIconHovered(int index) {
+    isSocialIconHovered[index] = !isSocialIconHovered[index];
+    emit(ToggleSocialIconIsHoveredBool(isSocialIconHovered[index]));
   }
 
   int selectedTab = 0;
@@ -24,5 +24,15 @@ class AppCubit extends Cubit<AppState> {
       selectedTab = index;
       emit(UpdateSelectedTab(selectedTab));
     }
+  }
+
+  List<bool> isProjectButtonHovered = List.generate(
+    AppConstants.socialIcons.length,
+    (_) => false,
+  );
+
+  void toggleProjectButtonHovered(int index) {
+    isProjectButtonHovered[index] = !isProjectButtonHovered[index];
+    emit(ToggleProjectItemButtonIsHovered(isProjectButtonHovered[index]));
   }
 }

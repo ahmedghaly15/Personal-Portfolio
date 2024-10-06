@@ -15,7 +15,7 @@ class AboutTabContent extends StatelessWidget {
     final isArabic = context.watch<LocaleCubit>().isArabic;
 
     return Container(
-      margin: AppUtils.tabContentMargin(isArabic),
+      margin: AppUtils.tabContentEdgeInsets(isArabic),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
