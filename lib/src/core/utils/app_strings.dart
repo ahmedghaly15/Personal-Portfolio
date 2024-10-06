@@ -8,4 +8,5 @@ class AppStrings {
   static const String nunitoFontFamily = 'Nunito';
   static const String playfairFontFamily = 'Playfair Display';
   static const String ralewayFontFamily = 'Raleway';
+  static const String myGmail = "ahmedghaly0767@gmail.com";
 }

@@ -4,6 +4,7 @@ import 'package:personal_portfolio/src/core/locale/lang_keys.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
+import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/models/social_icon.dart';
 
 class AppConstants {
@@ -16,7 +17,7 @@ class AppConstants {
   ];
   static List<SocialIcon> socialIcons(BuildContext context) => [
         SocialIcon(
-          url: "ahmedghaly0767@gmail.com",
+          url: AppStrings.myGmail,
           icon: context.isDarkModeActive
               ? Assets.svgsEmailDarkModeIcon
               : Assets.svgsEmailIcon,

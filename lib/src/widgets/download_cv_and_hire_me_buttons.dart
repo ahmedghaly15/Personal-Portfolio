@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/locale/lang_keys.dart';
+import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 
@@ -17,7 +19,7 @@ class DownloadCVAndHireMeButtons extends StatelessWidget {
         MySizedBox.width16,
         MainButton(
           isOutlined: true,
-          onPressed: () {},
+          onPressed: () => openUrl(AppStrings.myGmail, isEmail: true),
           textKey: LangKeys.hireMe,
         ),
       ],
