@@ -18,11 +18,11 @@ class MobileLayoutTopSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         isArabic
-            ? _buildMyTabsAndImage()
+            ? _buildMyTabsAndImage(context)
             : _buildSocialAndServicesIconButtons(isArabic),
         isArabic
             ? _buildSocialAndServicesIconButtons(isArabic)
-            : _buildMyTabsAndImage(),
+            : _buildMyTabsAndImage(context),
       ],
     );
   }
@@ -40,13 +40,13 @@ class MobileLayoutTopSection extends StatelessWidget {
     );
   }
 
-  Widget _buildMyTabsAndImage() {
+  Widget _buildMyTabsAndImage(BuildContext context) {
     return Expanded(
       child: TabsAndMyImage(
-        backgroundSvgImage: Assets.imagesMobileLavenderBg,
+        backgroundSvgImage: Assets.svgsMobileLavenderBg,
         isDesktop: false,
         headerWidget: IconButton(
-          onPressed: () {},
+          onPressed: () => Scaffold.of(context).openDrawer(),
           icon: Icon(
             Icons.menu,
             color: Colors.white,

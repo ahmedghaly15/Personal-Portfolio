@@ -26,7 +26,7 @@ class HeaderTabsBlocBuilder extends StatelessWidget {
                         _buildTabTextButton(context, index),
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
-                          width: context.width * 0.045,
+                          width: context.screenWidth * 0.045,
                           child: Divider(
                             color: Colors.white,
                             thickness: 2.w,

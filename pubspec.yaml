@@ -29,6 +29,8 @@ dependencies:
   file_saver: ^0.2.14
   # To display progress widgets based on percentage
   percent_indicator: ^4.2.3
+  # Speed Dial Float Action Button
+  speed_dial_fab: ^2.3.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0

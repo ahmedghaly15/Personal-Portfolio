@@ -108,11 +108,6 @@ class Assets {
   /// assets/images/linkup_icon.png
   static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
 
-  /// Assets for imagesMobileLavenderBg
-  /// assets/images/mobile-lavender-bg.svg
-  static const String imagesMobileLavenderBg =
-      "assets/images/mobile-lavender-bg.svg";
-
   /// Assets for imagesRoomeIcon
   /// assets/images/roome_icon.png
   static const String imagesRoomeIcon = "assets/images/roome_icon.png";
@@ -172,4 +167,9 @@ class Assets {
   /// Assets for svgsMediumIcon
   /// assets/svgs/medium_icon.svg
   static const String svgsMediumIcon = "assets/svgs/medium_icon.svg";
+
+  /// Assets for svgsMobileLavenderBg
+  /// assets/svgs/mobile-lavender-bg.svg
+  static const String svgsMobileLavenderBg =
+      "assets/svgs/mobile-lavender-bg.svg";
 }

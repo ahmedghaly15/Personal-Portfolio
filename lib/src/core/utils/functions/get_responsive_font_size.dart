@@ -22,7 +22,7 @@ double _getScaleFactor(BuildContext context) {
   // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
   // double width = physicalWidth / devicePixelRatio;
 
-  final double width = context.width;
+  final double width = context.screenWidth;
   if (width < 800) {
     return width / 550;
   } else if (width < 1200) {
