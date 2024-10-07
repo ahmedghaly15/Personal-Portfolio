@@ -18,28 +18,32 @@ class DownloadCVAndHireMeButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        MainButton(
-          onPressed: () async => await _downloadCV(),
-          textKey: LangKeys.downloadCV,
+        Expanded(
+          child: MainButton(
+            onPressed: () async => await _downloadCV(),
+            textKey: LangKeys.downloadCV,
+          ),
         ),
-        MySizedBox.width16,
-        BlocBuilder<AppCubit, AppState>(
-          buildWhen: (_, current) => current is ToggleHireMeButtonIsHovered,
-          builder: (context, state) {
-            final bool isHovered = context.watch<AppCubit>().isHireMeHovered;
-            return MouseRegion(
-              onEnter: (_) => context.read<AppCubit>().toggleHireMeHovered(),
-              onExit: (_) => context.read<AppCubit>().toggleHireMeHovered(),
-              child: MainButton(
-                isOutlined: isHovered ? false : true,
-                onPressed: () async => await openUrl(
-                  AppStrings.myGmail,
-                  isEmail: true,
+        MySizedBox.width29,
+        Expanded(
+          child: BlocBuilder<AppCubit, AppState>(
+            buildWhen: (_, current) => current is ToggleHireMeButtonIsHovered,
+            builder: (context, state) {
+              final bool isHovered = context.watch<AppCubit>().isHireMeHovered;
+              return MouseRegion(
+                onEnter: (_) => context.read<AppCubit>().toggleHireMeHovered(),
+                onExit: (_) => context.read<AppCubit>().toggleHireMeHovered(),
+                child: MainButton(
+                  isOutlined: isHovered ? false : true,
+                  onPressed: () async => await openUrl(
+                    AppStrings.myGmail,
+                    isEmail: true,
+                  ),
+                  textKey: LangKeys.hireMe,
                 ),
-                textKey: LangKeys.hireMe,
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ],
     );
