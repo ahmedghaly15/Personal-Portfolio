@@ -17,11 +17,11 @@ class MobileLayoutTopSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         isArabic
-            ? _buildMyTabsAndImage(context)
+            ? _buildTabsAndMyImage(context)
             : _buildSocialAndServicesIconButtons(isArabic),
         isArabic
             ? _buildSocialAndServicesIconButtons(isArabic)
-            : _buildMyTabsAndImage(context),
+            : _buildTabsAndMyImage(context),
       ],
     );
   }
@@ -39,7 +39,7 @@ class MobileLayoutTopSection extends StatelessWidget {
     );
   }
 
-  Widget _buildMyTabsAndImage(BuildContext context) {
+  Widget _buildTabsAndMyImage(BuildContext context) {
     return const Expanded(
       child: TabsAndMyImage(
         backgroundSvgImage: Assets.svgsMobileLavenderBg,
