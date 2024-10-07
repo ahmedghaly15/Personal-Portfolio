@@ -1,5 +1,5 @@
 name: personal_portfolio
-description: "A new Flutter project."
+description: "A portfolio app for Ahmed Ghaly"
 publish_to: 'none'
 version: 0.1.0
 
@@ -34,6 +34,9 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+  
+  launcher_name: ^1.0.2
+  icons_launcher: ^3.0.0
 
 flutter:
   uses-material-design: true
@@ -85,3 +88,7 @@ flutter_assets:
   output_path: lib/src/core/utils/
   filename: app_assets.dart
   field_prefix: null
+
+
+launcher_name:
+  default: "Ahmed Ghaly"
