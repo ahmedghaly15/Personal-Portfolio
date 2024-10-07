@@ -65,8 +65,11 @@ class MainButton extends StatelessWidget {
             : border,
       ),
       child: MaterialButton(
-        padding:
-            padding ?? EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+        padding: padding ??
+            EdgeInsets.symmetric(
+              horizontal: 32.w,
+              vertical: 20.h,
+            ),
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(
@@ -74,18 +77,16 @@ class MainButton extends StatelessWidget {
           ),
         ),
         child: child ??
-            FittedBox(
-              child: Text(
-                context.translate(textKey!),
-                style: textStyle ??
-                    AppTextStyles.nunitoFont20Medium(context).copyWith(
-                      fontSize: getResponsiveFontSize(context,
-                          fontSize: fontSize ?? 20),
-                      color: isOutlined
-                          ? AppColors.primaryColor
-                          : textColor ?? Colors.white,
-                    ),
-              ),
+            Text(
+              context.translate(textKey!),
+              style: textStyle ??
+                  AppTextStyles.nunitoFont20Medium(context).copyWith(
+                    fontSize: getResponsiveFontSize(context,
+                        fontSize: fontSize ?? 20),
+                    color: isOutlined
+                        ? AppColors.primaryColor
+                        : textColor ?? Colors.white,
+                  ),
             ),
       ),
     );

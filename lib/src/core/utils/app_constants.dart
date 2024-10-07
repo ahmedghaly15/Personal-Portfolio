@@ -55,11 +55,12 @@ class AppConstants {
         ),
         AppTextStyles.playfairFont64Bold(context).copyWith(
           color: context.isDarkModeActive
-              ? Colors.white60
+              ? Colors.white
               : AppColors.closeToBlackColor,
         ),
         AppTextStyles.nunitoFont24Regular(context).copyWith(
-          color: AppColors.mediumGrey,
+          color:
+              context.isDarkModeActive ? Colors.white60 : AppColors.mediumGrey,
         ),
       ];
 
