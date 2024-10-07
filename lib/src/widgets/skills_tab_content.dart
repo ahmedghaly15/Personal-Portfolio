@@ -11,14 +11,17 @@ import 'package:personal_portfolio/src/core/utils/app_utils.dart';
 import 'package:personal_portfolio/src/models/skill.dart';
 
 class SkillsTabContent extends StatelessWidget {
-  const SkillsTabContent({super.key});
+  const SkillsTabContent({super.key, this.margin});
+
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
     final isArabic = context.watch<LocaleCubit>().isArabic;
     return Container(
-      margin: AppUtils.tabContentEdgeInsets(isArabic)
-          .add(EdgeInsets.only(top: 32.h)),
+      margin: margin ??
+          AppUtils.tabContentEdgeInsets(isArabic)
+              .add(EdgeInsets.only(top: 32.h)),
       child: Wrap(
         children: List.generate(
           AppConstants.skills.length,

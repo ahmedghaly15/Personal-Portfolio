@@ -8,18 +8,21 @@ import 'package:personal_portfolio/src/core/utils/app_utils.dart';
 import 'package:personal_portfolio/src/widgets/project_item.dart';
 
 class PortfolioTabContent extends StatelessWidget {
-  const PortfolioTabContent({super.key});
+  const PortfolioTabContent({super.key, this.gridPadding});
+
+  final EdgeInsetsGeometry? gridPadding;
 
   @override
   Widget build(BuildContext context) {
     final isArabic = context.watch<LocaleCubit>().isArabic;
     return SlideInLeft(
       child: GridView.builder(
-        padding: AppUtils.tabContentEdgeInsets(isArabic).add(
-          EdgeInsets.symmetric(
-            vertical: 32.h,
-          ),
-        ),
+        padding: gridPadding ??
+            AppUtils.tabContentEdgeInsets(isArabic).add(
+              EdgeInsets.symmetric(
+                vertical: 32.h,
+              ),
+            ),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: AppConstants.portfolio.length,

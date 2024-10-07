@@ -9,9 +9,16 @@ import 'package:personal_portfolio/src/widgets/portfolio_tab_content.dart';
 import 'package:personal_portfolio/src/widgets/skills_tab_content.dart';
 
 class SelectedTabContentBlocBuilder extends StatelessWidget {
-  const SelectedTabContentBlocBuilder({super.key, this.aboutTabMargin});
+  const SelectedTabContentBlocBuilder({
+    super.key,
+    this.aboutTabMargin,
+    this.skillsTabMargin,
+    this.portfolioGridPadding,
+  });
 
   final EdgeInsetsGeometry? aboutTabMargin;
+  final EdgeInsetsGeometry? skillsTabMargin;
+  final EdgeInsetsGeometry? portfolioGridPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +31,10 @@ class SelectedTabContentBlocBuilder extends StatelessWidget {
             return AboutTabContent(margin: aboutTabMargin);
 
           case LangKeys.skills:
-            return const SkillsTabContent();
+            return SkillsTabContent(margin: skillsTabMargin);
 
           case LangKeys.portfolio:
-            return const PortfolioTabContent();
+            return PortfolioTabContent(gridPadding: portfolioGridPadding);
 
           default:
             return const Center(

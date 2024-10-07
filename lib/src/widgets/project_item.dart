@@ -47,7 +47,6 @@ class ProjectItem extends StatelessWidget {
                 start: 24.w,
                 end: 32.w,
                 top: 16.h,
-                bottom: 16.h,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -97,10 +96,7 @@ class ProjectItem extends StatelessWidget {
                               child: MainButton(
                                 onPressed: () async =>
                                     await openUrl(project.url!),
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 8.h,
-                                  horizontal: 16.w,
-                                ),
+                                margin: EdgeInsets.only(bottom: 16.h),
                                 isOutlined: isButtonHovered ? false : true,
                                 backgroundColor: isButtonHovered
                                     ? null

@@ -21,6 +21,14 @@ class HomeViewMobileLayout extends StatelessWidget {
               end: 56.w,
               bottom: 24.h,
             ),
+            skillsTabMargin: EdgeInsets.symmetric(
+              vertical: 32.h,
+              horizontal: 48.w,
+            ),
+            portfolioGridPadding: EdgeInsets.symmetric(
+              vertical: 32.h,
+              horizontal: 48.w,
+            ),
           ),
         ),
       ],
