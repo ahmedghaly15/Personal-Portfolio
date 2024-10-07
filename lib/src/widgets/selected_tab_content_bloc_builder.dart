@@ -9,7 +9,9 @@ import 'package:personal_portfolio/src/widgets/portfolio_tab_content.dart';
 import 'package:personal_portfolio/src/widgets/skills_tab_content.dart';
 
 class SelectedTabContentBlocBuilder extends StatelessWidget {
-  const SelectedTabContentBlocBuilder({super.key});
+  const SelectedTabContentBlocBuilder({super.key, this.aboutTabMargin});
+
+  final EdgeInsetsGeometry? aboutTabMargin;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class SelectedTabContentBlocBuilder extends StatelessWidget {
         final selectedTab = context.watch<AppCubit>().selectedTab;
         switch (AppConstants.headerTitlesKeys[selectedTab]) {
           case LangKeys.about:
-            return const AboutTabContent();
+            return AboutTabContent(margin: aboutTabMargin);
 
           case LangKeys.skills:
             return const SkillsTabContent();

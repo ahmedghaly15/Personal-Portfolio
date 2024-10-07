@@ -20,7 +20,7 @@ class _UpAndDownAnimatedWidgetState extends State<UpAndDownAnimatedWidget>
   void initState() {
     super.initState();
     _initAndRepeatAnimation();
-    _animation = Tween<double>(begin: 0.0, end: 30.0.h).animate(_controller);
+    _animation = Tween<double>(begin: 0.0, end: 24.0.h).animate(_controller);
   }
 
   void _initAndRepeatAnimation() {

@@ -6,22 +6,21 @@ import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_utils.dart';
-import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/widgets/download_cv_and_hire_me_buttons.dart';
 
 class AboutTabContent extends StatelessWidget {
-  const AboutTabContent({super.key});
+  const AboutTabContent({super.key, this.margin});
+
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
     final isArabic = context.watch<LocaleCubit>().isArabic;
-
     return Container(
-      margin: AppUtils.tabContentEdgeInsets(isArabic),
+      margin: margin ?? AppUtils.tabContentEdgeInsets(isArabic),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          MySizedBox.height140,
           ...List.generate(
             AppConstants.myDescriptionLangKeys.length,
             (index) => FadeInLeft(
