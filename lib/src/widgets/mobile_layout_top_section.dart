@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/locale/logic/locale_cubit.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
@@ -41,19 +40,12 @@ class MobileLayoutTopSection extends StatelessWidget {
   }
 
   Widget _buildMyTabsAndImage(BuildContext context) {
-    return Expanded(
+    return const Expanded(
       child: TabsAndMyImage(
         backgroundSvgImage: Assets.svgsMobileLavenderBg,
         isDesktop: false,
-        headerWidget: IconButton(
-          onPressed: () => Scaffold.of(context).openDrawer(),
-          icon: Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: 40.h,
-          ),
-        ),
         myImageRadius: 280,
+        topPosition: 32,
       ),
     );
   }

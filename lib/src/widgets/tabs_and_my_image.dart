@@ -16,12 +16,14 @@ class TabsAndMyImage extends StatelessWidget {
     required this.isDesktop,
     required this.myImageRadius,
     this.headerWidget,
+    this.topPosition = 64,
   });
 
   final String backgroundSvgImage;
   final bool isDesktop;
   final Widget? headerWidget;
   final double myImageRadius;
+  final double topPosition;
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +41,11 @@ class TabsAndMyImage extends StatelessWidget {
                 margin: EdgeInsetsDirectional.only(top: 14.h, start: 16.w),
                 child: const HeaderTabsBlocBuilder(),
               )
-            : headerWidget!,
+            : headerWidget ?? const SizedBox.shrink(),
         PositionedDirectional(
-          top: 60.h,
+          top: topPosition.h,
           end: isArabic ? null : 16.w,
           start: isArabic ? 16.w : null,
-          // bottom: 0,
           child: UpAndDownAnimatedWidget(
             child: CircleAvatar(
               backgroundColor: AppColors.primaryColor,
