@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
 
+  /// Assets for appIcon
+  /// assets/app_icon.png
+  static const String appIcon = "assets/app_icon.png";
+
   /// Assets for cvAhmed Ghaly
   /// assets/cv/Ahmed Ghaly.pdf
   static const String cvAhmedGhaly = "assets/cv/Ahmed Ghaly.pdf";
@@ -103,6 +107,11 @@ class Assets {
   /// Assets for imagesLinkupIcon
   /// assets/images/linkup_icon.png
   static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
+
+  /// Assets for imagesMobileLavenderBg
+  /// assets/images/mobile-lavender-bg.svg
+  static const String imagesMobileLavenderBg =
+      "assets/images/mobile-lavender-bg.svg";
 
   /// Assets for imagesRoomeIcon
   /// assets/images/roome_icon.png

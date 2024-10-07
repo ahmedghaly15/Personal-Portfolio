@@ -10,7 +10,18 @@ import 'package:personal_portfolio/src/widgets/header_tabs_bloc_builder.dart';
 import 'package:personal_portfolio/src/widgets/up_and_down_animated_widget.dart';
 
 class TabsAndMyImage extends StatelessWidget {
-  const TabsAndMyImage({super.key});
+  const TabsAndMyImage({
+    super.key,
+    required this.backgroundSvgImage,
+    required this.isDesktop,
+    required this.myImageRadius,
+    this.headerWidget,
+  });
+
+  final String backgroundSvgImage;
+  final bool isDesktop;
+  final Widget? headerWidget;
+  final double myImageRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +33,23 @@ class TabsAndMyImage extends StatelessWidget {
           ? AlignmentDirectional.topStart
           : AlignmentDirectional.topEnd,
       children: [
-        BounceInDown(child: SvgPicture.asset(Assets.svgsLavenderBg)),
-        Container(
-          margin: EdgeInsetsDirectional.only(top: 14.h, start: 16.w),
-          child: const HeaderTabsBlocBuilder(),
-        ),
+        BounceInDown(child: SvgPicture.asset(backgroundSvgImage)),
+        isDesktop
+            ? Container(
+                margin: EdgeInsetsDirectional.only(top: 14.h, start: 16.w),
+                child: const HeaderTabsBlocBuilder(),
+              )
+            : headerWidget!,
         PositionedDirectional(
-          top: 0,
+          top: 56.h,
           end: isArabic ? null : 16.w,
           start: isArabic ? 16.w : null,
-          bottom: 16.h,
+          // bottom: 0,
           child: UpAndDownAnimatedWidget(
             child: CircleAvatar(
               backgroundColor: AppColors.primaryColor,
               backgroundImage: const AssetImage(Assets.imagesBlackMe),
-              radius: 280.r,
+              radius: myImageRadius.r,
             ),
           ),
         ),
