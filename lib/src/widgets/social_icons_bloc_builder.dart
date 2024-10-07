@@ -8,13 +8,19 @@ import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/cubit/app_cubit.dart';
 
 class SocialIconsBlocBuilder extends StatelessWidget {
-  const SocialIconsBlocBuilder({super.key});
+  const SocialIconsBlocBuilder({
+    super.key,
+    this.direction = Axis.horizontal,
+  });
+
+  final Axis direction;
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubit, AppState>(
       buildWhen: (_, current) => current is ToggleSocialIconIsHoveredBool,
       builder: (context, state) => Wrap(
+        direction: direction,
         children: List.generate(
           AppConstants.socialIcons.length,
           (index) => FadeInDown(
