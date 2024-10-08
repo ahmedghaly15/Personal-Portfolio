@@ -6,6 +6,7 @@ import 'package:personal_portfolio/src/core/widgets/responsive_layout.dart';
 import 'package:personal_portfolio/src/widgets/custom_floating_action_button.dart';
 import 'package:personal_portfolio/src/widgets/home_view_desktop_layout.dart';
 import 'package:personal_portfolio/src/widgets/home_view_mobile_layout.dart';
+import 'package:personal_portfolio/src/widgets/home_view_tablet_layout.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -15,9 +16,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: ResponsiveLayout(
         mobileLayout: (_) => const HomeViewMobileLayout(),
-        tabletLayout: (_) => const Center(
-          child: Text('Tablet'),
-        ),
+        tabletLayout: (_) => const HomeViewTabletLayout(),
         desktopLayout: (_) => const HomeViewDesktopLayout(),
       ),
       floatingActionButton: context.screenWidth < SizeConfig.tabletBreakPoint

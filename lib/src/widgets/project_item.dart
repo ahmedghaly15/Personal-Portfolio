@@ -32,8 +32,7 @@ class ProjectItem extends StatelessWidget {
     final isArabic = context.watch<LocaleCubit>().isArabic;
     return AnimatedContainer(
       duration: const Duration(milliseconds: 500),
-      height:
-          isExpanded ? context.screenHeight * 0.8 : context.screenHeight * 0.4,
+      height: isExpanded ? context.screenHeight : context.screenHeight * 0.4,
       width: double.infinity,
       margin: itemMargin ??
           AppUtils.tabContentEdgeInsets(isArabic).add(

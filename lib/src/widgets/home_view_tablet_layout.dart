@@ -3,8 +3,8 @@ import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/widgets/layout_top_section.dart';
 import 'package:personal_portfolio/src/widgets/mobile_or_tablet_selected_tab_content.dart';
 
-class HomeViewMobileLayout extends StatelessWidget {
-  const HomeViewMobileLayout({super.key});
+class HomeViewTabletLayout extends StatelessWidget {
+  const HomeViewTabletLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +12,10 @@ class HomeViewMobileLayout extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: LayoutTopSection(
-            backgroundSvgImage: Assets.svgsMobileLavenderBg,
-            isLayoutLargerThanMobile: false,
-            topPosition: 24,
-            myImageHorizontalPosition: 24,
+            backgroundSvgImage: Assets.svgsTabletLavenderBg,
+            isLayoutLargerThanMobile: true,
+            myImageRadius: 240,
+            myImageHorizontalPosition: 56,
           ),
         ),
         SliverToBoxAdapter(

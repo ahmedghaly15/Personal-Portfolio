@@ -13,21 +13,21 @@ class TabsAndMyImage extends StatelessWidget {
   const TabsAndMyImage({
     super.key,
     required this.backgroundSvgImage,
-    required this.isDesktop,
-    required this.myImageRadius,
+    required this.isLayoutLargerThanMobile,
+    this.myImageRadius = 280,
     this.headerWidget,
     this.topPosition,
-    this.horizontalPosition,
+    this.myImageHorizontalPosition,
     this.bottomPosition,
     this.alignment,
   });
 
   final String backgroundSvgImage;
-  final bool isDesktop;
+  final bool isLayoutLargerThanMobile;
   final Widget? headerWidget;
   final double myImageRadius;
   final double? topPosition;
-  final double? horizontalPosition;
+  final double? myImageHorizontalPosition;
   final double? bottomPosition;
   final AlignmentGeometry? alignment;
 
@@ -35,7 +35,6 @@ class TabsAndMyImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final isArabic =
         context.watch<LocaleCubit>().isArabic; // Watch the locale change here
-
     return Stack(
       alignment: alignment ??
           (isArabic
@@ -43,7 +42,7 @@ class TabsAndMyImage extends StatelessWidget {
               : AlignmentDirectional.topEnd),
       children: [
         BounceInDown(child: SvgPicture.asset(backgroundSvgImage)),
-        isDesktop
+        isLayoutLargerThanMobile
             ? Container(
                 margin: EdgeInsetsDirectional.only(top: 14.h, start: 16.w),
                 child: const HeaderTabsBlocBuilder(),
@@ -52,8 +51,8 @@ class TabsAndMyImage extends StatelessWidget {
         PositionedDirectional(
           bottom: bottomPosition?.h,
           top: topPosition?.h ?? 64.h,
-          end: isArabic ? null : horizontalPosition?.w ?? 16.w,
-          start: isArabic ? horizontalPosition?.w ?? 16.w : null,
+          end: isArabic ? null : myImageHorizontalPosition?.w ?? 16.w,
+          start: isArabic ? myImageHorizontalPosition?.w ?? 16.w : null,
           child: UpAndDownAnimatedWidget(
             child: CircleAvatar(
               backgroundColor: AppColors.primaryColor,

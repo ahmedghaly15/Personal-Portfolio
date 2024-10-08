@@ -18,34 +18,35 @@ class HomeViewDesktopContent extends StatelessWidget {
         context.watch<LocaleCubit>().isArabic; // Watch the locale change here
 
     return isArabic
-        ? const Row(
+        ? Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TabsAndMyImage(
-                isDesktop: true,
-                myImageRadius: 280,
-                backgroundSvgImage: Assets.svgsLavenderBg,
-              ),
+              _buildTabsAndMyImageWidget(),
               MySizedBox.width114,
-              Expanded(
-                child: SelectedTabContentAndHeaderIconButtons(),
-              ),
+              _buildSelectedTabContentAndHeaderIconButtons(),
             ],
           )
-        : const Row(
+        : Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: SelectedTabContentAndHeaderIconButtons(),
-              ),
+              _buildSelectedTabContentAndHeaderIconButtons(),
               MySizedBox.width114,
-              TabsAndMyImage(
-                isDesktop: true,
-                myImageRadius: 280,
-                backgroundSvgImage: Assets.svgsLavenderBg,
-              ),
+              _buildTabsAndMyImageWidget(),
             ],
           );
+  }
+
+  Expanded _buildSelectedTabContentAndHeaderIconButtons() {
+    return const Expanded(
+      child: SelectedTabContentAndHeaderIconButtons(),
+    );
+  }
+
+  Widget _buildTabsAndMyImageWidget() {
+    return const TabsAndMyImage(
+      isLayoutLargerThanMobile: true,
+      backgroundSvgImage: Assets.svgsLavenderBg,
+    );
   }
 }
 
