@@ -14,9 +14,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ResponsiveLayout(
-        mobileLayout: (context) => const HomeViewMobileLayout(),
-        tabletLayout: (context) => Container(),
-        desktopLayout: (context) => const HomeViewDesktopLayout(),
+        mobileLayout: (_) => const HomeViewMobileLayout(),
+        tabletLayout: (_) => const Center(
+          child: Text('Tablet'),
+        ),
+        desktopLayout: (_) => const HomeViewDesktopLayout(),
       ),
       floatingActionButton: context.screenWidth < SizeConfig.tabletBreakPoint
           ? FadeInDown(child: const CustomFloatingActionButton())
