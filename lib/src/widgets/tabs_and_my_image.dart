@@ -16,14 +16,22 @@ class TabsAndMyImage extends StatelessWidget {
     required this.isDesktop,
     required this.myImageRadius,
     this.headerWidget,
-    this.topPosition = 64,
+    this.topPosition,
+    this.startPosition,
+    this.endPosition,
+    this.bottomPosition,
+    this.alignment,
   });
 
   final String backgroundSvgImage;
   final bool isDesktop;
   final Widget? headerWidget;
   final double myImageRadius;
-  final double topPosition;
+  final double? topPosition;
+  final double? startPosition;
+  final double? endPosition;
+  final double? bottomPosition;
+  final AlignmentGeometry? alignment;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +39,10 @@ class TabsAndMyImage extends StatelessWidget {
         context.watch<LocaleCubit>().isArabic; // Watch the locale change here
 
     return Stack(
-      alignment: isArabic
-          ? AlignmentDirectional.topStart
-          : AlignmentDirectional.topEnd,
+      alignment: alignment ??
+          (isArabic
+              ? AlignmentDirectional.topStart
+              : AlignmentDirectional.topEnd),
       children: [
         BounceInDown(child: SvgPicture.asset(backgroundSvgImage)),
         isDesktop
@@ -43,9 +52,10 @@ class TabsAndMyImage extends StatelessWidget {
               )
             : headerWidget ?? const SizedBox.shrink(),
         PositionedDirectional(
-          top: topPosition.h,
-          end: isArabic ? null : 16.w,
-          start: isArabic ? 16.w : null,
+          bottom: bottomPosition?.h,
+          top: topPosition?.h ?? 64.h,
+          end: isArabic ? null : endPosition?.w ?? 16.w,
+          start: isArabic ? startPosition?.w ?? 16.w : null,
           child: UpAndDownAnimatedWidget(
             child: CircleAvatar(
               backgroundColor: AppColors.primaryColor,

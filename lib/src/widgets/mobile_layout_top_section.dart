@@ -45,7 +45,7 @@ class MobileLayoutTopSection extends StatelessWidget {
         backgroundSvgImage: Assets.svgsMobileLavenderBg,
         isDesktop: false,
         myImageRadius: 280,
-        topPosition: 32,
+        topPosition: 24,
       ),
     );
   }
