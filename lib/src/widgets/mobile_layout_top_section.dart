@@ -46,6 +46,7 @@ class MobileLayoutTopSection extends StatelessWidget {
         isDesktop: false,
         myImageRadius: 280,
         topPosition: 24,
+        horizontalPosition: 24,
       ),
     );
   }

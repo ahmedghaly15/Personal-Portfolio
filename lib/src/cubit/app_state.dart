@@ -24,3 +24,8 @@ final class ToggleHireMeButtonIsHovered extends AppState {
   final bool isHovered;
   ToggleHireMeButtonIsHovered(this.isHovered);
 }
+
+final class ExpandProjectItem extends AppState {
+  final bool isExpanded;
+  ExpandProjectItem(this.isExpanded);
+}

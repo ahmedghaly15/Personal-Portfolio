@@ -17,8 +17,7 @@ class TabsAndMyImage extends StatelessWidget {
     required this.myImageRadius,
     this.headerWidget,
     this.topPosition,
-    this.startPosition,
-    this.endPosition,
+    this.horizontalPosition,
     this.bottomPosition,
     this.alignment,
   });
@@ -28,8 +27,7 @@ class TabsAndMyImage extends StatelessWidget {
   final Widget? headerWidget;
   final double myImageRadius;
   final double? topPosition;
-  final double? startPosition;
-  final double? endPosition;
+  final double? horizontalPosition;
   final double? bottomPosition;
   final AlignmentGeometry? alignment;
 
@@ -54,8 +52,8 @@ class TabsAndMyImage extends StatelessWidget {
         PositionedDirectional(
           bottom: bottomPosition?.h,
           top: topPosition?.h ?? 64.h,
-          end: isArabic ? null : endPosition?.w ?? 16.w,
-          start: isArabic ? startPosition?.w ?? 16.w : null,
+          end: isArabic ? null : horizontalPosition?.w ?? 16.w,
+          start: isArabic ? horizontalPosition?.w ?? 16.w : null,
           child: UpAndDownAnimatedWidget(
             child: CircleAvatar(
               backgroundColor: AppColors.primaryColor,

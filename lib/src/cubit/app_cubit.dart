@@ -41,4 +41,14 @@ class AppCubit extends Cubit<AppState> {
     isHireMeHovered = !isHireMeHovered;
     emit(ToggleHireMeButtonIsHovered(isHireMeHovered));
   }
+
+  List<bool> isProjectItemExpanded = List.generate(
+    AppConstants.portfolio.length,
+    (_) => false,
+  );
+
+  void toggleProjectItemExpanded(int index) {
+    isProjectItemExpanded[index] = !isProjectItemExpanded[index];
+    emit(ExpandProjectItem(isProjectItemExpanded[index]));
+  }
 }
