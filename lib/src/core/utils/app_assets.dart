@@ -114,6 +114,10 @@ class Assets {
   /// assets/svgs/email_icon.svg
   static const String svgsEmailIcon = "assets/svgs/email_icon.svg";
 
+  /// Assets for svgsFacebookIcon
+  /// assets/svgs/facebook-icon.svg
+  static const String svgsFacebookIcon = "assets/svgs/facebook-icon.svg";
+
   /// Assets for svgsGithubDarkModeIcon
   /// assets/svgs/github_dark_mode_icon.svg
   static const String svgsGithubDarkModeIcon = "assets/svgs/github_dark_mode_icon.svg";
@@ -121,6 +125,22 @@ class Assets {
   /// Assets for svgsGithubIcon
   /// assets/svgs/github_icon.svg
   static const String svgsGithubIcon = "assets/svgs/github_icon.svg";
+
+  /// Assets for svgsHoveredFacebookIcon
+  /// assets/svgs/hovered-facebook-icon.svg
+  static const String svgsHoveredFacebookIcon = "assets/svgs/hovered-facebook-icon.svg";
+
+  /// Assets for svgsHoveredInstagramIcon
+  /// assets/svgs/hovered-instagram-icon.svg
+  static const String svgsHoveredInstagramIcon = "assets/svgs/hovered-instagram-icon.svg";
+
+  /// Assets for svgsHoveredXIcon
+  /// assets/svgs/hovered-x-icon.svg
+  static const String svgsHoveredXIcon = "assets/svgs/hovered-x-icon.svg";
+
+  /// Assets for svgsInstagramIcon
+  /// assets/svgs/instagram-icon.svg
+  static const String svgsInstagramIcon = "assets/svgs/instagram-icon.svg";
 
   /// Assets for svgsLavenderBg
   /// assets/svgs/lavender-bg.svg
@@ -157,5 +177,9 @@ class Assets {
   /// Assets for svgsTabletLavenderBg
   /// assets/svgs/tablet-lavender-bg.svg
   static const String svgsTabletLavenderBg = "assets/svgs/tablet-lavender-bg.svg";
+
+  /// Assets for svgsXIcon
+  /// assets/svgs/x-icon.svg
+  static const String svgsXIcon = "assets/svgs/x-icon.svg";
 }
 

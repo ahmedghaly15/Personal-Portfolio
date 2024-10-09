@@ -39,6 +39,21 @@ class AppConstants {
       icon: Assets.svgsMediumIcon,
       hoveredIcon: Assets.svgsMediumDarkModeIcon,
     ),
+    SocialIcon(
+      url: "https://x.com/aboghaly___",
+      icon: Assets.svgsXIcon,
+      hoveredIcon: Assets.svgsHoveredXIcon,
+    ),
+    SocialIcon(
+      hoveredIcon: Assets.svgsHoveredFacebookIcon,
+      icon: Assets.svgsFacebookIcon,
+      url: "https://www.facebook.com/profile.php?id=100011409033548",
+    ),
+    SocialIcon(
+      hoveredIcon: Assets.svgsHoveredInstagramIcon,
+      icon: Assets.svgsInstagramIcon,
+      url: "https://www.instagram.com/aboghaly___/",
+    ),
   ];
 
   static const List<String> myDescriptionLangKeys = [
