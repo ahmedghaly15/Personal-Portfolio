@@ -46,8 +46,9 @@ The portfolio also includes:
 
 ## Screenshots
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
-<img src="https://github.com/user-attachments/assets/d8d6bb48-ddbe-4d24-95fd-bf0296a53819" alt="tablet" width="100%" />
-<img src="https://github.com/user-attachments/assets/918bbba6-d351-4053-b142-5c5b779efb62" alt="desktop" width="100%" />
-<img src="https://github.com/user-attachments/assets/b89e8b21-0f91-4942-9a28-808748675c07" alt="mobile" width="100%" />
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/d8d6bb48-ddbe-4d24-95fd-bf0296a53819" alt="tablet" width="100%" />
+  <img src="https://github.com/user-attachments/assets/918bbba6-d351-4053-b142-5c5b779efb62" alt="desktop" width="100%" />
+  <img src="https://github.com/user-attachments/assets/b89e8b21-0f91-4942-9a28-808748675c07" alt="mobile" width="100%" />
 </div>
+
