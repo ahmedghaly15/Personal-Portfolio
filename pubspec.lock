@@ -81,14 +81,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.5"
-  cupertino_icons:
-    dependency: transitive
-    description:
-      name: cupertino_icons
-      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
   dio:
     dependency: transitive
     description:
@@ -490,14 +482,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  speed_dial_fab:
-    dependency: "direct main"
-    description:
-      name: speed_dial_fab
-      sha256: "466ab01825a4e8167e44d57674f4efe4a2364b2d01982e3d02dd0210b9107f9b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.0"
   stack_trace:
     dependency: transitive
     description:
