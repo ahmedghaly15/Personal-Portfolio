@@ -83,6 +83,17 @@ flutter:
           weight: 600
         - asset: assets/fonts/Raleway/Raleway-Bold.ttf
           weight: 700
+    
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter/Inter_28pt-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter/Inter_28pt-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter/Inter_28pt-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter/Inter_28pt-Bold.ttf
+          weight: 700
 
 
 flutter_assets:
