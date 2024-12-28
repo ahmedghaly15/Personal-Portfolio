@@ -29,4 +29,6 @@ class AppStrings {
   static const String wantToStartProjectTogether =
       "Do you want to start\na project together?";
   static const String copyMyEmailAddress = 'Copy my email address';
+  static const String smallSelectionOf = 'A small selection of';
+  static const String recentProjects = 'recent projects';
 }

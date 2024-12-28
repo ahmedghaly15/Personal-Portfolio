@@ -66,6 +66,10 @@ class Assets {
   /// assets/images/prioritize-image.png
   static const String imagesPrioritizeImage = "assets/images/prioritize-image.png";
 
+  /// Assets for imagesProjectItemBackground
+  /// assets/images/project-item-background.png
+  static const String imagesProjectItemBackground = "assets/images/project-item-background.png";
+
   /// Assets for imagesRoomeIcon
   /// assets/images/roome_icon.png
   static const String imagesRoomeIcon = "assets/images/roome_icon.png";

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
 import 'package:personal_portfolio/src/widgets/passion_and_purpose_section.dart';
 import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
+import 'package:personal_portfolio/src/widgets/small_selection_rich_text.dart';
 import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
 
 class LandingViewDesktopLayout extends StatelessWidget {
@@ -59,6 +61,12 @@ class LandingViewDesktopLayout extends StatelessWidget {
               right: 24.w,
             ),
             child: const PassionAndPurposeSection(),
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: Align(
+            alignment: Alignment.center,
+            child: SmallSelectionRichText(),
           ),
         ),
       ],
