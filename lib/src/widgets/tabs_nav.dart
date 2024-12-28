@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
@@ -60,9 +59,7 @@ class TabsNav extends StatelessWidget {
                     onPressed: () =>
                         context.read<LandingCubit>().selectTabNav(index),
                     child: Text(
-                      context.translate(
-                        AppConstants.headerTitlesKeys[index],
-                      ),
+                      AppConstants.headerTitlesKeys[index],
                     ),
                   ),
                   isSelected
