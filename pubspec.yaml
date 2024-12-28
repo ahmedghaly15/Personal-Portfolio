@@ -9,8 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # For in-app localization
-  flutter_localization: ^0.2.2
   # State management
   flutter_bloc: ^8.1.6
   # An SVG rendering and widget library for Flutter, which allows painting
@@ -19,8 +17,6 @@ dependencies:
   get_it: ^7.7.0
   # A flutter plugin for adapting screen and font size.Guaranteed to look good on different models
   flutter_screenutil: ^5.9.3
-  # Flutter plugin for reading and writing simple key-value pairs for cache
-  shared_preferences: ^2.2.3
   # For beautiful animations 
   animate_do: ^3.3.4
   # For launching a URL
@@ -29,8 +25,6 @@ dependencies:
   file_saver: ^0.2.14
   # To display progress widgets based on percentage
   percent_indicator: ^4.2.3
-  # Speed Dial Float Action Button
-  # speed_dial_fab: ^2.3.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -47,43 +41,8 @@ flutter:
     - assets/images/
     - assets/svgs/
     - assets/cv/
-    - lib/src/core/locale/lang/ar.json
-    - lib/src/core/locale/lang/en.json
 
   fonts:
-    - family: Nunito
-      fonts:
-        - asset: assets/fonts/Nunito/Nunito-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Nunito/Nunito-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Nunito/Nunito-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Nunito/Nunito-Bold.ttf
-          weight: 700
-
-    - family: Playfair Display
-      fonts:
-        - asset: assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf
-          weight: 700
-
-    - family: Raleway
-      fonts:
-        - asset: assets/fonts/Raleway/Raleway-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Raleway/Raleway-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Raleway/Raleway-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Raleway/Raleway-Bold.ttf
-          weight: 700
-    
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter/Inter_28pt-Regular.ttf

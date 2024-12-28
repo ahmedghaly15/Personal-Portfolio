@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/functions/get_responsive_font_size.dart';
@@ -78,7 +77,7 @@ class MainButton extends StatelessWidget {
         ),
         child: child ??
             Text(
-              context.translate(textKey!),
+              textKey!,
               style: textStyle ??
                   AppTextStyles.nunitoFont20Medium(context).copyWith(
                     fontSize: getResponsiveFontSize(context,
@@ -93,13 +92,6 @@ class MainButton extends StatelessWidget {
   }
 
   Color _backgroundColor(BuildContext context) {
-    return isOutlined
-        ? _outlinedBackgroundColor(context)
-        : AppColors.primaryColor;
+    return isOutlined ? Colors.transparent : AppColors.primaryColor;
   }
-
-  Color _outlinedBackgroundColor(BuildContext context) =>
-      (context.isDarkModeActive
-          ? AppColors.darkColor
-          : AppColors.scaffoldLightBackgroundColor);
 }

@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/src/core/helpers/extensions.dart';
-import 'package:personal_portfolio/src/core/locale/lang_keys.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/models/project.dart';
@@ -13,9 +9,9 @@ class AppConstants {
   AppConstants._();
 
   static const List<String> headerTitlesKeys = [
-    LangKeys.about,
-    LangKeys.skills,
-    LangKeys.portfolio,
+    AppStrings.about,
+    AppStrings.skills,
+    AppStrings.portfolio,
   ];
   static const List<SocialIcon> socialIcons = [
     SocialIcon(
@@ -56,29 +52,6 @@ class AppConstants {
     ),
   ];
 
-  static const List<String> myDescriptionLangKeys = [
-    LangKeys.flutterDeveloper,
-    LangKeys.helloMyNameIs,
-    LangKeys.myDescription,
-  ];
-
-  static const List<double> myDescriptionTextsBottomMargins = [12, 32, 32];
-
-  static List<TextStyle> myDescriptionTextStyles(BuildContext context) => [
-        AppTextStyles.nunitoFont20Bold(context).copyWith(
-          color: AppColors.primaryColor,
-        ),
-        AppTextStyles.playfairFont64Bold(context).copyWith(
-          color: context.isDarkModeActive
-              ? Colors.white
-              : AppColors.closeToBlackColor,
-        ),
-        AppTextStyles.nunitoFont24Regular(context).copyWith(
-          color:
-              context.isDarkModeActive ? Colors.white60 : AppColors.mediumGrey,
-        ),
-      ];
-
   static const List<Skill> skills = [
     Skill(name: 'Dart', percent: 0.85),
     Skill(name: 'OOP', percent: 0.8),
@@ -97,27 +70,27 @@ class AppConstants {
   static const List<Project> portfolio = [
     Project(
       name: 'ICare',
-      descriptionKey: LangKeys.icareDescription,
+      descriptionKey: AppStrings.icareDescription,
       image: Assets.imagesIcareIcon,
       url: "https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file",
       canBeDownloaded: true,
     ),
     Project(
       name: "Linkup",
-      descriptionKey: LangKeys.linkupDescription,
+      descriptionKey: AppStrings.linkupDescription,
       image: Assets.imagesLinkupIcon,
       url: "https://www.mediafire.com/file/ow4ilvobb6jxb04/Linkup.apk/file",
       canBeDownloaded: true,
     ),
     Project(
       name: "Storeify",
-      descriptionKey: LangKeys.storeifyDescription,
+      descriptionKey: AppStrings.storeifyDescription,
       image: Assets.imagesStoreifyIcon,
       neitherDownloadedNorViewed: true,
     ),
     Project(
       name: "Roome",
-      descriptionKey: LangKeys.roomeDescription,
+      descriptionKey: AppStrings.roomeDescription,
       image: Assets.imagesRoomeIcon,
       url: "https://github.com/ahmedghaly15/Roome",
     ),
