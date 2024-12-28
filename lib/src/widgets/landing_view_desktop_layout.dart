@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
-import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
 import 'package:personal_portfolio/src/widgets/experience_item.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
@@ -118,7 +113,8 @@ class LandingViewDesktopLayout extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 90.w),
           sliver: const MyApproachSliverGrid(),
         ),
-        const SliverToBoxAdapter(
+        const SliverFillRemaining(
+          hasScrollBody: false,
           child: Align(
             child: ContactMeSection(),
           ),
