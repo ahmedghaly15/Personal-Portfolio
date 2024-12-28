@@ -33,4 +33,9 @@ class AppStrings {
   static const String recentProjects = 'recent projects';
   static const String viewOnGitHub = 'View on GitHub';
   static const String downloadApp = 'Download App';
+  static const String my = 'My';
+  static const String workExperience = 'Work Experience';
+  static const String flutterDevIntern = 'Flutter Developer Intern';
+  static const String myInternDescription =
+      "• Developed and integrated AI-driven features into Flutter mobile apps using various AI APIs.\n• Collaborated with a team of developers using Agile methodology, participating in weekly sprint meetings.\n• Built and tested responsive UIs for mobile applications, ensuring seamless performance on multiple devices.\n• Worked on debugging and optimizing Flutter applications to improve user experience and performance.\n• Assisted in the development and maintenance of Flutter-based apps for multiple clients, delivering high-quality solutions within deadlines.\n• Collaborated in code reviews and shared best practices to improve the overall quality of the team’s Flutter applications.";
 }

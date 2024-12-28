@@ -21,6 +21,10 @@ class AppTextStyles {
         fontSize: getResponsiveFontSize(context, fontSize: 30),
         fontWeight: FontWeight.w700,
       );
+  static TextStyle font26Bold(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 26),
+        fontWeight: FontWeight.w700,
+      );
   static TextStyle font24Regular(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         fontWeight: FontWeight.w400,

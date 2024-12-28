@@ -58,6 +58,10 @@ class Assets {
   /// assets/images/icare_icon.png
   static const String imagesIcareIcon = "assets/images/icare_icon.png";
 
+  /// Assets for imagesInternExperienceImg
+  /// assets/images/intern-experience-img.png
+  static const String imagesInternExperienceImg = "assets/images/intern-experience-img.png";
+
   /// Assets for imagesLinkupIcon
   /// assets/images/linkup_icon.png
   static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
