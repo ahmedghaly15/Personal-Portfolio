@@ -57,4 +57,10 @@ class AppStrings {
   static const String approach6Name = "Maintenance and Continuous Improvement";
   static const String approach6Description =
       "But my work doesn’t stop at deployment. I believe in maintenance and continuous improvement. I monitor feedback, fix bugs, and add features based on user needs. Technology and user expectations change over time, and I make sure the application evolves to stay relevant and valuable. For me, this phase is a testament to my commitment to delivering long-term value.";
+  static const String lookingToBringYourIdeasToLife =
+      "Looking to bring your ideas to life with\nbeautiful and responsive";
+  static const String flutterApps = "Flutter apps";
+  static const String reachMeOut =
+      "Reach out to me and let's discuss how I can help you achieve your goals.";
+  static const String contactMeNow = 'Contact Me Now';
 }
