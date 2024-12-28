@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 
 class SmallSelectionRichText extends StatelessWidget {
-  const SmallSelectionRichText({super.key});
+  const SmallSelectionRichText({
+    super.key,
+    required this.firstSpan,
+    required this.secondSpan,
+  });
+
+  final String firstSpan, secondSpan;
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +17,13 @@ class SmallSelectionRichText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: '${AppStrings.smallSelectionOf} ',
+            text: firstSpan,
             style: AppTextStyles.font48Bold(context).copyWith(
               color: Colors.white,
             ),
           ),
           TextSpan(
-            text: AppStrings.recentProjects,
+            text: secondSpan,
             style: AppTextStyles.font48Bold(context).copyWith(
               color: AppColors.colorCBACF9,
             ),
