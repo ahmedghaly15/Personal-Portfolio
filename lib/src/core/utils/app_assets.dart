@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   /// Assets for appIcon
   /// assets/app_icon.png
   static const String appIcon = "assets/app_icon.png";
@@ -12,23 +12,19 @@ class Assets {
 
   /// Assets for fontsInterInter28ptBold
   /// assets/fonts/Inter/Inter_28pt-Bold.ttf
-  static const String fontsInterInter28ptBold =
-      "assets/fonts/Inter/Inter_28pt-Bold.ttf";
+  static const String fontsInterInter28ptBold = "assets/fonts/Inter/Inter_28pt-Bold.ttf";
 
   /// Assets for fontsInterInter28ptMedium
   /// assets/fonts/Inter/Inter_28pt-Medium.ttf
-  static const String fontsInterInter28ptMedium =
-      "assets/fonts/Inter/Inter_28pt-Medium.ttf";
+  static const String fontsInterInter28ptMedium = "assets/fonts/Inter/Inter_28pt-Medium.ttf";
 
   /// Assets for fontsInterInter28ptRegular
   /// assets/fonts/Inter/Inter_28pt-Regular.ttf
-  static const String fontsInterInter28ptRegular =
-      "assets/fonts/Inter/Inter_28pt-Regular.ttf";
+  static const String fontsInterInter28ptRegular = "assets/fonts/Inter/Inter_28pt-Regular.ttf";
 
   /// Assets for fontsInterInter28ptSemiBold
   /// assets/fonts/Inter/Inter_28pt-SemiBold.ttf
-  static const String fontsInterInter28ptSemiBold =
-      "assets/fonts/Inter/Inter_28pt-SemiBold.ttf";
+  static const String fontsInterInter28ptSemiBold = "assets/fonts/Inter/Inter_28pt-SemiBold.ttf";
 
   /// Assets for fontsInterOFL
   /// assets/fonts/Inter/OFL.txt
@@ -40,23 +36,19 @@ class Assets {
 
   /// Assets for fontsNunitoNunitoBold
   /// assets/fonts/Nunito/Nunito-Bold.ttf
-  static const String fontsNunitoNunitoBold =
-      "assets/fonts/Nunito/Nunito-Bold.ttf";
+  static const String fontsNunitoNunitoBold = "assets/fonts/Nunito/Nunito-Bold.ttf";
 
   /// Assets for fontsNunitoNunitoMedium
   /// assets/fonts/Nunito/Nunito-Medium.ttf
-  static const String fontsNunitoNunitoMedium =
-      "assets/fonts/Nunito/Nunito-Medium.ttf";
+  static const String fontsNunitoNunitoMedium = "assets/fonts/Nunito/Nunito-Medium.ttf";
 
   /// Assets for fontsNunitoNunitoRegular
   /// assets/fonts/Nunito/Nunito-Regular.ttf
-  static const String fontsNunitoNunitoRegular =
-      "assets/fonts/Nunito/Nunito-Regular.ttf";
+  static const String fontsNunitoNunitoRegular = "assets/fonts/Nunito/Nunito-Regular.ttf";
 
   /// Assets for fontsNunitoNunitoSemiBold
   /// assets/fonts/Nunito/Nunito-SemiBold.ttf
-  static const String fontsNunitoNunitoSemiBold =
-      "assets/fonts/Nunito/Nunito-SemiBold.ttf";
+  static const String fontsNunitoNunitoSemiBold = "assets/fonts/Nunito/Nunito-SemiBold.ttf";
 
   /// Assets for fontsNunitoOFL
   /// assets/fonts/Nunito/OFL.txt
@@ -68,33 +60,27 @@ class Assets {
 
   /// Assets for fontsPlayfairDisplayOFL
   /// assets/fonts/Playfair_Display/OFL.txt
-  static const String fontsPlayfairDisplayOFL =
-      "assets/fonts/Playfair_Display/OFL.txt";
+  static const String fontsPlayfairDisplayOFL = "assets/fonts/Playfair_Display/OFL.txt";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplayBold
   /// assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplayBold =
-      "assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplayBold = "assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplayMedium
   /// assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplayMedium =
-      "assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplayMedium = "assets/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplayRegular
   /// assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplayRegular =
-      "assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplayRegular = "assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf";
 
   /// Assets for fontsPlayfairDisplayPlayfairDisplaySemiBold
   /// assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf
-  static const String fontsPlayfairDisplayPlayfairDisplaySemiBold =
-      "assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf";
+  static const String fontsPlayfairDisplayPlayfairDisplaySemiBold = "assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf";
 
   /// Assets for fontsPlayfairDisplayREADME
   /// assets/fonts/Playfair_Display/README.txt
-  static const String fontsPlayfairDisplayREADME =
-      "assets/fonts/Playfair_Display/README.txt";
+  static const String fontsPlayfairDisplayREADME = "assets/fonts/Playfair_Display/README.txt";
 
   /// Assets for fontsRalewayOFL
   /// assets/fonts/Raleway/OFL.txt
@@ -106,32 +92,31 @@ class Assets {
 
   /// Assets for fontsRalewayRalewayBold
   /// assets/fonts/Raleway/Raleway-Bold.ttf
-  static const String fontsRalewayRalewayBold =
-      "assets/fonts/Raleway/Raleway-Bold.ttf";
+  static const String fontsRalewayRalewayBold = "assets/fonts/Raleway/Raleway-Bold.ttf";
 
   /// Assets for fontsRalewayRalewayMedium
   /// assets/fonts/Raleway/Raleway-Medium.ttf
-  static const String fontsRalewayRalewayMedium =
-      "assets/fonts/Raleway/Raleway-Medium.ttf";
+  static const String fontsRalewayRalewayMedium = "assets/fonts/Raleway/Raleway-Medium.ttf";
 
   /// Assets for fontsRalewayRalewayRegular
   /// assets/fonts/Raleway/Raleway-Regular.ttf
-  static const String fontsRalewayRalewayRegular =
-      "assets/fonts/Raleway/Raleway-Regular.ttf";
+  static const String fontsRalewayRalewayRegular = "assets/fonts/Raleway/Raleway-Regular.ttf";
 
   /// Assets for fontsRalewayRalewaySemiBold
   /// assets/fonts/Raleway/Raleway-SemiBold.ttf
-  static const String fontsRalewayRalewaySemiBold =
-      "assets/fonts/Raleway/Raleway-SemiBold.ttf";
+  static const String fontsRalewayRalewaySemiBold = "assets/fonts/Raleway/Raleway-SemiBold.ttf";
 
   /// Assets for imagesBackgroundGridPattern
   /// assets/images/background_grid-pattern.png
-  static const String imagesBackgroundGridPattern =
-      "assets/images/background_grid-pattern.png";
+  static const String imagesBackgroundGridPattern = "assets/images/background_grid-pattern.png";
 
   /// Assets for imagesBlackMe
   /// assets/images/black_me.jpg
   static const String imagesBlackMe = "assets/images/black_me.jpg";
+
+  /// Assets for imagesEndSpotlight
+  /// assets/images/end_spotlight.png
+  static const String imagesEndSpotlight = "assets/images/end_spotlight.png";
 
   /// Assets for imagesIcareIcon
   /// assets/images/icare_icon.png
@@ -145,6 +130,10 @@ class Assets {
   /// assets/images/roome_icon.png
   static const String imagesRoomeIcon = "assets/images/roome_icon.png";
 
+  /// Assets for imagesStartSpotlight
+  /// assets/images/start_spotlight.png
+  static const String imagesStartSpotlight = "assets/images/start_spotlight.png";
+
   /// Assets for imagesStoreifyIcon
   /// assets/images/storeify_icon.png
   static const String imagesStoreifyIcon = "assets/images/storeify_icon.png";
@@ -155,16 +144,11 @@ class Assets {
 
   /// Assets for svgsEmailDarkModeIcon
   /// assets/svgs/email__dark_mode_icon.svg
-  static const String svgsEmailDarkModeIcon =
-      "assets/svgs/email__dark_mode_icon.svg";
+  static const String svgsEmailDarkModeIcon = "assets/svgs/email__dark_mode_icon.svg";
 
   /// Assets for svgsEmailIcon
   /// assets/svgs/email_icon.svg
   static const String svgsEmailIcon = "assets/svgs/email_icon.svg";
-
-  /// Assets for svgsEndSpotlight
-  /// assets/svgs/end_spotlight.svg
-  static const String svgsEndSpotlight = "assets/svgs/end_spotlight.svg";
 
   /// Assets for svgsFacebookIcon
   /// assets/svgs/facebook-icon.svg
@@ -172,8 +156,7 @@ class Assets {
 
   /// Assets for svgsGithubDarkModeIcon
   /// assets/svgs/github_dark_mode_icon.svg
-  static const String svgsGithubDarkModeIcon =
-      "assets/svgs/github_dark_mode_icon.svg";
+  static const String svgsGithubDarkModeIcon = "assets/svgs/github_dark_mode_icon.svg";
 
   /// Assets for svgsGithubIcon
   /// assets/svgs/github_icon.svg
@@ -181,13 +164,11 @@ class Assets {
 
   /// Assets for svgsHoveredFacebookIcon
   /// assets/svgs/hovered-facebook-icon.svg
-  static const String svgsHoveredFacebookIcon =
-      "assets/svgs/hovered-facebook-icon.svg";
+  static const String svgsHoveredFacebookIcon = "assets/svgs/hovered-facebook-icon.svg";
 
   /// Assets for svgsHoveredInstagramIcon
   /// assets/svgs/hovered-instagram-icon.svg
-  static const String svgsHoveredInstagramIcon =
-      "assets/svgs/hovered-instagram-icon.svg";
+  static const String svgsHoveredInstagramIcon = "assets/svgs/hovered-instagram-icon.svg";
 
   /// Assets for svgsHoveredXIcon
   /// assets/svgs/hovered-x-icon.svg
@@ -211,8 +192,7 @@ class Assets {
 
   /// Assets for svgsLinkedinDarkModeIcon
   /// assets/svgs/linkedin_dark_mode_icon.svg
-  static const String svgsLinkedinDarkModeIcon =
-      "assets/svgs/linkedin_dark_mode_icon.svg";
+  static const String svgsLinkedinDarkModeIcon = "assets/svgs/linkedin_dark_mode_icon.svg";
 
   /// Assets for svgsLinkedinIcon
   /// assets/svgs/linkedin_icon.svg
@@ -224,8 +204,7 @@ class Assets {
 
   /// Assets for svgsMediumDarkModeIcon
   /// assets/svgs/medium_dark_mode_icon.svg
-  static const String svgsMediumDarkModeIcon =
-      "assets/svgs/medium_dark_mode_icon.svg";
+  static const String svgsMediumDarkModeIcon = "assets/svgs/medium_dark_mode_icon.svg";
 
   /// Assets for svgsMediumIcon
   /// assets/svgs/medium_icon.svg
@@ -233,19 +212,14 @@ class Assets {
 
   /// Assets for svgsMobileLavenderBg
   /// assets/svgs/mobile-lavender-bg.svg
-  static const String svgsMobileLavenderBg =
-      "assets/svgs/mobile-lavender-bg.svg";
-
-  /// Assets for svgsStartSpotlight
-  /// assets/svgs/start_spotlight.svg
-  static const String svgsStartSpotlight = "assets/svgs/start_spotlight.svg";
+  static const String svgsMobileLavenderBg = "assets/svgs/mobile-lavender-bg.svg";
 
   /// Assets for svgsTabletLavenderBg
   /// assets/svgs/tablet-lavender-bg.svg
-  static const String svgsTabletLavenderBg =
-      "assets/svgs/tablet-lavender-bg.svg";
+  static const String svgsTabletLavenderBg = "assets/svgs/tablet-lavender-bg.svg";
 
   /// Assets for svgsXIcon
   /// assets/svgs/x-icon.svg
   static const String svgsXIcon = "assets/svgs/x-icon.svg";
 }
+

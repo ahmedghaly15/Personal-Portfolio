@@ -9,4 +9,5 @@ class AppStrings {
   static const String playfairFontFamily = 'Playfair Display';
   static const String ralewayFontFamily = 'Raleway';
   static const String myGmail = "ahmedghaly0767@gmail.com";
+  static const String fontFamily = 'Inter';
 }

@@ -122,4 +122,8 @@ class AppConstants {
       url: "https://github.com/ahmedghaly15/Roome",
     ),
   ];
+  static const List<Color> boxGradientColors = [
+    Color(0xff04071D),
+    Color(0xff0C0E23),
+  ];
 }
