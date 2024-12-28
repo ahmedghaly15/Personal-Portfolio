@@ -110,13 +110,9 @@ class Assets {
   /// assets/svgs/facebook-icon.svg
   static const String svgsFacebookIcon = "assets/svgs/facebook-icon.svg";
 
-  /// Assets for svgsGithubDarkModeIcon
-  /// assets/svgs/github_dark_mode_icon.svg
-  static const String svgsGithubDarkModeIcon = "assets/svgs/github_dark_mode_icon.svg";
-
   /// Assets for svgsGithubIcon
-  /// assets/svgs/github_icon.svg
-  static const String svgsGithubIcon = "assets/svgs/github_icon.svg";
+  /// assets/svgs/github-icon.svg
+  static const String svgsGithubIcon = "assets/svgs/github-icon.svg";
 
   /// Assets for svgsHoveredFacebookIcon
   /// assets/svgs/hovered-facebook-icon.svg

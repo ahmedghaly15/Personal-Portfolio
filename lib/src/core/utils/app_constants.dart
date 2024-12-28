@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/models/project.dart';
 import 'package:personal_portfolio/src/models/skill.dart';
 import 'package:personal_portfolio/src/models/social_icon.dart';
 
@@ -25,7 +24,7 @@ class AppConstants {
     SocialIcon(
       url: AppStrings.gitHubUrl,
       icon: Assets.svgsGithubIcon,
-      hoveredIcon: Assets.svgsGithubDarkModeIcon,
+      hoveredIcon: Assets.svgsGithubIcon,
     ),
     SocialIcon(
       url: "https://www.linkedin.com/in/ahmed-ghaly15/",
@@ -67,35 +66,6 @@ class AppConstants {
     Skill(name: 'Clean Architecture', percent: 0.8),
     Skill(name: 'MVVM Pattern', percent: 0.9),
     Skill(name: 'Responsiveness', percent: 0.8),
-  ];
-
-  static const List<Project> portfolio = [
-    Project(
-      name: 'ICare',
-      descriptionKey: "AppStrings.icareDescription",
-      image: Assets.imagesIcareIcon,
-      url: "https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file",
-      canBeDownloaded: true,
-    ),
-    Project(
-      name: "Linkup",
-      descriptionKey: "AppStrings.linkupDescription",
-      image: Assets.imagesLinkupIcon,
-      url: "https://www.mediafire.com/file/ow4ilvobb6jxb04/Linkup.apk/file",
-      canBeDownloaded: true,
-    ),
-    Project(
-      name: "Storeify",
-      descriptionKey: "AppStrings.storeifyDescription",
-      image: Assets.imagesStoreifyIcon,
-      neitherDownloadedNorViewed: true,
-    ),
-    Project(
-      name: "Roome",
-      descriptionKey: "AppStrings.roomeDescription",
-      image: Assets.imagesRoomeIcon,
-      url: "https://github.com/ahmedghaly15/Roome",
-    ),
   ];
 
   static BoxDecoration get boxDecoration => BoxDecoration(

@@ -31,4 +31,6 @@ class AppStrings {
   static const String copyMyEmailAddress = 'Copy my email address';
   static const String smallSelectionOf = 'A small selection of';
   static const String recentProjects = 'recent projects';
+  static const String viewOnGitHub = 'View on GitHub';
+  static const String downloadApp = 'Download App';
 }
