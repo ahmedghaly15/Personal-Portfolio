@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import 'package:personal_portfolio/src/widgets/experience_item.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
 import 'package:personal_portfolio/src/widgets/passion_and_purpose_section.dart';
 import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
@@ -66,13 +67,33 @@ class LandingViewDesktopLayout extends StatelessWidget {
         const SliverToBoxAdapter(
           child: Align(
             alignment: Alignment.center,
-            child: SmallSelectionRichText(),
+            child: SmallSelectionRichText(
+              firstSpan: '${AppStrings.smallSelectionOf} ',
+              secondSpan: AppStrings.recentProjects,
+            ),
           ),
         ),
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.only(top: 48.h, bottom: 150.h),
             child: const SmallSelectionList(),
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: Align(
+            alignment: Alignment.center,
+            child: SmallSelectionRichText(
+              firstSpan: '${AppStrings.my} ',
+              secondSpan: AppStrings.workExperience,
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Align(
+            child: Container(
+              margin: EdgeInsets.only(top: 70.h, bottom: 130.h),
+              child: const ExperienceItem(),
+            ),
           ),
         ),
       ],
