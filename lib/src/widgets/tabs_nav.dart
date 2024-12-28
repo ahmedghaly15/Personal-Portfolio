@@ -24,19 +24,7 @@ class TabsNav extends StatelessWidget {
         vertical: 50.h,
         horizontal: 16.w,
       ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(13.r),
-        gradient: const LinearGradient(
-          colors: AppConstants.boxGradientColors,
-          stops: [0, 1],
-          begin: AlignmentDirectional.topStart,
-          end: AlignmentDirectional.bottomEnd,
-        ),
-        border: Border.all(
-          color: AppColors.color6971A2.withAlpha(41),
-          width: 1.w,
-        ),
-      ),
+      decoration: AppConstants.boxDecoration,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,

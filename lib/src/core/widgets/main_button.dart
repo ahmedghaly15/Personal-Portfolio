@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
+import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/functions/get_responsive_font_size.dart';
 
 class MainButton extends StatelessWidget {
@@ -12,37 +12,23 @@ class MainButton extends StatelessWidget {
     required this.onPressed,
     this.borderRadius,
     this.textStyle,
-    this.backgroundColor,
-    this.textColor,
-    this.boxShadow,
     this.width,
     this.height,
     this.padding,
-    this.border,
-    this.isOutlined = false,
     this.fontSize,
     this.margin,
-    this.borderColor = AppColors.primaryColor,
-    this.borderWidth = 1,
   });
 
   final String? textKey;
   final Widget? child;
   final double? borderRadius;
   final TextStyle? textStyle;
-  final Color? backgroundColor;
-  final Color? textColor;
   final void Function()? onPressed;
-  final List<BoxShadow>? boxShadow;
   final double? width;
   final double? height;
   final EdgeInsetsGeometry? padding;
-  final BoxBorder? border;
-  final bool isOutlined;
   final double? fontSize;
   final EdgeInsetsGeometry? margin;
-  final Color borderColor;
-  final double borderWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -50,29 +36,19 @@ class MainButton extends StatelessWidget {
       width: width?.w,
       height: height?.h,
       margin: margin,
-      decoration: BoxDecoration(
-        color: backgroundColor ?? _backgroundColor(context),
-        borderRadius: BorderRadiusDirectional.circular(
-          borderRadius?.r ?? 16.0.r,
-        ),
-        boxShadow: boxShadow,
-        border: isOutlined
-            ? Border.all(
-                color: borderColor,
-                width: borderWidth.w,
-              )
-            : border,
+      decoration: AppConstants.boxDecoration.copyWith(
+        borderRadius: BorderRadius.circular(borderRadius ?? 13.r),
       ),
       child: MaterialButton(
         padding: padding ??
             EdgeInsets.symmetric(
-              horizontal: 32.w,
-              vertical: 20.h,
+              horizontal: 40.w,
+              vertical: 22.h,
             ),
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(
-            borderRadius?.r ?? 16.0.r,
+            borderRadius?.r ?? 13.0.r,
           ),
         ),
         child: child ??
@@ -81,17 +57,11 @@ class MainButton extends StatelessWidget {
               style: textStyle ??
                   AppTextStyles.font18Medium(context).copyWith(
                     fontSize: getResponsiveFontSize(context,
-                        fontSize: fontSize ?? 20),
-                    color: isOutlined
-                        ? AppColors.primaryColor
-                        : textColor ?? Colors.white,
+                        fontSize: fontSize ?? 18),
+                    color: Colors.white,
                   ),
             ),
       ),
     );
-  }
-
-  Color _backgroundColor(BuildContext context) {
-    return isOutlined ? Colors.transparent : AppColors.primaryColor;
   }
 }

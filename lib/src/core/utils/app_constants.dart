@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/models/project.dart';
@@ -95,8 +97,21 @@ class AppConstants {
       url: "https://github.com/ahmedghaly15/Roome",
     ),
   ];
-  static const List<Color> boxGradientColors = [
-    Color(0xff04071D),
-    Color(0xff0C0E23),
-  ];
+
+  static BoxDecoration get boxDecoration => BoxDecoration(
+        borderRadius: BorderRadius.circular(13.r),
+        gradient: const LinearGradient(
+          colors: [
+            Color(0xff04071D),
+            Color(0xff0C0E23),
+          ],
+          stops: [0, 1],
+          begin: AlignmentDirectional.topStart,
+          end: AlignmentDirectional.bottomEnd,
+        ),
+        border: Border.all(
+          color: AppColors.color6971A2.withAlpha(41),
+          width: 1.w,
+        ),
+      );
 }
