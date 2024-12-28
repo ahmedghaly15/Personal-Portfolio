@@ -23,7 +23,7 @@ class AppConstants {
       isEmail: true,
     ),
     SocialIcon(
-      url: "https://github.com/ahmedghaly15",
+      url: AppStrings.gitHubUrl,
       icon: Assets.svgsGithubIcon,
       hoveredIcon: Assets.svgsGithubDarkModeIcon,
     ),
@@ -100,18 +100,20 @@ class AppConstants {
 
   static BoxDecoration get boxDecoration => BoxDecoration(
         borderRadius: BorderRadius.circular(13.r),
-        gradient: const LinearGradient(
-          colors: [
-            Color(0xff04071D),
-            Color(0xff0C0E23),
-          ],
-          stops: [0, 1],
-          begin: AlignmentDirectional.topStart,
-          end: AlignmentDirectional.bottomEnd,
-        ),
+        gradient: boxPrimaryLinearGradient,
         border: Border.all(
           color: AppColors.color6971A2.withAlpha(41),
           width: 1.w,
         ),
+      );
+
+  static LinearGradient get boxPrimaryLinearGradient => const LinearGradient(
+        colors: [
+          Color(0xff04071D),
+          Color(0xff0C0E23),
+        ],
+        stops: [0, 1],
+        begin: AlignmentDirectional.topStart,
+        end: AlignmentDirectional.bottomEnd,
       );
 }

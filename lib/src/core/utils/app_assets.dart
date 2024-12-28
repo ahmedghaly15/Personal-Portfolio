@@ -42,6 +42,14 @@ class Assets {
   /// assets/images/black_me.jpg
   static const String imagesBlackMe = "assets/images/black_me.jpg";
 
+  /// Assets for imagesCentricGridPattern
+  /// assets/images/centric-grid-pattern.png
+  static const String imagesCentricGridPattern = "assets/images/centric-grid-pattern.png";
+
+  /// Assets for imagesCopyEmailAddressBackground
+  /// assets/images/copy_email_address_background.png
+  static const String imagesCopyEmailAddressBackground = "assets/images/copy_email_address_background.png";
+
   /// Assets for imagesEndSpotlight
   /// assets/images/end_spotlight.png
   static const String imagesEndSpotlight = "assets/images/end_spotlight.png";
@@ -54,6 +62,10 @@ class Assets {
   /// assets/images/linkup_icon.png
   static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
 
+  /// Assets for imagesPrioritizeImage
+  /// assets/images/prioritize-image.png
+  static const String imagesPrioritizeImage = "assets/images/prioritize-image.png";
+
   /// Assets for imagesRoomeIcon
   /// assets/images/roome_icon.png
   static const String imagesRoomeIcon = "assets/images/roome_icon.png";
@@ -65,6 +77,22 @@ class Assets {
   /// Assets for imagesStoreifyIcon
   /// assets/images/storeify_icon.png
   static const String imagesStoreifyIcon = "assets/images/storeify_icon.png";
+
+  /// Assets for imagesTechEnthusiastBackground
+  /// assets/images/tech-enthusiast-background.png
+  static const String imagesTechEnthusiastBackground = "assets/images/tech-enthusiast-background.png";
+
+  /// Assets for imagesTechEnthusiastBoxImg
+  /// assets/images/tech-enthusiast-box-img.png
+  static const String imagesTechEnthusiastBoxImg = "assets/images/tech-enthusiast-box-img.png";
+
+  /// Assets for svgsCopyIcon
+  /// assets/svgs/copy-icon.svg
+  static const String svgsCopyIcon = "assets/svgs/copy-icon.svg";
+
+  /// Assets for svgsDownloadIcon
+  /// assets/svgs/download-icon.svg
+  static const String svgsDownloadIcon = "assets/svgs/download-icon.svg";
 
   /// Assets for svgsEmailDarkModeIcon
   /// assets/svgs/email__dark_mode_icon.svg
