@@ -54,6 +54,10 @@ class Assets {
   /// assets/images/end_spotlight.png
   static const String imagesEndSpotlight = "assets/images/end_spotlight.png";
 
+  /// Assets for imagesFooterGridPattern
+  /// assets/images/footer-grid-pattern.png
+  static const String imagesFooterGridPattern = "assets/images/footer-grid-pattern.png";
+
   /// Assets for imagesIcareIcon
   /// assets/images/icare_icon.png
   static const String imagesIcareIcon = "assets/images/icare_icon.png";

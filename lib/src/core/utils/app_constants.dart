@@ -79,8 +79,8 @@ class AppConstants {
 
   static LinearGradient get boxPrimaryLinearGradient => const LinearGradient(
         colors: [
-          Color(0xff04071D),
-          Color(0xff0C0E23),
+          AppColors.color04071D,
+          AppColors.color0C0E23,
         ],
         stops: [0, 1],
         begin: AlignmentDirectional.topStart,

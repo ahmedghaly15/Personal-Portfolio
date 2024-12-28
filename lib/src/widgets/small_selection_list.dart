@@ -5,6 +5,7 @@ import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
+import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
@@ -46,12 +47,7 @@ class SmallSelectionItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 36.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(23.r),
-        gradient: const LinearGradient(
-          colors: [AppColors.color04071D, AppColors.color0C0E23],
-          stops: [0, 1],
-          begin: AlignmentDirectional.topStart,
-          end: AlignmentDirectional.bottomEnd,
-        ),
+        gradient: AppConstants.boxPrimaryLinearGradient,
         border: Border.all(
           color: AppColors.color6971A2.withAlpha(41),
           width: 1.w,
