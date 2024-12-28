@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/models/skill.dart';
-import 'package:personal_portfolio/src/models/social_icon.dart';
 
 class AppConstants {
   AppConstants._();
@@ -13,44 +11,6 @@ class AppConstants {
     AppStrings.about,
     AppStrings.skills,
     AppStrings.portfolio,
-  ];
-  static const List<SocialIcon> socialIcons = [
-    SocialIcon(
-      url: AppStrings.myGmail,
-      icon: Assets.svgsEmailIcon,
-      hoveredIcon: Assets.svgsEmailDarkModeIcon,
-      isEmail: true,
-    ),
-    SocialIcon(
-      url: AppStrings.gitHubUrl,
-      icon: Assets.svgsGithubIcon,
-      hoveredIcon: Assets.svgsGithubIcon,
-    ),
-    SocialIcon(
-      url: "https://www.linkedin.com/in/ahmed-ghaly15/",
-      icon: Assets.svgsLinkedinIcon,
-      hoveredIcon: Assets.svgsLinkedinDarkModeIcon,
-    ),
-    SocialIcon(
-      url: "https://medium.com/@ahmedghaly15",
-      icon: Assets.svgsMediumIcon,
-      hoveredIcon: Assets.svgsMediumDarkModeIcon,
-    ),
-    SocialIcon(
-      url: "https://x.com/aboghaly___",
-      icon: Assets.svgsXIcon,
-      hoveredIcon: Assets.svgsHoveredXIcon,
-    ),
-    SocialIcon(
-      hoveredIcon: Assets.svgsHoveredFacebookIcon,
-      icon: Assets.svgsFacebookIcon,
-      url: "https://www.facebook.com/profile.php?id=100011409033548",
-    ),
-    SocialIcon(
-      hoveredIcon: Assets.svgsHoveredInstagramIcon,
-      icon: Assets.svgsInstagramIcon,
-      url: "https://www.instagram.com/aboghaly___/",
-    ),
   ];
 
   static const List<Skill> skills = [

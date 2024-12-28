@@ -106,33 +106,9 @@ class Assets {
   /// assets/svgs/download-icon.svg
   static const String svgsDownloadIcon = "assets/svgs/download-icon.svg";
 
-  /// Assets for svgsEmailDarkModeIcon
-  /// assets/svgs/email__dark_mode_icon.svg
-  static const String svgsEmailDarkModeIcon = "assets/svgs/email__dark_mode_icon.svg";
-
-  /// Assets for svgsEmailIcon
-  /// assets/svgs/email_icon.svg
-  static const String svgsEmailIcon = "assets/svgs/email_icon.svg";
-
-  /// Assets for svgsFacebookIcon
-  /// assets/svgs/facebook-icon.svg
-  static const String svgsFacebookIcon = "assets/svgs/facebook-icon.svg";
-
   /// Assets for svgsGithubIcon
   /// assets/svgs/github-icon.svg
   static const String svgsGithubIcon = "assets/svgs/github-icon.svg";
-
-  /// Assets for svgsHoveredFacebookIcon
-  /// assets/svgs/hovered-facebook-icon.svg
-  static const String svgsHoveredFacebookIcon = "assets/svgs/hovered-facebook-icon.svg";
-
-  /// Assets for svgsHoveredInstagramIcon
-  /// assets/svgs/hovered-instagram-icon.svg
-  static const String svgsHoveredInstagramIcon = "assets/svgs/hovered-instagram-icon.svg";
-
-  /// Assets for svgsHoveredXIcon
-  /// assets/svgs/hovered-x-icon.svg
-  static const String svgsHoveredXIcon = "assets/svgs/hovered-x-icon.svg";
 
   /// Assets for svgsInstagramIcon
   /// assets/svgs/instagram-icon.svg
@@ -142,24 +118,12 @@ class Assets {
   /// assets/svgs/link_arrow.svg
   static const String svgsLinkArrow = "assets/svgs/link_arrow.svg";
 
-  /// Assets for svgsLinkedinDarkModeIcon
-  /// assets/svgs/linkedin_dark_mode_icon.svg
-  static const String svgsLinkedinDarkModeIcon = "assets/svgs/linkedin_dark_mode_icon.svg";
-
-  /// Assets for svgsLinkedinIcon
-  /// assets/svgs/linkedin_icon.svg
-  static const String svgsLinkedinIcon = "assets/svgs/linkedin_icon.svg";
-
-  /// Assets for svgsMediumDarkModeIcon
-  /// assets/svgs/medium_dark_mode_icon.svg
-  static const String svgsMediumDarkModeIcon = "assets/svgs/medium_dark_mode_icon.svg";
+  /// Assets for svgsLinkedInIcon
+  /// assets/svgs/linkedIn-icon.svg
+  static const String svgsLinkedInIcon = "assets/svgs/linkedIn-icon.svg";
 
   /// Assets for svgsMediumIcon
-  /// assets/svgs/medium_icon.svg
-  static const String svgsMediumIcon = "assets/svgs/medium_icon.svg";
-
-  /// Assets for svgsXIcon
-  /// assets/svgs/x-icon.svg
-  static const String svgsXIcon = "assets/svgs/x-icon.svg";
+  /// assets/svgs/medium-icon.svg
+  static const String svgsMediumIcon = "assets/svgs/medium-icon.svg";
 }
 

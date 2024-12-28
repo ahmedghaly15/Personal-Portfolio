@@ -1,11 +1,30 @@
+import 'package:personal_portfolio/src/core/utils/app_assets.dart';
+import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+
 class SocialIcon {
-  final String icon, url, hoveredIcon;
-  final bool isEmail;
+  final String icon, url;
 
   const SocialIcon({
-    required this.hoveredIcon,
     required this.icon,
     required this.url,
-    this.isEmail = false,
   });
+
+  static const List<SocialIcon> socialIcons = [
+    SocialIcon(
+      icon: Assets.svgsInstagramIcon,
+      url: "https://www.instagram.com/aboghaly___/",
+    ),
+    SocialIcon(
+      url: AppStrings.gitHubUrl,
+      icon: Assets.svgsGithubIcon,
+    ),
+    SocialIcon(
+      url: "https://www.linkedin.com/in/ahmed-ghaly15/",
+      icon: Assets.svgsLinkedInIcon,
+    ),
+    SocialIcon(
+      url: "https://medium.com/@ahmedghaly15",
+      icon: Assets.svgsMediumIcon,
+    ),
+  ];
 }
