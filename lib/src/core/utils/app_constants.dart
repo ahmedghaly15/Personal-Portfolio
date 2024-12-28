@@ -70,27 +70,27 @@ class AppConstants {
   static const List<Project> portfolio = [
     Project(
       name: 'ICare',
-      descriptionKey: AppStrings.icareDescription,
+      descriptionKey: "AppStrings.icareDescription",
       image: Assets.imagesIcareIcon,
       url: "https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file",
       canBeDownloaded: true,
     ),
     Project(
       name: "Linkup",
-      descriptionKey: AppStrings.linkupDescription,
+      descriptionKey: "AppStrings.linkupDescription",
       image: Assets.imagesLinkupIcon,
       url: "https://www.mediafire.com/file/ow4ilvobb6jxb04/Linkup.apk/file",
       canBeDownloaded: true,
     ),
     Project(
       name: "Storeify",
-      descriptionKey: AppStrings.storeifyDescription,
+      descriptionKey: "AppStrings.storeifyDescription",
       image: Assets.imagesStoreifyIcon,
       neitherDownloadedNorViewed: true,
     ),
     Project(
       name: "Roome",
-      descriptionKey: AppStrings.roomeDescription,
+      descriptionKey: "AppStrings.roomeDescription",
       image: Assets.imagesRoomeIcon,
       url: "https://github.com/ahmedghaly15/Roome",
     ),

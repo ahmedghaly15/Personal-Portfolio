@@ -45,13 +45,13 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-        - asset: assets/fonts/Inter/Inter_28pt-Regular.ttf
+        - asset: assets/fonts/Inter/Inter_24pt-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Inter/Inter_28pt-Medium.ttf
+        - asset: assets/fonts/Inter/Inter_24pt-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Inter/Inter_28pt-SemiBold.ttf
+        - asset: assets/fonts/Inter/Inter_24pt-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Inter/Inter_28pt-Bold.ttf
+        - asset: assets/fonts/Inter/Inter_24pt-Bold.ttf
           weight: 700
 
 

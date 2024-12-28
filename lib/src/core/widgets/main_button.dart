@@ -79,7 +79,7 @@ class MainButton extends StatelessWidget {
             Text(
               textKey!,
               style: textStyle ??
-                  AppTextStyles.nunitoFont20Medium(context).copyWith(
+                  AppTextStyles.font18Medium(context).copyWith(
                     fontSize: getResponsiveFontSize(context,
                         fontSize: fontSize ?? 20),
                     color: isOutlined
