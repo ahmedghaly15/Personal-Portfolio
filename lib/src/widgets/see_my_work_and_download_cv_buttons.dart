@@ -11,17 +11,28 @@ import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 
 class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
-  const SeeMyWorkAndDownloadCVButtons({super.key});
+  const SeeMyWorkAndDownloadCVButtons({
+    super.key,
+    this.areExpanded = false,
+    this.gradient,
+  });
+
+  final bool areExpanded;
+  final Gradient? gradient;
 
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
       delay: const Duration(milliseconds: 900),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: OverflowBar(
+        alignment: MainAxisAlignment.center,
+        overflowAlignment: OverflowBarAlignment.center,
+        overflowSpacing: 16.h,
         spacing: 24.w,
         children: [
           MainButton(
+            gradient: gradient,
+            width: areExpanded ? double.infinity : null,
             onPressed: () async => await openUrl(AppStrings.gitHubUrl),
             borderRadius: 14,
             child: Row(
@@ -37,6 +48,8 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
             ),
           ),
           MainButton(
+            gradient: gradient,
+            width: areExpanded ? double.infinity : null,
             onPressed: () async => await _downloadCV(),
             borderRadius: 14,
             child: Row(
