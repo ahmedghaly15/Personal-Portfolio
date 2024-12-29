@@ -41,8 +41,6 @@ class Project {
       downloadUrl:
           "https://www.mediafire.com/file/ow4ilvobb6jxb04/Linkup.apk/file",
       githubUrl: "https://github.com/ahmedghaly15/Linkup",
-      promoUrl:
-          "https://github.com/ahmedghaly15/Linkup/assets/108659381/e0c5cc97-303f-4004-9480-064046c3dd24",
     ),
     Project(
       name: "Roome - Hotel Booking App",

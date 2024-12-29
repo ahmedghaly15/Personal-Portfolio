@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_mobile_about_tab.dart';
+import 'package:personal_portfolio/src/widgets/landing_view_mobile_portfolio_tab.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_mobile_skills_tab.dart';
 
 class LandingViewMobileLayout extends StatelessWidget {
@@ -23,6 +24,8 @@ class LandingViewMobileLayout extends StatelessWidget {
                 return const LandingViewMobileAboutTab();
               case 1:
                 return const LandingViewMobileSkillsTab();
+              case 2:
+                return const LandingViewMobilePortfolioTab();
               default:
                 return Container();
             }

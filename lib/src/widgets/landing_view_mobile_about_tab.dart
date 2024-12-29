@@ -29,9 +29,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
       slivers: [
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 32.w),
-          sliver: const SliverToBoxAdapter(
-            child: TabsNav(),
-          ),
+          sliver: const SliverToBoxAdapter(child: TabsNav()),
         ),
         SliverToBoxAdapter(
           child: Container(
