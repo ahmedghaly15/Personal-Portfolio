@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 
 class LandingViewBigText extends StatelessWidget {
@@ -13,7 +12,6 @@ class LandingViewBigText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      duration: AppConstants.animationDuration,
       delay: const Duration(milliseconds: 500),
       child: FittedBox(
         child: RichText(
@@ -58,7 +56,6 @@ class HeaderSmallText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      duration: AppConstants.animationDuration,
       delay: const Duration(milliseconds: 300),
       child: Text(
         text,
@@ -80,7 +77,6 @@ class HeaderDescriptionText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      duration: AppConstants.animationDuration,
       delay: const Duration(milliseconds: 700),
       child: Text(
         text,

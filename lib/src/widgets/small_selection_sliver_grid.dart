@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/models/project.dart';
 import 'package:personal_portfolio/src/widgets/project_item.dart';
 
@@ -56,7 +55,7 @@ class _AnimatedProjectItemState extends State<AnimatedProjectItem> {
       child: _isVisible
           ? (widget.index.isEven
               ? FadeInLeft(
-                  duration: AppConstants.animationDuration,
+                  duration: const Duration(milliseconds: 500),
                   child: ProjectItem(
                     key:
                         ValueKey('small_selection_sliver_grid_${widget.index}'),
@@ -65,7 +64,7 @@ class _AnimatedProjectItemState extends State<AnimatedProjectItem> {
                 )
               : FadeInRight(
                   key: ValueKey('small_selection_sliver_grid_${widget.index}'),
-                  duration: AppConstants.animationDuration,
+                  duration: const Duration(milliseconds: 500),
                   child: ProjectItem(project: widget.project),
                 ))
           : const SizedBox.shrink(),

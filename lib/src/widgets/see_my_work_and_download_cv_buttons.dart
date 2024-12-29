@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, Uint8List, rootBundle;
@@ -14,41 +15,44 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      spacing: 24.w,
-      children: [
-        MainButton(
-          onPressed: () async => await openUrl(AppStrings.gitHubUrl),
-          borderRadius: 14,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            spacing: 10.w,
-            children: [
-              Text(
-                AppStrings.seeMyWork,
-                style: AppTextStyles.font18Medium(context),
-              ),
-              SvgPicture.asset(Assets.svgsLinkArrow),
-            ],
+    return FadeInUp(
+      delay: const Duration(milliseconds: 900),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 24.w,
+        children: [
+          MainButton(
+            onPressed: () async => await openUrl(AppStrings.gitHubUrl),
+            borderRadius: 14,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 10.w,
+              children: [
+                Text(
+                  AppStrings.seeMyWork,
+                  style: AppTextStyles.font18Medium(context),
+                ),
+                SvgPicture.asset(Assets.svgsLinkArrow),
+              ],
+            ),
           ),
-        ),
-        MainButton(
-          onPressed: () async => await _downloadCV(),
-          borderRadius: 14,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            spacing: 10.w,
-            children: [
-              Text(
-                AppStrings.downloadCV,
-                style: AppTextStyles.font18Medium(context),
-              ),
-              SvgPicture.asset(Assets.svgsDownloadIcon),
-            ],
+          MainButton(
+            onPressed: () async => await _downloadCV(),
+            borderRadius: 14,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 10.w,
+              children: [
+                Text(
+                  AppStrings.downloadCV,
+                  style: AppTextStyles.font18Medium(context),
+                ),
+                SvgPicture.asset(Assets.svgsDownloadIcon),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

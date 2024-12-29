@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/widgets/copy_my_email_card.dart';
+import 'package:personal_portfolio/src/widgets/prioritize_img.dart';
 import 'package:personal_portfolio/src/widgets/tech_enthusiast_card.dart';
 
 class PassionAndPurposeSection extends StatelessWidget {
@@ -17,27 +15,9 @@ class PassionAndPurposeSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Flexible(
+        const Flexible(
           flex: 2,
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(23.r),
-                child: Image.asset(
-                  Assets.imagesPrioritizeImage,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              PositionedDirectional(
-                start: 40.w,
-                bottom: 60.h,
-                child: Text(
-                  AppStrings.iPrioritizeClient,
-                  style: AppTextStyles.font32Bold(context),
-                ),
-              ),
-            ],
-          ),
+          child: PrioritizeImg(),
         ),
         Flexible(
           child: Column(
