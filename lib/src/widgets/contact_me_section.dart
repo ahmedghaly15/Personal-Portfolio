@@ -9,28 +9,31 @@ class ContactMeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: Image.asset(
-            Assets.imagesFooterGridPattern,
-            fit: BoxFit.cover,
+    return AspectRatio(
+      aspectRatio: 2,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              Assets.imagesFooterGridPattern,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        const Positioned(
-          left: 0,
-          right: 0,
-          bottom: 0,
-          top: 0,
-          child: EncourageContactingMe(),
-        ),
-        Positioned(
-          left: 0,
-          right: 0,
-          bottom: 56.h,
-          child: const SocialIcons(),
-        ),
-      ],
+          const Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            top: 0,
+            child: EncourageContactingMe(),
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 56.h,
+            child: const SocialIcons(),
+          ),
+        ],
+      ),
     );
   }
 }
