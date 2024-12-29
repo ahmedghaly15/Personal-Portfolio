@@ -45,10 +45,9 @@ class ProjectItem extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset(
-                project.image,
-                height: 330.h,
-                width: 552.w,
+              AspectRatio(
+                aspectRatio: 1.7,
+                child: Image.asset(project.image),
               ),
             ],
           ),

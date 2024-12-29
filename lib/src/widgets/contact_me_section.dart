@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/widgets/animated_encourage_contacting_me.dart';
 import 'package:personal_portfolio/src/widgets/social_icons.dart';
 
 class ContactMeSection extends StatelessWidget {
-  const ContactMeSection({super.key});
+  const ContactMeSection({
+    super.key,
+    required this.aspectRatio,
+    this.contactMeButtonWidth,
+  });
+
+  final double aspectRatio;
+  final double? contactMeButtonWidth;
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2,
+      aspectRatio: aspectRatio,
       child: Stack(
         children: [
           Positioned.fill(
@@ -19,18 +25,20 @@ class ContactMeSection extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          const Positioned(
+          Positioned(
             left: 0,
             right: 0,
             bottom: 0,
             top: 0,
-            child: AnimatedEncourageContactingMe(),
+            child: AnimatedEncourageContactingMe(
+              contactMeButtonWidth: contactMeButtonWidth,
+            ),
           ),
-          Positioned(
+          const Positioned(
             left: 0,
             right: 0,
-            bottom: 56.h,
-            child: const SocialIcons(),
+            bottom: 0,
+            child: SocialIcons(),
           ),
         ],
       ),
