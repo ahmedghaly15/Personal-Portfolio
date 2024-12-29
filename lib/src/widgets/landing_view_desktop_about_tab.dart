@@ -9,7 +9,7 @@ import 'package:personal_portfolio/src/widgets/custom_section_title.dart';
 import 'package:personal_portfolio/src/widgets/experience_item.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
 import 'package:personal_portfolio/src/widgets/my_approach_sliver_grid.dart';
-import 'package:personal_portfolio/src/widgets/passion_and_purpose_section.dart';
+import 'package:personal_portfolio/src/widgets/desktop_passion_and_purpose_section.dart';
 import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
 import 'package:personal_portfolio/src/widgets/small_selection_sliver_grid.dart';
 import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
@@ -58,12 +58,11 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
               left: 24.w,
               right: 24.w,
             ),
-            child: const PassionAndPurposeSection(),
+            child: const DesktopPassionAndPurposeSection(),
           ),
         ),
         const SliverToBoxAdapter(
           child: Align(
-            alignment: Alignment.center,
             child: CustomSectionTitle(
               whiteSpan: '${AppStrings.smallSelectionOf} ',
               colorfulSpan: AppStrings.recentProjects,
@@ -85,7 +84,6 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         ),
         const SliverToBoxAdapter(
           child: Align(
-            alignment: Alignment.center,
             child: CustomSectionTitle(
               whiteSpan: '${AppStrings.my} ',
               colorfulSpan: AppStrings.workExperience,
@@ -93,11 +91,14 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
           ),
         ),
         SliverToBoxAdapter(
-          child: Align(
-            child: Container(
-              margin: EdgeInsets.only(top: 70.h, bottom: 130.h),
-              child: const ExperienceItem(),
+          child: Container(
+            margin: EdgeInsets.only(
+              top: 70.h,
+              bottom: 130.h,
+              left: 90.w,
+              right: 90.w,
             ),
+            child: const ExperienceItem(),
           ),
         ),
         SliverToBoxAdapter(
@@ -115,9 +116,10 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 90.w),
           sliver: const MyApproachSliverGrid(),
         ),
-        const SliverToBoxAdapter(
-          child: Align(
-            child: ContactMeSection(),
+        SliverPadding(
+          padding: EdgeInsets.only(bottom: 32.h),
+          sliver: const SliverToBoxAdapter(
+            child: ContactMeSection(aspectRatio: 2),
           ),
         ),
       ],
