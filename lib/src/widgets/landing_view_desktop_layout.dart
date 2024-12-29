@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
+import 'package:personal_portfolio/src/widgets/custom_section_title.dart';
 import 'package:personal_portfolio/src/widgets/experience_item.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
 import 'package:personal_portfolio/src/widgets/my_approach_sliver_grid.dart';
 import 'package:personal_portfolio/src/widgets/passion_and_purpose_section.dart';
 import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
-import 'package:personal_portfolio/src/widgets/small_selection_list.dart';
-import 'package:personal_portfolio/src/widgets/small_selection_rich_text.dart';
+import 'package:personal_portfolio/src/widgets/small_selection_sliver_grid.dart';
 import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
 
 class LandingViewDesktopLayout extends StatelessWidget {
@@ -69,24 +71,31 @@ class LandingViewDesktopLayout extends StatelessWidget {
         const SliverToBoxAdapter(
           child: Align(
             alignment: Alignment.center,
-            child: SmallSelectionRichText(
-              firstSpan: '${AppStrings.smallSelectionOf} ',
-              secondSpan: AppStrings.recentProjects,
+            child: CustomSectionTitle(
+              whiteSpan: '${AppStrings.smallSelectionOf} ',
+              colorfulSpan: AppStrings.recentProjects,
             ),
           ),
         ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 100.w),
+          sliver: const SmallSelectionSliverGrid(),
+        ),
         SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(top: 48.h, bottom: 150.h),
-            child: const SmallSelectionList(),
+          child: Align(
+            child: MainButton(
+              margin: EdgeInsets.only(bottom: 150.h),
+              onPressed: () {},
+              text: AppStrings.seeMyPortfolio,
+            ),
           ),
         ),
         const SliverToBoxAdapter(
           child: Align(
             alignment: Alignment.center,
-            child: SmallSelectionRichText(
-              firstSpan: '${AppStrings.my} ',
-              secondSpan: AppStrings.workExperience,
+            child: CustomSectionTitle(
+              whiteSpan: '${AppStrings.my} ',
+              colorfulSpan: AppStrings.workExperience,
             ),
           ),
         ),
@@ -102,9 +111,9 @@ class LandingViewDesktopLayout extends StatelessWidget {
           child: Align(
             child: Container(
               margin: EdgeInsets.only(bottom: 60.h),
-              child: const SmallSelectionRichText(
-                firstSpan: '${AppStrings.my} ',
-                secondSpan: AppStrings.approach,
+              child: const CustomSectionTitle(
+                whiteSpan: '${AppStrings.my} ',
+                colorfulSpan: AppStrings.approach,
               ),
             ),
           ),
@@ -113,8 +122,7 @@ class LandingViewDesktopLayout extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 90.w),
           sliver: const MyApproachSliverGrid(),
         ),
-        const SliverFillRemaining(
-          hasScrollBody: false,
+        const SliverToBoxAdapter(
           child: Align(
             child: ContactMeSection(),
           ),
