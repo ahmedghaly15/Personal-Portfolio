@@ -4,8 +4,8 @@ import 'package:personal_portfolio/src/widgets/animated_copy_my_email_card.dart'
 import 'package:personal_portfolio/src/widgets/animated_prioritize_img.dart';
 import 'package:personal_portfolio/src/widgets/animated_tech_enthusiast_card.dart';
 
-class PassionAndPurposeSection extends StatelessWidget {
-  const PassionAndPurposeSection({super.key});
+class DesktopPassionAndPurposeSection extends StatelessWidget {
+  const DesktopPassionAndPurposeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
