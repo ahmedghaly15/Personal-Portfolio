@@ -13,7 +13,6 @@ class LandingViewDesktopPortfolioTab extends StatelessWidget {
       slivers: [
         const SliverToBoxAdapter(
           child: Align(
-            alignment: Alignment.center,
             child: TabsNav(),
           ),
         ),

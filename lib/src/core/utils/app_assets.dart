@@ -70,6 +70,10 @@ class Assets {
   /// assets/images/linkup_icon.png
   static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
 
+  /// Assets for imagesMobileGridPattern
+  /// assets/images/mobile-grid-pattern.png
+  static const String imagesMobileGridPattern = "assets/images/mobile-grid-pattern.png";
+
   /// Assets for imagesPrioritizeImage
   /// assets/images/prioritize-image.png
   static const String imagesPrioritizeImage = "assets/images/prioritize-image.png";

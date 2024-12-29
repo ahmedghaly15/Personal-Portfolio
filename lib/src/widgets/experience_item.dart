@@ -26,11 +26,11 @@ class ExperienceItem extends StatelessWidget {
           width: 1.w,
         ),
       ),
-      child: Row(
+      child: OverflowBar(
         spacing: 30.w,
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        overflowSpacing: 20.h,
+        alignment: MainAxisAlignment.center,
+        overflowAlignment: OverflowBarAlignment.start,
         children: [
           Image.asset(Assets.imagesInternExperienceImg),
           Column(

@@ -45,10 +45,9 @@ class ProjectItem extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset(
-                project.image,
-                height: 330.h,
-                width: 552.w,
+              AspectRatio(
+                aspectRatio: 1.7,
+                child: Image.asset(project.image),
               ),
             ],
           ),
@@ -64,33 +63,38 @@ class ProjectItem extends StatelessWidget {
                 project.description,
                 style: AppTextStyles.font20Regular(context),
                 textAlign: TextAlign.justify,
-                maxLines: 6,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ),
           MySizedBox.height14,
-          Row(
+          OverflowBar(
             spacing: 16.w,
-            mainAxisAlignment: MainAxisAlignment.center,
+            alignment: MainAxisAlignment.spaceEvenly,
+            overflowAlignment: OverflowBarAlignment.center,
             children: [
               if (project.downloadUrl != null)
-                ProjectItemTextButton(
-                  url: project.downloadUrl!,
-                  titleText: AppStrings.downloadApp,
-                  svgPath: Assets.svgsDownloadIcon,
+                Flexible(
+                  child: ProjectItemTextButton(
+                    url: project.downloadUrl!,
+                    titleText: AppStrings.downloadApp,
+                    svgPath: Assets.svgsDownloadIcon,
+                  ),
                 ),
               if (project.githubUrl != null)
-                ProjectItemTextButton(
-                  url: project.githubUrl!,
-                  titleText: AppStrings.viewOnGitHub,
-                  svgPath: Assets.svgsGithubIcon,
+                Flexible(
+                  child: ProjectItemTextButton(
+                    url: project.githubUrl!,
+                    titleText: AppStrings.viewOnGitHub,
+                    svgPath: Assets.svgsGithubIcon,
+                  ),
                 ),
               if (project.promoUrl != null)
-                ProjectItemTextButton(
-                  url: project.promoUrl!,
-                  titleText: AppStrings.seeThePromo,
-                  svgPath: Assets.svgsPlay,
+                Flexible(
+                  child: ProjectItemTextButton(
+                    url: project.promoUrl!,
+                    titleText: AppStrings.seeThePromo,
+                    svgPath: Assets.svgsPlay,
+                  ),
                 ),
             ],
           ),

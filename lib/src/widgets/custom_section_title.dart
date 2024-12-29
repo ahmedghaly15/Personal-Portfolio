@@ -14,6 +14,7 @@ class CustomSectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      textAlign: TextAlign.center,
       text: TextSpan(
         children: [
           TextSpan(
