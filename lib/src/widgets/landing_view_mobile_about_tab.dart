@@ -110,7 +110,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
               children: List.generate(
                 2,
                 (index) => AspectRatio(
-                  aspectRatio: 1,
+                  aspectRatio: 0.75,
                   child: AnimatedProjectItem(
                     project: Project.portfolio[index],
                     index: index,

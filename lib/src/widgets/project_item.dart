@@ -63,8 +63,6 @@ class ProjectItem extends StatelessWidget {
                 project.description,
                 style: AppTextStyles.font20Regular(context),
                 textAlign: TextAlign.justify,
-                maxLines: 6,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ),

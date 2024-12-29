@@ -46,7 +46,10 @@ class _AnimatedProjectItemState extends State<AnimatedProjectItem> {
                   duration: const Duration(milliseconds: 500),
                   child: ProjectItem(project: widget.project),
                 ))
-          : const SizedBox.shrink(),
+          : Opacity(
+              opacity: 0,
+              child: ProjectItem(project: widget.project),
+            ),
     );
   }
 }
