@@ -65,4 +65,11 @@ class AppStrings {
   static const String contactMeNow = 'Contact Me Now';
   static const String seeMyPortfolio = 'See My Portfolio';
   static const String seeThePromo = 'See the Promo';
+  static const String masteringTheArtOfFlutter =
+      'MASTERING THE ART OF FLUTTER DEVELOPMENT';
+  static const String elevating = 'Elevating';
+  static const String oneLineCode = 'one line of code at a time';
+  static const String mySkills = 'my skills';
+  static const String onJourney =
+      "On a journey of constant growth—honing my expertise in crafting seamless apps, solving complex challenges, and delivering excellence.";
 }

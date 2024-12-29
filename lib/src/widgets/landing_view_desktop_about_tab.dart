@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
+import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
 import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
 import 'package:personal_portfolio/src/widgets/custom_section_title.dart';
 import 'package:personal_portfolio/src/widgets/experience_item.dart';
@@ -30,26 +31,19 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.only(top: 73.h, bottom: 22.h),
-            child: Text(
-              AppStrings.dynamicAppMagic,
-              style: AppTextStyles.font16Regular(context),
-              textAlign: TextAlign.center,
-            ),
+            child: const HeaderSmallText(text: AppStrings.dynamicAppMagic),
           ),
         ),
         const SliverToBoxAdapter(
           child: Align(
-            alignment: Alignment.center,
             child: LandingViewBigText(),
           ),
         ),
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 30.h),
-            child: Text(
-              AppStrings.introduction,
-              style: AppTextStyles.font24Regular(context),
-              textAlign: TextAlign.center,
+            child: const HeaderDescriptionText(
+              text: AppStrings.introduction,
             ),
           ),
         ),
@@ -84,7 +78,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
           child: Align(
             child: MainButton(
               margin: EdgeInsets.only(bottom: 150.h),
-              onPressed: () {},
+              onPressed: () => context.read<LandingCubit>().selectTabNav(2),
               text: AppStrings.seeMyPortfolio,
             ),
           ),
