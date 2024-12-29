@@ -42,9 +42,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 56.w),
-            child: const Align(
-              child: LandingViewBigText(),
-            ),
+            child: const LandingViewBigText(),
           ),
         ),
         SliverToBoxAdapter(
