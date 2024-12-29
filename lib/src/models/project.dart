@@ -41,6 +41,8 @@ class Project {
       downloadUrl:
           "https://www.mediafire.com/file/ow4ilvobb6jxb04/Linkup.apk/file",
       githubUrl: "https://github.com/ahmedghaly15/Linkup",
+      promoUrl:
+          "https://github.com/ahmedghaly15/Linkup/assets/108659381/e0c5cc97-303f-4004-9480-064046c3dd24",
     ),
     Project(
       name: "Roome - Hotel Booking App",
@@ -48,6 +50,8 @@ class Project {
           "Roome is a Flutter app designed to help users find and book hotels for their vacations or leisure activities. The app provides a user-friendly interface to explore various hotel options (Near Me, Recommended, Popular) and make reservations.",
       image: Assets.imagesRoomeIcon,
       githubUrl: "https://github.com/ahmedghaly15/Roome",
+      promoUrl:
+          "https://github.com/Alaa5652/roome-app/assets/108659381/c33e939f-6420-48fb-9a2f-987f50c98f04",
     ),
   ];
 }

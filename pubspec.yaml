@@ -25,6 +25,8 @@ dependencies:
   file_saver: ^0.2.14
   # To display progress widgets based on percentage
   percent_indicator: ^4.2.3
+  # To add staggered animations to your ListView, GridView
+  flutter_staggered_animations: ^1.1.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
