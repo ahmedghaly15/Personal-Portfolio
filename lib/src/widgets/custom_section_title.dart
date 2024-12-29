@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 
-class SmallSelectionRichText extends StatelessWidget {
-  const SmallSelectionRichText({
+class CustomSectionTitle extends StatelessWidget {
+  const CustomSectionTitle({
     super.key,
-    required this.firstSpan,
-    required this.secondSpan,
+    required this.whiteSpan,
+    required this.colorfulSpan,
   });
 
-  final String firstSpan, secondSpan;
+  final String whiteSpan, colorfulSpan;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,13 @@ class SmallSelectionRichText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: firstSpan,
+            text: whiteSpan,
             style: AppTextStyles.font48Bold(context).copyWith(
               color: Colors.white,
             ),
           ),
           TextSpan(
-            text: secondSpan,
+            text: colorfulSpan,
             style: AppTextStyles.font48Bold(context).copyWith(
               color: AppColors.colorCBACF9,
             ),

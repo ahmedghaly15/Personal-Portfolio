@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
@@ -11,26 +10,8 @@ import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/models/project.dart';
 
-class SmallSelectionList extends StatelessWidget {
-  const SmallSelectionList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      spacing: 40.w,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(
-        2,
-        (index) => SmallSelectionItem(project: Project.portfolio[index]),
-        growable: false,
-      ),
-    );
-  }
-}
-
-class SmallSelectionItem extends StatelessWidget {
-  const SmallSelectionItem({
+class ProjectItem extends StatelessWidget {
+  const ProjectItem({
     super.key,
     required this.project,
   });
@@ -40,10 +21,6 @@ class SmallSelectionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        maxWidth: 600.w,
-        maxHeight: context.screenHeight * 0.75,
-      ),
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 36.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(23.r),
@@ -54,9 +31,10 @@ class SmallSelectionItem extends StatelessWidget {
         ),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Stack(
+            alignment: Alignment.center,
             children: [
               Positioned.fill(
                 child: ClipRRect(
@@ -79,45 +57,69 @@ class SmallSelectionItem extends StatelessWidget {
             project.name,
             style: AppTextStyles.font32Bold(context),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 18.h),
-            child: Text(
-              project.description,
-              style: AppTextStyles.font20Regular(context),
-              textAlign: TextAlign.justify,
-              maxLines: 4,
-              overflow: TextOverflow.ellipsis,
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(top: 18.h),
+              child: Text(
+                project.description,
+                style: AppTextStyles.font20Regular(context),
+                textAlign: TextAlign.justify,
+                maxLines: 6,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ),
-          const Spacer(),
+          MySizedBox.height14,
           Row(
             spacing: 16.w,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (project.downloadUrl != null)
-                TextButton.icon(
-                  style: TextButton.styleFrom(
-                    textStyle: AppTextStyles.font20Medium(context),
-                    foregroundColor: AppColors.colorCBACF9,
-                  ),
-                  onPressed: () async => await openUrl(project.downloadUrl!),
-                  label: const Text(AppStrings.downloadApp),
-                  icon: SvgPicture.asset(Assets.svgsLinkArrow),
+                ProjectItemTextButton(
+                  url: project.downloadUrl!,
+                  titleText: AppStrings.downloadApp,
+                  svgPath: Assets.svgsDownloadIcon,
                 ),
               if (project.githubUrl != null)
-                TextButton.icon(
-                  style: TextButton.styleFrom(
-                    textStyle: AppTextStyles.font20Medium(context),
-                    foregroundColor: AppColors.colorCBACF9,
-                  ),
-                  onPressed: () async => await openUrl(project.githubUrl!),
-                  label: const Text(AppStrings.viewOnGitHub),
-                  icon: SvgPicture.asset(Assets.svgsGithubIcon),
+                ProjectItemTextButton(
+                  url: project.githubUrl!,
+                  titleText: AppStrings.viewOnGitHub,
+                  svgPath: Assets.svgsGithubIcon,
+                ),
+              if (project.promoUrl != null)
+                ProjectItemTextButton(
+                  url: project.promoUrl!,
+                  titleText: AppStrings.seeThePromo,
+                  svgPath: Assets.svgsPlay,
                 ),
             ],
           ),
         ],
       ),
+    );
+  }
+}
+
+class ProjectItemTextButton extends StatelessWidget {
+  const ProjectItemTextButton({
+    super.key,
+    required this.url,
+    required this.titleText,
+    required this.svgPath,
+  });
+
+  final String url, titleText, svgPath;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      style: TextButton.styleFrom(
+        textStyle: AppTextStyles.font20Medium(context),
+        foregroundColor: AppColors.colorCBACF9,
+      ),
+      onPressed: () async => await openUrl(url),
+      icon: Text(titleText),
+      label: SvgPicture.asset(svgPath),
     );
   }
 }
