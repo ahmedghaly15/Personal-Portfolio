@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/widgets/copy_my_email_card.dart';
-import 'package:personal_portfolio/src/widgets/prioritize_img.dart';
-import 'package:personal_portfolio/src/widgets/tech_enthusiast_card.dart';
+import 'package:personal_portfolio/src/widgets/animated_copy_my_email_card.dart';
+import 'package:personal_portfolio/src/widgets/animated_prioritize_img.dart';
+import 'package:personal_portfolio/src/widgets/animated_tech_enthusiast_card.dart';
 
 class PassionAndPurposeSection extends StatelessWidget {
   const PassionAndPurposeSection({super.key});
@@ -17,7 +17,7 @@ class PassionAndPurposeSection extends StatelessWidget {
       children: [
         const Flexible(
           flex: 2,
-          child: PrioritizeImg(),
+          child: AnimatedPrioritizeImg(),
         ),
         Flexible(
           child: Column(
@@ -27,11 +27,11 @@ class PassionAndPurposeSection extends StatelessWidget {
             children: const [
               AspectRatio(
                 aspectRatio: 351 / 180,
-                child: TechEnthusiastCard(),
+                child: AnimatedTechEnthusiastCard(),
               ),
               AspectRatio(
                 aspectRatio: 351 / 180,
-                child: CopyMyEmailCard(),
+                child: AnimatedCopyMyEmailCard(),
               ),
             ],
           ),
