@@ -1,9 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+
+import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/models/project.dart';
 import 'package:personal_portfolio/src/widgets/project_item.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 class SmallSelectionSliverGrid extends StatelessWidget {
   const SmallSelectionSliverGrid({super.key});
@@ -54,7 +56,7 @@ class _AnimatedProjectItemState extends State<AnimatedProjectItem> {
       child: _isVisible
           ? (widget.index.isEven
               ? FadeInLeft(
-                  duration: const Duration(milliseconds: 500),
+                  duration: AppConstants.animationDuration,
                   child: ProjectItem(
                     key:
                         ValueKey('small_selection_sliver_grid_${widget.index}'),
@@ -63,7 +65,7 @@ class _AnimatedProjectItemState extends State<AnimatedProjectItem> {
                 )
               : FadeInRight(
                   key: ValueKey('small_selection_sliver_grid_${widget.index}'),
-                  duration: const Duration(milliseconds: 500),
+                  duration: AppConstants.animationDuration,
                   child: ProjectItem(project: widget.project),
                 ))
           : const SizedBox.shrink(),

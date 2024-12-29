@@ -6,6 +6,8 @@ import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 class AppConstants {
   AppConstants._();
 
+  static const Duration animationDuration = Duration(milliseconds: 500);
+
   static const List<String> headerTitlesKeys = [
     AppStrings.about,
     AppStrings.skills,
