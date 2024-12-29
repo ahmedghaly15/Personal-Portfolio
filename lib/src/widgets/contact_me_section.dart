@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/widgets/encourage_contacting_me.dart';
+import 'package:personal_portfolio/src/widgets/animated_encourage_contacting_me.dart';
 import 'package:personal_portfolio/src/widgets/social_icons.dart';
 
 class ContactMeSection extends StatelessWidget {
@@ -24,7 +24,7 @@ class ContactMeSection extends StatelessWidget {
             right: 0,
             bottom: 0,
             top: 0,
-            child: EncourageContactingMe(),
+            child: AnimatedEncourageContactingMe(),
           ),
           Positioned(
             left: 0,
