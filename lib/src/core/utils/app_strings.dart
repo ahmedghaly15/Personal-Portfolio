@@ -63,4 +63,6 @@ class AppStrings {
   static const String reachMeOut =
       "Reach out to me and let's discuss how I can help you achieve your goals.";
   static const String contactMeNow = 'Contact Me Now';
+  static const String seeMyPortfolio = 'See My Portfolio';
+  static const String seeThePromo = 'See the Promo';
 }

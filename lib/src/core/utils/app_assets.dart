@@ -125,5 +125,9 @@ class Assets {
   /// Assets for svgsMediumIcon
   /// assets/svgs/medium-icon.svg
   static const String svgsMediumIcon = "assets/svgs/medium-icon.svg";
+
+  /// Assets for svgsPlay
+  /// assets/svgs/play.svg
+  static const String svgsPlay = "assets/svgs/play.svg";
 }
 

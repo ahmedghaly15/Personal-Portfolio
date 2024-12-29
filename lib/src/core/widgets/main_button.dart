@@ -8,7 +8,7 @@ import 'package:personal_portfolio/src/core/utils/functions/get_responsive_font_
 class MainButton extends StatelessWidget {
   const MainButton({
     super.key,
-    this.textKey,
+    this.text,
     this.child,
     required this.onPressed,
     this.borderRadius,
@@ -19,10 +19,11 @@ class MainButton extends StatelessWidget {
     this.fontSize,
     this.margin,
     this.backgroundColor,
-    this.borderColor, this.gradient,
+    this.borderColor,
+    this.gradient,
   });
 
-  final String? textKey;
+  final String? text;
   final Widget? child;
   final double? borderRadius;
   final TextStyle? textStyle;
@@ -47,7 +48,7 @@ class MainButton extends StatelessWidget {
         border: Border.all(
           color: borderColor ?? AppColors.color6971A2.withAlpha(41),
         ),
-        gradient: gradient?? AppConstants.boxPrimaryLinearGradient,
+        gradient: gradient ?? AppConstants.boxPrimaryLinearGradient,
       ),
       child: MaterialButton(
         padding: padding ??
@@ -63,7 +64,7 @@ class MainButton extends StatelessWidget {
         ),
         child: child ??
             Text(
-              textKey!,
+              text!,
               style: textStyle ??
                   AppTextStyles.font18Medium(context).copyWith(
                     fontSize: getResponsiveFontSize(context,

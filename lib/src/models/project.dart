@@ -2,7 +2,7 @@ import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 
 class Project {
   final String name, description, image;
-  final String? githubUrl, downloadUrl;
+  final String? githubUrl, downloadUrl, promoUrl;
 
   const Project({
     required this.name,
@@ -10,6 +10,7 @@ class Project {
     required this.image,
     this.githubUrl,
     this.downloadUrl,
+    this.promoUrl,
   });
 
   static const List<Project> portfolio = [
@@ -20,6 +21,8 @@ class Project {
       image: Assets.imagesIcareIcon,
       downloadUrl:
           "https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file",
+      promoUrl:
+          'https://github.com/user-attachments/assets/9e7325da-aef9-4a39-9702-ad95e63ced9e',
     ),
     Project(
       name: "Storeify - E-Commerce App",
@@ -27,6 +30,8 @@ class Project {
           "Storeify is a powerful and dynamic e-commerce Flutter application designed to provide users with a seamless and engaging shopping experience. With robust features and a user-centric interface, Storeify combines functionality and performance to deliver an all-in-one e-commerce solution.",
       image: Assets.imagesStoreifyIcon,
       githubUrl: "https://github.com/ahmedghaly15/Storeify",
+      promoUrl:
+          'https://github.com/user-attachments/assets/ab7bc1ab-4151-40da-accd-143dae9c94a2',
     ),
     Project(
       name: "Linkup - Social Media App",
