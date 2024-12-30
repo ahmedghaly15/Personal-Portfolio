@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/widgets/animated_contact_me_content.dart';
+import 'package:personal_portfolio/src/widgets/contact_me_content.dart';
 
 class ContactMeSection extends StatelessWidget {
   const ContactMeSection({

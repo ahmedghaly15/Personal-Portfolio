@@ -66,7 +66,7 @@ class AppStrings {
   static const String seeMyPortfolio = 'See My Portfolio';
   static const String seeThePromo = 'See the Promo';
   static const String masteringTheArtOfFlutter =
-      'MASTERING THE ART OF FLUTTER DEVELOPMENT';
+      'Mastering the Art of Flutter Development';
   static const String elevating = 'Elevating';
   static const String oneLineCode = 'one line of code at a time';
   static const String mySkills = 'my skills';

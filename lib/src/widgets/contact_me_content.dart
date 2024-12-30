@@ -59,29 +59,31 @@ class ContactMeContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ElasticIn(
-          child: RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '${AppStrings.lookingToBringYourIdeasToLife} ',
-                  style: AppTextStyles.font48Bold(context).copyWith(
-                    color: Colors.white,
+          child: FittedBox(
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: '${AppStrings.lookingToBringYourIdeasToLife} ',
+                    style: AppTextStyles.font48Bold(context).copyWith(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                TextSpan(
-                  text: AppStrings.flutterApps,
-                  style: AppTextStyles.font48Bold(context).copyWith(
-                    color: AppColors.colorCBACF9,
+                  TextSpan(
+                    text: AppStrings.flutterApps,
+                    style: AppTextStyles.font48Bold(context).copyWith(
+                      color: AppColors.colorCBACF9,
+                    ),
                   ),
-                ),
-                TextSpan(
-                  text: '?',
-                  style: AppTextStyles.font48Bold(context).copyWith(
-                    color: Colors.white,
+                  TextSpan(
+                    text: '?',
+                    style: AppTextStyles.font48Bold(context).copyWith(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

@@ -11,7 +11,6 @@ class AppConstants {
     AppStrings.skills,
     AppStrings.portfolio,
   ];
-
   static BoxDecoration get boxDecoration => BoxDecoration(
         borderRadius: BorderRadius.circular(13.r),
         gradient: boxPrimaryLinearGradient,
@@ -20,7 +19,6 @@ class AppConstants {
           width: 1.w,
         ),
       );
-
   static const LinearGradient boxPrimaryLinearGradient = LinearGradient(
     colors: [
       AppColors.color04071D,
@@ -39,4 +37,5 @@ class AppConstants {
     begin: AlignmentDirectional.topStart,
     end: AlignmentDirectional.bottomEnd,
   );
+  static const double mobileHorizontalPadVal = 56;
 }
