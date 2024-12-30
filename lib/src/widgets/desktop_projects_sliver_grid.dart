@@ -5,7 +5,12 @@ import 'package:personal_portfolio/src/models/project.dart';
 import 'package:personal_portfolio/src/widgets/project_item.dart';
 
 class DesktopProjectsSliverGrid extends StatelessWidget {
-  const DesktopProjectsSliverGrid({super.key});
+  const DesktopProjectsSliverGrid({
+    super.key,
+    this.tabletProjectAspectRatio,
+  });
+
+  final double? tabletProjectAspectRatio;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +19,7 @@ class DesktopProjectsSliverGrid extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 40.w,
         mainAxisSpacing: 32.h,
+        childAspectRatio: tabletProjectAspectRatio ?? 1,
       ),
       itemBuilder: (_, index) => AnimationConfiguration.staggeredGrid(
         duration: const Duration(milliseconds: 675),
