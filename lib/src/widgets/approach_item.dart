@@ -118,7 +118,7 @@ class PhaseContainer extends StatelessWidget {
         horizontal: _isHovered ? 20.w : 25.w,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(11.r),
+        borderRadius: BorderRadius.circular(23.r),
         gradient: const LinearGradient(
           colors: [Color(0xff161A31), Color(0xff06091F)],
           stops: [0, 1],

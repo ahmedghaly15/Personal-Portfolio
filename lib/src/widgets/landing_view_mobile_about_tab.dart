@@ -7,17 +7,17 @@ import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
 import 'package:personal_portfolio/src/models/approach.dart';
 import 'package:personal_portfolio/src/models/project.dart';
-import 'package:personal_portfolio/src/widgets/animated_copy_my_email_card.dart';
-import 'package:personal_portfolio/src/widgets/animated_prioritize_img.dart';
 import 'package:personal_portfolio/src/widgets/animated_project_item.dart';
-import 'package:personal_portfolio/src/widgets/animated_tech_enthusiast_card.dart';
 import 'package:personal_portfolio/src/widgets/approach_item.dart';
 import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
+import 'package:personal_portfolio/src/widgets/copy_my_email_card.dart';
 import 'package:personal_portfolio/src/widgets/custom_section_title.dart';
 import 'package:personal_portfolio/src/widgets/experience_item.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
+import 'package:personal_portfolio/src/widgets/prioritize_img.dart';
 import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
 import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
+import 'package:personal_portfolio/src/widgets/tech_enthusiast_card.dart';
 
 class LandingViewMobileAboutTab extends StatelessWidget {
   const LandingViewMobileAboutTab({super.key});
@@ -25,10 +25,11 @@ class LandingViewMobileAboutTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
+          ),
           sliver: const SliverToBoxAdapter(child: TabsNav()),
         ),
         SliverToBoxAdapter(
@@ -46,16 +47,18 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 24.h, horizontal: 56.w),
-            child: const HeaderDescriptionText(
-              text: AppStrings.introduction,
+            child: const FittedBox(
+              child: HeaderDescriptionText(
+                text: AppStrings.introduction,
+              ),
             ),
           ),
         ),
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.only(
-              left: 32.w,
-              right: 32.w,
+              left: AppConstants.mobileHorizontalPadVal.w,
+              right: AppConstants.mobileHorizontalPadVal.w,
               bottom: 64.h,
             ),
             child: const SeeMyWorkAndDownloadCVButtons(
@@ -65,7 +68,9 @@ class LandingViewMobileAboutTab extends StatelessWidget {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
+          ),
           sliver: SliverToBoxAdapter(
             child: Column(
               spacing: 24.h,
@@ -75,11 +80,11 @@ class LandingViewMobileAboutTab extends StatelessWidget {
                   child: AnimatedPrioritizeImg(),
                 ),
                 AspectRatio(
-                  aspectRatio: 398 / 142,
+                  aspectRatio: 2.3,
                   child: AnimatedTechEnthusiastCard(),
                 ),
                 AspectRatio(
-                  aspectRatio: 398 / 142,
+                  aspectRatio: 2.3,
                   child: AnimatedCopyMyEmailCard(),
                 ),
               ],
@@ -101,14 +106,16 @@ class LandingViewMobileAboutTab extends StatelessWidget {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
+          ),
           sliver: SliverToBoxAdapter(
             child: Column(
               spacing: 20.h,
               children: List.generate(
                 2,
                 (index) => AspectRatio(
-                  aspectRatio: 0.75,
+                  aspectRatio: 0.7,
                   child: AnimatedProjectItem(
                     project: Project.portfolio[index],
                     index: index,
@@ -126,9 +133,9 @@ class LandingViewMobileAboutTab extends StatelessWidget {
             gradient: AppConstants.boxSecondaryLinearGradient,
             margin: EdgeInsets.only(
               bottom: 64.h,
-              left: 32.w,
-              right: 32.w,
-              top: 32.h,
+              left: AppConstants.mobileHorizontalPadVal.w,
+              right: AppConstants.mobileHorizontalPadVal.w,
+              top: AppConstants.mobileHorizontalPadVal.h,
             ),
             text: AppStrings.seeMyPortfolio,
           ),
@@ -148,7 +155,10 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Container(
-            margin: EdgeInsets.only(left: 32.w, right: 32.w),
+            margin: EdgeInsets.only(
+              left: AppConstants.mobileHorizontalPadVal.w,
+              right: AppConstants.mobileHorizontalPadVal.w,
+            ),
             child: const ExperienceItem(),
           ),
         ),
@@ -163,7 +173,9 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 32.w),
+            margin: EdgeInsets.symmetric(
+              horizontal: AppConstants.mobileHorizontalPadVal.w,
+            ),
             child: OverflowBar(
               overflowSpacing: 48.w,
               alignment: MainAxisAlignment.center,
@@ -184,7 +196,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(
-            horizontal: 32.w,
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
             vertical: 12.h,
           ),
           sliver: const SliverToBoxAdapter(

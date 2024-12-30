@@ -11,7 +11,10 @@ class LandingView extends StatelessWidget {
     return Scaffold(
       body: ResponsiveLayout(
         mobileLayout: (_) => const LandingViewMobileLayout(),
-        tabletLayout: (_) => Container(),
+        tabletLayout: (_) => const LandingViewDesktopLayout(
+          tabletProjectAspectRatio: 1 / 2,
+          tabletApproachGridCrossAxisCount: 2,
+        ),
         desktopLayout: (_) => const LandingViewDesktopLayout(),
       ),
     );

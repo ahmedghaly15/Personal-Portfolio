@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
 import 'package:personal_portfolio/src/widgets/skills_progress_list.dart';
@@ -12,13 +13,12 @@ class LandingViewMobileSkillsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
       slivers: <Widget>[
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w),
-          sliver: const SliverToBoxAdapter(
-            child: TabsNav(),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
           ),
+          sliver: const SliverToBoxAdapter(child: TabsNav()),
         ),
         SliverToBoxAdapter(
           child: Container(
@@ -29,14 +29,19 @@ class LandingViewMobileSkillsTab extends StatelessWidget {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 56.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
+          ),
           sliver: const SliverToBoxAdapter(
             child: SkillsTabBigText(),
           ),
         ),
         SliverToBoxAdapter(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 40.w, vertical: 32.h),
+            margin: EdgeInsets.symmetric(
+              horizontal: AppConstants.mobileHorizontalPadVal.w,
+              vertical: 40.h,
+            ),
             child: const SkillsProgressList(),
           ),
         ),

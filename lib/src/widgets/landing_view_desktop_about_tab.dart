@@ -15,12 +15,18 @@ import 'package:personal_portfolio/src/widgets/small_selection_sliver_grid.dart'
 import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
 
 class LandingViewDesktopAboutTab extends StatelessWidget {
-  const LandingViewDesktopAboutTab({super.key});
+  const LandingViewDesktopAboutTab({
+    super.key,
+    this.tabletLayoutProjectAspectRatio,
+    this.tabletApproachGridCrossAxisCount,
+  });
+
+  final double? tabletLayoutProjectAspectRatio;
+  final int? tabletApproachGridCrossAxisCount;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
       slivers: [
         const SliverToBoxAdapter(
           child: Align(
@@ -70,7 +76,9 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 100.w),
-          sliver: const SmallSelectionSliverGrid(),
+          sliver: SmallSelectionSliverGrid(
+            tabletLayoutChildAspectRatio: tabletLayoutProjectAspectRatio,
+          ),
         ),
         SliverToBoxAdapter(
           child: Align(
@@ -113,13 +121,12 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 90.w),
-          sliver: const MyApproachSliverGrid(),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.only(bottom: 32.h),
-          sliver: const SliverToBoxAdapter(
-            child: ContactMeSection(aspectRatio: 2),
+          sliver: MyApproachSliverGrid(
+            tabletCrossAxisCount: tabletApproachGridCrossAxisCount,
           ),
+        ),
+        const SliverToBoxAdapter(
+          child: ContactMeSection(aspectRatio: 2),
         ),
       ],
     );

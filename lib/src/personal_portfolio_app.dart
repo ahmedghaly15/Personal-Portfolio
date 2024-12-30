@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/di/di.dart';
 import 'package:personal_portfolio/src/core/themes/app_themes.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
@@ -17,7 +16,7 @@ class PersonalPortfolioApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, __) => BlocProvider<LandingCubit>(
-        create: (_) => getIt.get<LandingCubit>(),
+        create: (_) => LandingCubit(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: AppStrings.appTitle,

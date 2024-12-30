@@ -7,7 +7,14 @@ import 'package:personal_portfolio/src/widgets/landing_view_desktop_portfolio_ta
 import 'package:personal_portfolio/src/widgets/landing_view_desktop_skills_tab.dart';
 
 class LandingViewDesktopLayout extends StatelessWidget {
-  const LandingViewDesktopLayout({super.key});
+  const LandingViewDesktopLayout({
+    super.key,
+    this.tabletProjectAspectRatio,
+    this.tabletApproachGridCrossAxisCount,
+  });
+
+  final double? tabletProjectAspectRatio;
+  final int? tabletApproachGridCrossAxisCount;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +35,19 @@ class LandingViewDesktopLayout extends StatelessWidget {
           builder: (context, selectedTabNavIndex) {
             switch (selectedTabNavIndex) {
               case 0:
-                return const LandingViewDesktopAboutTab();
+                return LandingViewDesktopAboutTab(
+                  tabletLayoutProjectAspectRatio: tabletProjectAspectRatio,
+                  tabletApproachGridCrossAxisCount:
+                      tabletApproachGridCrossAxisCount,
+                );
 
               case 1:
                 return const LandingViewDesktopSkillsTab();
 
               case 2:
-                return const LandingViewDesktopPortfolioTab();
+                return LandingViewDesktopPortfolioTab(
+                  tabletProjectAspectRatio: tabletProjectAspectRatio,
+                );
 
               default:
                 return const LandingViewDesktopAboutTab();

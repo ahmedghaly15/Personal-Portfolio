@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/widgets/animated_copy_my_email_card.dart';
-import 'package:personal_portfolio/src/widgets/animated_prioritize_img.dart';
-import 'package:personal_portfolio/src/widgets/animated_tech_enthusiast_card.dart';
+import 'package:personal_portfolio/src/widgets/copy_my_email_card.dart';
+import 'package:personal_portfolio/src/widgets/prioritize_img.dart';
+import 'package:personal_portfolio/src/widgets/tech_enthusiast_card.dart';
 
 class DesktopPassionAndPurposeSection extends StatelessWidget {
   const DesktopPassionAndPurposeSection({super.key});

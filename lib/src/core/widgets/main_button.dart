@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
@@ -75,4 +76,41 @@ class MainButton extends StatelessWidget {
       ),
     );
   }
+
+  factory MainButton.icon({
+    required BuildContext context,
+    required String labelText,
+    required String svgIcon,
+    TextStyle? textStyle,
+    double borderRadius = 14,
+    void Function()? onPressed,
+    double? width,
+    double? height,
+    EdgeInsetsGeometry? padding,
+    EdgeInsetsGeometry? margin,
+    Color? backgroundColor,
+    Color? borderColor,
+    Gradient? gradient,
+  }) =>
+      MainButton(
+        height: height,
+        width: width,
+        padding: padding,
+        gradient: gradient,
+        margin: margin,
+        backgroundColor: backgroundColor,
+        borderColor: borderColor,
+        onPressed: onPressed,
+        child: Row(
+          spacing: 16.w,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              labelText,
+              style: textStyle ?? AppTextStyles.font18Medium(context),
+            ),
+            SvgPicture.asset(svgIcon),
+          ],
+        ),
+      );
 }
