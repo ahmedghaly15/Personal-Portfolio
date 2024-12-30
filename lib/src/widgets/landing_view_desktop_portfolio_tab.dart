@@ -9,12 +9,9 @@ class LandingViewDesktopPortfolioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
       slivers: [
         const SliverToBoxAdapter(
-          child: Align(
-            child: TabsNav(),
-          ),
+          child: Align(child: TabsNav()),
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 56.h, horizontal: 100.w),
