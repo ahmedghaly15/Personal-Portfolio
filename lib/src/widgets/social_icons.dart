@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/models/social_icon.dart';
@@ -14,9 +15,12 @@ class SocialIcons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
         SocialIcon.socialIcons.length,
-        (index) => AnimatedSocialIcon(
-          socialIcon: SocialIcon.socialIcons[index],
-          index: index,
+        (index) => FadeInDown(
+          from: (100 + (10 * index)).toDouble(),
+          delay: Duration(milliseconds: 200 * index),
+          child: SocialIconItem(
+            socialIcon: SocialIcon.socialIcons[index],
+          ),
         ),
         growable: false,
       ),
