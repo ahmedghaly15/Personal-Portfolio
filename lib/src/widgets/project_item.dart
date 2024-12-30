@@ -42,6 +42,7 @@ class ProjectItem extends StatelessWidget {
                   child: Image.asset(
                     Assets.imagesProjectItemBackground,
                     fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => const Icon(Icons.error),
                   ),
                 ),
               ),
@@ -67,34 +68,29 @@ class ProjectItem extends StatelessWidget {
             ),
           ),
           MySizedBox.height14,
-          OverflowBar(
+          Wrap(
             spacing: 16.w,
-            alignment: MainAxisAlignment.spaceEvenly,
-            overflowAlignment: OverflowBarAlignment.center,
+            direction: Axis.horizontal,
+            alignment: WrapAlignment.spaceEvenly,
+            runAlignment: WrapAlignment.start,
             children: [
               if (project.downloadUrl != null)
-                Flexible(
-                  child: ProjectItemTextButton(
-                    url: project.downloadUrl!,
-                    titleText: AppStrings.downloadApp,
-                    svgPath: Assets.svgsDownloadIcon,
-                  ),
+                ProjectItemTextButton(
+                  url: project.downloadUrl!,
+                  titleText: AppStrings.downloadApp,
+                  svgPath: Assets.svgsDownloadIcon,
                 ),
               if (project.githubUrl != null)
-                Flexible(
-                  child: ProjectItemTextButton(
-                    url: project.githubUrl!,
-                    titleText: AppStrings.viewOnGitHub,
-                    svgPath: Assets.svgsGithubIcon,
-                  ),
+                ProjectItemTextButton(
+                  url: project.githubUrl!,
+                  titleText: AppStrings.viewOnGitHub,
+                  svgPath: Assets.svgsGithubIcon,
                 ),
               if (project.promoUrl != null)
-                Flexible(
-                  child: ProjectItemTextButton(
-                    url: project.promoUrl!,
-                    titleText: AppStrings.seeThePromo,
-                    svgPath: Assets.svgsPlay,
-                  ),
+                ProjectItemTextButton(
+                  url: project.promoUrl!,
+                  titleText: AppStrings.seeThePromo,
+                  svgPath: Assets.svgsPlay,
                 ),
             ],
           ),
