@@ -21,7 +21,7 @@ class LandingViewDesktopPortfolioTab extends StatelessWidget {
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 56.h, horizontal: 100.w),
           sliver: DesktopProjectsSliverGrid(
-            tabletProjectAspectRatio: tabletProjectAspectRatio,
+            childAspectRatio: tabletProjectAspectRatio,
           ),
         ),
       ],

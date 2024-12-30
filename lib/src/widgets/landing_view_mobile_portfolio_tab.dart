@@ -19,35 +19,25 @@ class LandingViewMobilePortfolioTab extends StatelessWidget {
           ),
           sliver: const SliverToBoxAdapter(child: TabsNav()),
         ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppConstants.mobileHorizontalPadVal.w,
-              vertical: 48.h,
-            ),
-            child: Wrap(
-              direction: Axis.horizontal,
-              alignment: WrapAlignment.center,
-              runAlignment: WrapAlignment.start,
-              spacing: 40.w,
-              runSpacing: 32.h,
-              children: List.generate(
-                Project.portfolio.length,
-                (index) => AnimationConfiguration.staggeredList(
-                  duration: const Duration(milliseconds: 675),
-                  position: index,
-                  child: FadeInAnimation(
-                    child: ScaleAnimation(
-                      child: AspectRatio(
-                        aspectRatio: 0.7,
-                        child: ProjectItem(
-                          project: Project.portfolio[index],
-                        ),
-                      ),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppConstants.mobileHorizontalPadVal.w,
+            vertical: 48.h,
+          ),
+          sliver: SliverList.builder(
+            itemCount: Project.portfolio.length,
+            itemBuilder: (_, index) => AnimationConfiguration.staggeredList(
+              duration: const Duration(milliseconds: 675),
+              position: index,
+              child: FadeInAnimation(
+                child: ScaleAnimation(
+                  child: AspectRatio(
+                    aspectRatio: 0.7,
+                    child: ProjectItem(
+                      project: Project.portfolio[index],
                     ),
                   ),
                 ),
-                growable: false,
               ),
             ),
           ),
