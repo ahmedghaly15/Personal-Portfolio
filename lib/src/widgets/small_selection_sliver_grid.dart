@@ -5,13 +5,19 @@ import 'package:personal_portfolio/src/widgets/animated_project_item.dart';
 import 'package:personal_portfolio/src/models/project.dart';
 
 class SmallSelectionSliverGrid extends StatelessWidget {
-  const SmallSelectionSliverGrid({super.key});
+  const SmallSelectionSliverGrid({
+    super.key,
+    this.tabletLayoutChildAspectRatio,
+  });
+
+  final double? tabletLayoutChildAspectRatio;
 
   @override
   Widget build(BuildContext context) {
     return SliverGrid.count(
       crossAxisCount: 2,
       crossAxisSpacing: 40.w,
+      childAspectRatio: tabletLayoutChildAspectRatio ?? 1,
       children: List.generate(
         2,
         (index) => AnimatedProjectItem(
