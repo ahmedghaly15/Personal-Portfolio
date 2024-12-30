@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
@@ -95,23 +94,14 @@ class ContactMeContent extends StatelessWidget {
           ),
         ),
         ElasticIn(
-          child: MainButton(
+          child: MainButton.icon(
+            context: context,
+            svgIcon: Assets.svgsLinkArrow,
+            labelText: AppStrings.contactMeNow,
             width: contactMeButtonWidth,
             onPressed: () async => await openUrl(
               AppStrings.myGmail,
               isEmail: true,
-            ),
-            child: Row(
-              spacing: 16.w,
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  AppStrings.contactMeNow,
-                  style: AppTextStyles.font18Medium(context),
-                ),
-                SvgPicture.asset(Assets.svgsLinkArrow),
-              ],
             ),
           ),
         ),

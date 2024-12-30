@@ -3,8 +3,6 @@ import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, Uint8List, rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
@@ -30,39 +28,21 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
         overflowSpacing: 16.h,
         spacing: 24.w,
         children: [
-          MainButton(
+          MainButton.icon(
+            context: context,
+            labelText: AppStrings.seeMyWork,
+            svgIcon: Assets.svgsLinkArrow,
             gradient: gradient,
             width: areExpanded ? double.infinity : null,
             onPressed: () async => await openUrl(AppStrings.gitHubUrl),
-            borderRadius: 14,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              spacing: 10.w,
-              children: [
-                Text(
-                  AppStrings.seeMyWork,
-                  style: AppTextStyles.font18Medium(context),
-                ),
-                SvgPicture.asset(Assets.svgsLinkArrow),
-              ],
-            ),
           ),
-          MainButton(
+          MainButton.icon(
+            context: context,
+            labelText: AppStrings.downloadCV,
+            svgIcon: Assets.svgsDownloadIcon,
             gradient: gradient,
             width: areExpanded ? double.infinity : null,
             onPressed: () async => await _downloadCV(),
-            borderRadius: 14,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              spacing: 10.w,
-              children: [
-                Text(
-                  AppStrings.downloadCV,
-                  style: AppTextStyles.font18Medium(context),
-                ),
-                SvgPicture.asset(Assets.svgsDownloadIcon),
-              ],
-            ),
           ),
         ],
       ),
