@@ -115,11 +115,8 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 90.w),
           sliver: const MyApproachSliverGrid(),
         ),
-        SliverPadding(
-          padding: EdgeInsets.only(bottom: 32.h),
-          sliver: const SliverToBoxAdapter(
-            child: ContactMeSection(aspectRatio: 2),
-          ),
+        const SliverToBoxAdapter(
+          child: ContactMeSection(aspectRatio: 2),
         ),
       ],
     );
