@@ -11,10 +11,6 @@ class SocialIcon {
 
   static const List<SocialIcon> socialIcons = [
     SocialIcon(
-      icon: Assets.svgsInstagramIcon,
-      url: "https://www.instagram.com/aboghaly___/",
-    ),
-    SocialIcon(
       url: AppStrings.gitHubUrl,
       icon: Assets.svgsGithubIcon,
     ),

@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 
+import '../models/work_experience.dart';
+
 class ExperienceItem extends StatelessWidget {
-  const ExperienceItem({super.key});
+  const ExperienceItem({super.key, required this.workExperience});
+
+  final WorkExperience workExperience;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +35,36 @@ class ExperienceItem extends StatelessWidget {
         alignment: MainAxisAlignment.center,
         overflowAlignment: OverflowBarAlignment.start,
         children: [
-          Image.asset(Assets.imagesInternExperienceImg),
+          Image.asset(workExperience.imgPath),
           Column(
             spacing: 12.h,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                AppStrings.flutterDevIntern,
-                style: AppTextStyles.font26Bold(context),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    workExperience.title,
+                    style: AppTextStyles.font26Bold(context),
+                  ),
+                  Text(
+                    workExperience.period,
+                    style: AppTextStyles.font16Regular(context),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    workExperience.company,
+                    style: AppTextStyles.font13Medium(context),
+                  ),
+                  Text(
+                    workExperience.jobMode,
+                    style: AppTextStyles.font13Medium(context),
+                  ),
+                ],
               ),
               Text(
                 AppStrings.myInternDescription,

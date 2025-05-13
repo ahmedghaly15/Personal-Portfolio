@@ -2,9 +2,9 @@
 class Assets {
   Assets._();
 
-  /// Assets for cvAhmedGhaly
-  /// assets/cv/Ahmed-Ghaly.pdf
-  static const String cvAhmedGhaly = "assets/cv/Ahmed-Ghaly.pdf";
+  /// Assets for cvAhmed Ghaly  Flutter Dev
+  /// assets/cv/Ahmed Ghaly - Flutter Dev.pdf
+  static const String cvAhmedGhaly = "assets/cv/Ahmed Ghaly - Flutter Dev.pdf";
 
   /// Assets for imagesBackgroundGridPattern
   /// assets/images/background_grid-pattern.png
@@ -30,6 +30,10 @@ class Assets {
   static const String imagesFooterGridPattern =
       "assets/images/footer-grid-pattern.png";
 
+  /// Assets for imagesFreelanceIcon
+  /// assets/images/freelance-icon.png
+  static const String imagesFreelanceIcon = "assets/images/freelance-icon.png";
+
   /// Assets for imagesIcareIcon
   /// assets/images/icare_icon.png
   static const String imagesIcareIcon = "assets/images/icare_icon.png";
@@ -38,6 +42,10 @@ class Assets {
   /// assets/images/intern-experience-img.png
   static const String imagesInternExperienceImg =
       "assets/images/intern-experience-img.png";
+
+  /// Assets for imagesJobIcon
+  /// assets/images/job-icon.png
+  static const String imagesJobIcon = "assets/images/job-icon.png";
 
   /// Assets for imagesLinkupIcon
   /// assets/images/linkup_icon.png

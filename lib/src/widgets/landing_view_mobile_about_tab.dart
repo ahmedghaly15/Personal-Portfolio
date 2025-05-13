@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
+import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
 import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
 import 'package:personal_portfolio/src/models/approach.dart';
 import 'package:personal_portfolio/src/models/project.dart';
+import 'package:personal_portfolio/src/models/work_experience.dart';
 import 'package:personal_portfolio/src/widgets/animated_project_item.dart';
 import 'package:personal_portfolio/src/widgets/approach_item.dart';
 import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
@@ -153,13 +155,17 @@ class LandingViewMobileAboutTab extends StatelessWidget {
             ),
           ),
         ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(
-              left: AppConstants.mobileHorizontalPadVal.w,
-              right: AppConstants.mobileHorizontalPadVal.w,
+        SliverPadding(
+          padding: EdgeInsets.only(
+            left: AppConstants.mobileHorizontalPadVal.w,
+            right: AppConstants.mobileHorizontalPadVal.w,
+          ),
+          sliver: SliverList.separated(
+            itemCount: WorkExperience.workExperience.length,
+            itemBuilder: (_, index) => ExperienceItem(
+              workExperience: WorkExperience.workExperience[index],
             ),
-            child: const ExperienceItem(),
+            separatorBuilder: (_, __) => MySizedBox.height14,
           ),
         ),
         SliverToBoxAdapter(

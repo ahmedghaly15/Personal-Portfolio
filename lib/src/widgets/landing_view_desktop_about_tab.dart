@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,9 @@ import 'package:personal_portfolio/src/widgets/desktop_passion_and_purpose_secti
 import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
 import 'package:personal_portfolio/src/widgets/small_selection_sliver_grid.dart';
 import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
+
+import '../core/widgets/my_sized_box.dart';
+import '../models/work_experience.dart';
 
 class LandingViewDesktopAboutTab extends StatelessWidget {
   const LandingViewDesktopAboutTab({
@@ -97,15 +101,22 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
             ),
           ),
         ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(
-              top: 70.h,
-              bottom: 130.h,
-              left: 90.w,
-              right: 90.w,
+        SliverPadding(
+          padding: EdgeInsets.only(
+            top: 70.h,
+            bottom: 130.h,
+            left: 90.w,
+            right: 90.w,
+          ),
+          sliver: SliverList.separated(
+            itemCount: WorkExperience.workExperience.length,
+            itemBuilder: (_, index) => FadeInLeft(
+              delay: Duration(milliseconds: 300 * index),
+              child: ExperienceItem(
+                workExperience: WorkExperience.workExperience[index],
+              ),
             ),
-            child: const ExperienceItem(),
+            separatorBuilder: (_, __) => MySizedBox.height14,
           ),
         ),
         SliverToBoxAdapter(
