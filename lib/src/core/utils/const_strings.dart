@@ -4,4 +4,5 @@ class ConstStrings {
   static const String supabaseUrlKey = "SUPABASE_URL";
   static const String supabaseAnonKey = "SUPABASE_ANON_KEY";
   static const String dataTable = 'Data';
+  static const String myIdKey = "MY_ID";
 }

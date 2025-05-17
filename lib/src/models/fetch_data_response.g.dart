@@ -21,15 +21,3 @@ Map<String, dynamic> _$FetchDataResponseToJson(FetchDataResponse instance) =>
       'skills': instance.skills.toJson(),
       'portfolio': instance.portfolio.map((e) => e.toJson()).toList(),
     };
-
-ProjectRequest _$ProjectRequestFromJson(Map<String, dynamic> json) =>
-    ProjectRequest(
-      portfolio: (json['portfolio'] as List<dynamic>)
-          .map((e) => Project.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$ProjectRequestToJson(ProjectRequest instance) =>
-    <String, dynamic>{
-      'portfolio': instance.portfolio.map((e) => e.toJson()).toList(),
-    };

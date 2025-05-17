@@ -21,14 +21,3 @@ class FetchDataResponse {
       _$FetchDataResponseFromJson(json);
   Map<String, dynamic> toJson() => _$FetchDataResponseToJson(this);
 }
-
-@JsonSerializable(explicitToJson: true)
-class ProjectRequest {
-  final List<Project> portfolio;
-
-  ProjectRequest({required this.portfolio});
-
-  factory ProjectRequest.fromJson(Map<String, dynamic> json) =>
-      _$ProjectRequestFromJson(json);
-  Map<String, dynamic> toJson() => _$ProjectRequestToJson(this);
-}
