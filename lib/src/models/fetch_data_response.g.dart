@@ -8,6 +8,7 @@ part of 'fetch_data_response.dart';
 
 FetchDataResponse _$FetchDataResponseFromJson(Map<String, dynamic> json) =>
     FetchDataResponse(
+      userId: json['user_id'] as String,
       about: About.fromJson(json['about'] as Map<String, dynamic>),
       skills: SkillTabModel.fromJson(json['skills'] as Map<String, dynamic>),
       portfolio: (json['portfolio'] as List<dynamic>)
@@ -17,6 +18,7 @@ FetchDataResponse _$FetchDataResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FetchDataResponseToJson(FetchDataResponse instance) =>
     <String, dynamic>{
+      'user_id': instance.userId,
       'about': instance.about.toJson(),
       'skills': instance.skills.toJson(),
       'portfolio': instance.portfolio.map((e) => e.toJson()).toList(),

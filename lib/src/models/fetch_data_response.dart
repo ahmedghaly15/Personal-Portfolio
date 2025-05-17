@@ -7,11 +7,14 @@ part 'fetch_data_response.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class FetchDataResponse {
+  @JsonKey(name: 'user_id')
+  final String userId;
   final About about;
   final SkillTabModel skills;
   final List<Project> portfolio;
 
   FetchDataResponse({
+    required this.userId,
     required this.about,
     required this.skills,
     required this.portfolio,
