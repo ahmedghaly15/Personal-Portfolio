@@ -35,6 +35,8 @@ dependencies:
   json_annotation: ^4.9.0
   # Service locator
   get_it: ^8.0.3
+  # Renders After Effects animations natively on Flutter
+  lottie: ^3.3.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -54,6 +56,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/svgs/
+    - assets/lottie/
     - assets/cv/
     - .env
 
