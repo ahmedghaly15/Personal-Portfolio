@@ -8,7 +8,8 @@ part of 'about.dart';
 
 About _$AboutFromJson(Map<String, dynamic> json) => About(
       headerSmallText: json['headerSmallText'] as String,
-      headerBigText: json['headerBigText'] as String,
+      headerBigText: AboutHeaderTextModel.fromJson(
+          json['headerBigText'] as Map<String, dynamic>),
       description: json['description'] as String,
       seeMyWorkLink: json['seeMyWorkLink'] as String,
       downloadCVLink: json['downloadCVLink'] as String,
@@ -19,21 +20,38 @@ About _$AboutFromJson(Map<String, dynamic> json) => About(
           .map((e) => WorkExperienceModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       approaches: (json['approaches'] as List<dynamic>)
-          .map((e) => Approach.fromJson(e as Map<String, dynamic>))
+          .map((e) => ApproachModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      contactMe: ContactMe.fromJson(json['contactMe'] as Map<String, dynamic>),
+      contactMe:
+          ContactMeModel.fromJson(json['contactMe'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AboutToJson(About instance) => <String, dynamic>{
       'headerSmallText': instance.headerSmallText,
-      'headerBigText': instance.headerBigText,
       'description': instance.description,
       'seeMyWorkLink': instance.seeMyWorkLink,
       'downloadCVLink': instance.downloadCVLink,
+      'headerBigText': instance.headerBigText.toJson(),
       'projects': instance.projects.map((e) => e.toJson()).toList(),
       'workExperience': instance.workExperience.map((e) => e.toJson()).toList(),
       'approaches': instance.approaches.map((e) => e.toJson()).toList(),
       'contactMe': instance.contactMe.toJson(),
+    };
+
+AboutHeaderTextModel _$AboutHeaderTextModelFromJson(
+        Map<String, dynamic> json) =>
+    AboutHeaderTextModel(
+      text1: json['text1'] as String,
+      text2: json['text2'] as String,
+      coloredString: json['coloredString'] as String,
+    );
+
+Map<String, dynamic> _$AboutHeaderTextModelToJson(
+        AboutHeaderTextModel instance) =>
+    <String, dynamic>{
+      'text1': instance.text1,
+      'text2': instance.text2,
+      'coloredString': instance.coloredString,
     };
 
 Project _$ProjectFromJson(Map<String, dynamic> json) => Project(
@@ -61,7 +79,6 @@ WorkExperienceModel _$WorkExperienceModelFromJson(Map<String, dynamic> json) =>
       endDate: json['endDate'] as String,
       company: json['company'] as String,
       experienceStatus: json['experienceStatus'] as String,
-      experienceMode: json['experienceMode'] as String,
       description: (json['description'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -75,33 +92,38 @@ Map<String, dynamic> _$WorkExperienceModelToJson(
       'endDate': instance.endDate,
       'company': instance.company,
       'experienceStatus': instance.experienceStatus,
-      'experienceMode': instance.experienceMode,
       'description': instance.description,
     };
 
-Approach _$ApproachFromJson(Map<String, dynamic> json) => Approach(
+ApproachModel _$ApproachModelFromJson(Map<String, dynamic> json) =>
+    ApproachModel(
       title: json['title'] as String,
       description: json['description'] as String,
     );
 
-Map<String, dynamic> _$ApproachToJson(Approach instance) => <String, dynamic>{
+Map<String, dynamic> _$ApproachModelToJson(ApproachModel instance) =>
+    <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
     };
 
-ContactMe _$ContactMeFromJson(Map<String, dynamic> json) => ContactMe(
-      title: json['title'] as String,
+ContactMeModel _$ContactMeModelFromJson(Map<String, dynamic> json) =>
+    ContactMeModel(
+      text1: json['text1'] as String,
+      colorfulText: json['colorfulText'] as String,
       description: json['description'] as String,
-      link: json['link'] as String,
+      contactMeUrl: json['contactMeUrl'] as String,
       gitHubUrl: json['gitHubUrl'] as String,
       linkedInUrl: json['linkedInUrl'] as String,
       mediumUrl: json['mediumUrl'] as String,
     );
 
-Map<String, dynamic> _$ContactMeToJson(ContactMe instance) => <String, dynamic>{
-      'title': instance.title,
+Map<String, dynamic> _$ContactMeModelToJson(ContactMeModel instance) =>
+    <String, dynamic>{
+      'text1': instance.text1,
+      'colorfulText': instance.colorfulText,
       'description': instance.description,
-      'link': instance.link,
+      'contactMeUrl': instance.contactMeUrl,
       'gitHubUrl': instance.gitHubUrl,
       'linkedInUrl': instance.linkedInUrl,
       'mediumUrl': instance.mediumUrl,

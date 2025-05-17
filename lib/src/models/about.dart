@@ -4,15 +4,12 @@ part 'about.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class About {
-  final String headerSmallText,
-      headerBigText,
-      description,
-      seeMyWorkLink,
-      downloadCVLink;
+  final String headerSmallText, description, seeMyWorkLink, downloadCVLink;
+  final AboutHeaderTextModel headerBigText;
   final List<Project> projects;
   final List<WorkExperienceModel> workExperience;
-  final List<Approach> approaches;
-  final ContactMe contactMe;
+  final List<ApproachModel> approaches;
+  final ContactMeModel contactMe;
 
   About({
     required this.headerSmallText,
@@ -28,6 +25,22 @@ class About {
 
   factory About.fromJson(Map<String, dynamic> json) => _$AboutFromJson(json);
   Map<String, dynamic> toJson() => _$AboutToJson(this);
+}
+
+@JsonSerializable()
+class AboutHeaderTextModel {
+  final String text1, text2, coloredString;
+
+  AboutHeaderTextModel({
+    required this.text1,
+    required this.text2,
+    required this.coloredString,
+  });
+
+  factory AboutHeaderTextModel.fromJson(Map<String, dynamic> json) =>
+      _$AboutHeaderTextModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AboutHeaderTextModelToJson(this);
 }
 
 @JsonSerializable()
@@ -51,12 +64,7 @@ class Project {
 
 @JsonSerializable()
 class WorkExperienceModel {
-  final String title,
-      startDate,
-      endDate,
-      company,
-      experienceStatus,
-      experienceMode;
+  final String title, startDate, endDate, company, experienceStatus;
   final List<String> description;
 
   WorkExperienceModel({
@@ -65,7 +73,6 @@ class WorkExperienceModel {
     required this.endDate,
     required this.company,
     required this.experienceStatus,
-    required this.experienceMode,
     required this.description,
   });
 
@@ -75,30 +82,37 @@ class WorkExperienceModel {
 }
 
 @JsonSerializable()
-class Approach {
+class ApproachModel {
   final String title, description;
 
-  Approach({required this.title, required this.description});
+  ApproachModel({required this.title, required this.description});
 
-  factory Approach.fromJson(Map<String, dynamic> json) =>
-      _$ApproachFromJson(json);
-  Map<String, dynamic> toJson() => _$ApproachToJson(this);
+  factory ApproachModel.fromJson(Map<String, dynamic> json) =>
+      _$ApproachModelFromJson(json);
+  Map<String, dynamic> toJson() => _$ApproachModelToJson(this);
 }
 
 @JsonSerializable()
-class ContactMe {
-  final String title, description, link, gitHubUrl, linkedInUrl, mediumUrl;
+class ContactMeModel {
+  final String text1,
+      colorfulText,
+      description,
+      contactMeUrl,
+      gitHubUrl,
+      linkedInUrl,
+      mediumUrl;
 
-  ContactMe({
-    required this.title,
+  ContactMeModel({
+    required this.text1,
+    required this.colorfulText,
     required this.description,
-    required this.link,
+    required this.contactMeUrl,
     required this.gitHubUrl,
     required this.linkedInUrl,
     required this.mediumUrl,
   });
 
-  factory ContactMe.fromJson(Map<String, dynamic> json) =>
-      _$ContactMeFromJson(json);
-  Map<String, dynamic> toJson() => _$ContactMeToJson(this);
+  factory ContactMeModel.fromJson(Map<String, dynamic> json) =>
+      _$ContactMeModelFromJson(json);
+  Map<String, dynamic> toJson() => _$ContactMeModelToJson(this);
 }
