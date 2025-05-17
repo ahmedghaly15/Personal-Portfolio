@@ -9,7 +9,6 @@ class About {
   final List<Project> projects;
   final List<WorkExperienceModel> workExperience;
   final List<ApproachModel> approaches;
-  final ContactMeModel contactMe;
 
   About({
     required this.headerSmallText,
@@ -20,7 +19,6 @@ class About {
     required this.projects,
     required this.workExperience,
     required this.approaches,
-    required this.contactMe,
   });
 
   factory About.fromJson(Map<String, dynamic> json) => _$AboutFromJson(json);
@@ -90,29 +88,4 @@ class ApproachModel {
   factory ApproachModel.fromJson(Map<String, dynamic> json) =>
       _$ApproachModelFromJson(json);
   Map<String, dynamic> toJson() => _$ApproachModelToJson(this);
-}
-
-@JsonSerializable()
-class ContactMeModel {
-  final String text1,
-      colorfulText,
-      description,
-      contactMeUrl,
-      gitHubUrl,
-      linkedInUrl,
-      mediumUrl;
-
-  ContactMeModel({
-    required this.text1,
-    required this.colorfulText,
-    required this.description,
-    required this.contactMeUrl,
-    required this.gitHubUrl,
-    required this.linkedInUrl,
-    required this.mediumUrl,
-  });
-
-  factory ContactMeModel.fromJson(Map<String, dynamic> json) =>
-      _$ContactMeModelFromJson(json);
-  Map<String, dynamic> toJson() => _$ContactMeModelToJson(this);
 }
