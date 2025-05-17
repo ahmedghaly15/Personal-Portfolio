@@ -7,12 +7,14 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 import 'src/core/utils/bloc_observer.dart';
 import 'src/core/utils/const_strings.dart';
+import 'src/core/utils/functions/setup_di.dart';
 import 'src/personal_portfolio_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   VisibilityDetectorController.instance.updateInterval = Duration.zero;
   Bloc.observer = MyBlocObserver();
+  await setupDI();
   await ScreenUtil.ensureScreenSize();
   await dotenv.load();
   await Supabase.initialize(

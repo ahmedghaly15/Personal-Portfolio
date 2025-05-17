@@ -33,6 +33,8 @@ dependencies:
   flutter_dotenv: ^5.2.1
   # Automatically generate code for converting to and from JSON by annotating Dart classes.
   json_annotation: ^4.9.0
+  # Service locator
+  get_it: ^8.0.3
 
 dev_dependencies:
   flutter_lints: ^4.0.0

@@ -34,6 +34,7 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
             gradient: gradient,
             width: areExpanded ? double.infinity : null,
             onPressed: () async {
+
               // await openUrl(AppStrings.gitHubUrl);
             },
           ),
