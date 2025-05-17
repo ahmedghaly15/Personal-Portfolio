@@ -4,7 +4,8 @@ class Assets {
 
   /// Assets for cvAhmed Ghaly  Flutter Dev
   /// assets/cv/Ahmed Ghaly - Flutter Dev.pdf
-  static const String cvAhmedGhaly = "assets/cv/Ahmed Ghaly - Flutter Dev.pdf";
+  static const String cvAhmedGhalyFlutterDev =
+      "assets/cv/Ahmed Ghaly - Flutter Dev.pdf";
 
   /// Assets for imagesBackgroundGridPattern
   /// assets/images/background_grid-pattern.png
@@ -88,6 +89,16 @@ class Assets {
   /// assets/images/tech-enthusiast-box-img.png
   static const String imagesTechEnthusiastBoxImg =
       "assets/images/tech-enthusiast-box-img.png";
+
+  /// Assets for lottieErrorAnimation
+  /// assets/lottie/error_animation.json
+  static const String lottieErrorAnimation =
+      "assets/lottie/error_animation.json";
+
+  /// Assets for lottieLoadingAnimation
+  /// assets/lottie/loading_animation.json
+  static const String lottieLoadingAnimation =
+      "assets/lottie/loading_animation.json";
 
   /// Assets for svgsCopyIcon
   /// assets/svgs/copy-icon.svg

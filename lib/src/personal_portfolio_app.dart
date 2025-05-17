@@ -6,6 +6,8 @@ import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
 import 'package:personal_portfolio/src/views/landing_view.dart';
 
+import 'core/utils/functions/setup_di.dart';
+
 class PersonalPortfolioApp extends StatelessWidget {
   const PersonalPortfolioApp({super.key});
 
@@ -16,7 +18,7 @@ class PersonalPortfolioApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, __) => BlocProvider<LandingCubit>(
-        create: (_) => LandingCubit(),
+        create: (_) => getIt.get<LandingCubit>()..fetchData(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: AppStrings.appTitle,

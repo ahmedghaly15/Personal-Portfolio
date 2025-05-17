@@ -51,7 +51,7 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
   }
 
   Future<void> _downloadCV() async {
-    final ByteData data = await rootBundle.load(Assets.cvAhmedGhaly);
+    final ByteData data = await rootBundle.load(Assets.cvAhmedGhalyFlutterDev);
     final Uint8List bytes = data.buffer.asUint8List();
     await FileSaver.instance.saveFile(
       name: 'Ahmed Ghaly - Flutter Dev', // The name of the file

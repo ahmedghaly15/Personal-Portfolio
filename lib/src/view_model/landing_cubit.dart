@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -32,9 +33,10 @@ class LandingCubit extends Cubit<LandingState> {
         data: data,
       ));
     } catch (e) {
+      debugPrint(e.toString());
       emit(state.copyWith(
         status: LandingStatus.fetchDataError,
-        error: e.toString(),
+        error: "Something went wrong. Please try again later.",
       ));
     }
   }

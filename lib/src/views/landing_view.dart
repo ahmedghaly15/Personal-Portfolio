@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/src/core/widgets/responsive_layout.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_desktop_layout.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_layout.dart';
+
+import 'widgets/landing_view_body_bloc_builder.dart';
+
+
 
 class LandingView extends StatelessWidget {
   const LandingView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ResponsiveLayout(
-        mobileLayout: (_) => const LandingViewMobileLayout(),
-        tabletLayout: (_) => const LandingViewDesktopLayout(
-          tabletProjectAspectRatio: 1 / 2,
-          tabletApproachGridCrossAxisCount: 2,
-        ),
-        desktopLayout: (_) => const LandingViewDesktopLayout(),
-      ),
+    return const Scaffold(
+      body: LandingViewBodyBlocBuilder(),
     );
   }
 }
