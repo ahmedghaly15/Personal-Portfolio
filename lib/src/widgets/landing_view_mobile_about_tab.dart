@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/widgets/main_button.dart';
-import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
-import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
-import 'package:personal_portfolio/src/models/approach.dart';
-import 'package:personal_portfolio/src/models/project.dart';
-import 'package:personal_portfolio/src/models/work_experience.dart';
-import 'package:personal_portfolio/src/widgets/animated_project_item.dart';
-import 'package:personal_portfolio/src/widgets/approach_item.dart';
-import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
-import 'package:personal_portfolio/src/widgets/copy_my_email_card.dart';
-import 'package:personal_portfolio/src/widgets/custom_section_title.dart';
-import 'package:personal_portfolio/src/widgets/experience_item.dart';
-import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
-import 'package:personal_portfolio/src/widgets/prioritize_img.dart';
-import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
-import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
-import 'package:personal_portfolio/src/widgets/tech_enthusiast_card.dart';
+
+import '../core/utils/app_constants.dart';
+import '../core/utils/app_strings.dart';
+import '../core/widgets/main_button.dart';
+import '../core/widgets/my_sized_box.dart';
+import '../cubit/landing_cubit.dart';
+import '../models/approach.dart';
+import '../models/project.dart';
+import '../models/work_experience.dart';
+import 'animated_project_item.dart';
+import 'approach_item.dart';
+import 'contact_me_section.dart';
+import 'copy_my_email_card.dart';
+import 'custom_section_title.dart';
+import 'experience_item.dart';
+import 'landing_view_big_text.dart';
+import 'prioritize_img.dart';
+import 'see_my_work_and_download_cv_buttons.dart';
+import 'tabs_nav.dart';
+import 'tech_enthusiast_card.dart';
+
 
 class LandingViewMobileAboutTab extends StatelessWidget {
   const LandingViewMobileAboutTab({super.key});
