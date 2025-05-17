@@ -14,9 +14,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   VisibilityDetectorController.instance.updateInterval = Duration.zero;
   Bloc.observer = MyBlocObserver();
+  await dotenv.load();
   await setupDI();
   await ScreenUtil.ensureScreenSize();
-  await dotenv.load();
   await Supabase.initialize(
     url: dotenv.env[ConstStrings.supabaseUrlKey]!,
     anonKey: dotenv.env[ConstStrings.supabaseAnonKey]!,

@@ -10,23 +10,25 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        spacing: 16.h,
-        children: [
-          Lottie.asset(
-            Assets.lottieErrorAnimation,
-            repeat: false,
-          ),
-          Text(
-            'Something went wrong. Please try again later.',
-            style: AppTextStyles.font14Medium(context),
-            textAlign: TextAlign.center,
-          ),
-        ],
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 16.h,
+          children: [
+            Lottie.asset(
+              Assets.lottieErrorAnimation,
+              repeat: false,
+            ),
+            Text(
+              'Something went wrong. Please try again later.',
+              style: AppTextStyles.font14Medium(context),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }
