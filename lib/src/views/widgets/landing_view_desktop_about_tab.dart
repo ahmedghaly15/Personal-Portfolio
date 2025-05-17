@@ -2,31 +2,33 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/widgets/main_button.dart';
-import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
-import 'package:personal_portfolio/src/views/widgets/contact_me_section.dart';
-import 'package:personal_portfolio/src/views/widgets/custom_section_title.dart';
-import 'package:personal_portfolio/src/views/widgets/desktop_passion_and_purpose_section.dart';
-import 'package:personal_portfolio/src/views/widgets/experience_item.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_big_text.dart';
-import 'package:personal_portfolio/src/views/widgets/my_approach_sliver_grid.dart';
-import 'package:personal_portfolio/src/views/widgets/see_my_work_and_download_cv_buttons.dart';
-import 'package:personal_portfolio/src/views/widgets/small_selection_sliver_grid.dart';
-import 'package:personal_portfolio/src/views/widgets/tabs_nav.dart';
 
+import '../../core/utils/app_strings.dart';
+import '../../core/widgets/main_button.dart';
 import '../../core/widgets/my_sized_box.dart';
-import '../../models/work_experience.dart';
+import '../../models/about.dart';
+import '../../view_model/landing_cubit.dart';
+import 'contact_me_section.dart';
+import 'custom_section_title.dart';
+import 'desktop_passion_and_purpose_section.dart';
+import 'experience_item.dart';
+import 'landing_view_big_text.dart';
+import 'my_approach_sliver_grid.dart';
+import 'see_my_work_and_download_cv_buttons.dart';
+import 'small_selection_sliver_grid.dart';
+import 'tabs_nav.dart';
 
 class LandingViewDesktopAboutTab extends StatelessWidget {
   const LandingViewDesktopAboutTab({
     super.key,
     this.tabletLayoutProjectAspectRatio,
     this.tabletApproachGridCrossAxisCount,
+    required this.about,
   });
 
   final double? tabletLayoutProjectAspectRatio;
   final int? tabletApproachGridCrossAxisCount;
+  final About about;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +45,9 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
             child: const HeaderSmallText(text: AppStrings.dynamicAppMagic),
           ),
         ),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Align(
-            child: LandingViewBigText(),
+            child: LandingViewBigText(headerBigText: about.headerBigText),
           ),
         ),
         SliverToBoxAdapter(
@@ -56,8 +58,11 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
             ),
           ),
         ),
-        const SliverToBoxAdapter(
-          child: SeeMyWorkAndDownloadCVButtons(),
+        SliverToBoxAdapter(
+          child: SeeMyWorkAndDownloadCVButtons(
+            seeMyWorkUrl: about.seeMyWorkLink,
+            downloadCVUrl: about.downloadCVLink,
+          ),
         ),
         SliverToBoxAdapter(
           child: Container(
@@ -81,6 +86,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 100.w),
           sliver: SmallSelectionSliverGrid(
+            projects: about.projects,
             tabletLayoutChildAspectRatio: tabletLayoutProjectAspectRatio,
           ),
         ),
@@ -109,11 +115,11 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
             right: 90.w,
           ),
           sliver: SliverList.separated(
-            itemCount: WorkExperience.workExperience.length,
+            itemCount: about.workExperience.length,
             itemBuilder: (_, index) => FadeInLeft(
               delay: Duration(milliseconds: 300 * index),
               child: ExperienceItem(
-                workExperience: WorkExperience.workExperience[index],
+                workExperience: about.workExperience[index],
               ),
             ),
             separatorBuilder: (_, __) => MySizedBox.height14,
@@ -134,6 +140,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 90.w),
           sliver: MyApproachSliverGrid(
             tabletCrossAxisCount: tabletApproachGridCrossAxisCount,
+            approaches: about.approaches,
           ),
         ),
         const SliverToBoxAdapter(

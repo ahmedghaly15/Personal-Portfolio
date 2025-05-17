@@ -28,7 +28,7 @@ class LandingViewMobilePortfolioTab extends StatelessWidget {
             vertical: 48.h,
           ),
           sliver: SliverList.builder(
-            itemCount: Project.portfolio.length,
+            itemCount: projects.length,
             itemBuilder: (_, index) => AnimationConfiguration.staggeredList(
               duration: const Duration(milliseconds: 675),
               position: index,
@@ -37,7 +37,7 @@ class LandingViewMobilePortfolioTab extends StatelessWidget {
                   child: AspectRatio(
                     aspectRatio: 0.7,
                     child: ProjectItem(
-                      project: Project.portfolio[index],
+                      project: projects[index]
                     ),
                   ),
                 ),

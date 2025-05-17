@@ -7,9 +7,6 @@ import '../../core/utils/app_strings.dart';
 import '../../core/widgets/main_button.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
-import '../../models/approach.dart';
-import '../../models/project.dart';
-import '../../models/work_experience.dart';
 import '../../view_model/landing_cubit.dart';
 import 'animated_project_item.dart';
 import 'approach_item.dart';
@@ -41,21 +38,21 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
-            child: const HeaderSmallText(text: AppStrings.dynamicAppMagic),
+            child: HeaderSmallText(text: about.headerSmallText),
           ),
         ),
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 56.w),
-            child: const LandingViewBigText(),
+            child: LandingViewBigText(headerBigText: about.headerBigText),
           ),
         ),
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 24.h, horizontal: 56.w),
-            child: const FittedBox(
+            child: FittedBox(
               child: HeaderDescriptionText(
-                text: AppStrings.introduction,
+                text: about.description
               ),
             ),
           ),
@@ -67,7 +64,9 @@ class LandingViewMobileAboutTab extends StatelessWidget {
               right: AppConstants.mobileHorizontalPadVal.w,
               bottom: 64.h,
             ),
-            child: const SeeMyWorkAndDownloadCVButtons(
+            child: SeeMyWorkAndDownloadCVButtons(
+              seeMyWorkUrl: about.seeMyWorkLink,
+              downloadCVUrl: about.downloadCVLink,
               areExpanded: true,
               gradient: AppConstants.boxSecondaryLinearGradient,
             ),
@@ -123,7 +122,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
                 (index) => AspectRatio(
                   aspectRatio: 0.7,
                   child: AnimatedProjectItem(
-                    project: Project.portfolio[index],
+                    project: about.projects[index],
                     index: index,
                   ),
                 ),
@@ -165,9 +164,9 @@ class LandingViewMobileAboutTab extends StatelessWidget {
             right: AppConstants.mobileHorizontalPadVal.w,
           ),
           sliver: SliverList.separated(
-            itemCount: WorkExperience.workExperience.length,
+            itemCount: about.workExperience.length,
             itemBuilder: (_, index) => ExperienceItem(
-              workExperience: WorkExperience.workExperience[index],
+              workExperience: about.workExperience[index],
             ),
             separatorBuilder: (_, __) => MySizedBox.height14,
           ),
@@ -191,11 +190,11 @@ class LandingViewMobileAboutTab extends StatelessWidget {
               alignment: MainAxisAlignment.center,
               spacing: 40.w,
               children: List.generate(
-                Approach.myApproach.length,
+                about.approaches.length,
                 (index) => AspectRatio(
                   aspectRatio: 398 / 500,
                   child: ApproachItem(
-                    approach: Approach.myApproach[index],
+                    approach: about.approaches[index],
                     index: index,
                   ),
                 ),

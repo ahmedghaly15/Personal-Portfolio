@@ -43,6 +43,7 @@ class LandingViewDesktopLayout extends StatelessWidget {
                   tabletLayoutProjectAspectRatio: tabletProjectAspectRatio,
                   tabletApproachGridCrossAxisCount:
                       tabletApproachGridCrossAxisCount,
+                  about: data.about,
                 );
 
               case 1:
@@ -51,10 +52,11 @@ class LandingViewDesktopLayout extends StatelessWidget {
               case 2:
                 return LandingViewDesktopPortfolioTab(
                   tabletProjectAspectRatio: tabletProjectAspectRatio,
+                  projects: data.portfolio,
                 );
 
               default:
-                return const LandingViewDesktopAboutTab();
+                return LandingViewDesktopAboutTab(about: data.about);
             }
           },
         ),
