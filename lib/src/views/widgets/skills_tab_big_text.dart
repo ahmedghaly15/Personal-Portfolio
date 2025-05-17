@@ -1,16 +1,23 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_big_text.dart';
+
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_strings.dart';
+
 
 class SkillsTabBigText extends StatelessWidget {
   const SkillsTabBigText({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LandingViewBigText(
-      textSpans: [
+    return FadeInDown(
+      delay: const Duration(milliseconds: 500),
+      child: FittedBox(
+        child: RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
         TextSpan(
           text: '${AppStrings.elevating} ',
           style: AppTextStyles.font72Bold(context).copyWith(
@@ -30,6 +37,9 @@ class SkillsTabBigText extends StatelessWidget {
           ),
         ),
       ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -14,10 +14,13 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
     super.key,
     this.areExpanded = false,
     this.gradient,
+    required this.seeMyWorkUrl,
+    required this.downloadCVUrl,
   });
 
   final bool areExpanded;
   final Gradient? gradient;
+  final String seeMyWorkUrl, downloadCVUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
             svgIcon: Assets.svgsLinkArrow,
             gradient: gradient,
             width: areExpanded ? double.infinity : null,
-            onPressed: () async => await openUrl(AppStrings.gitHubUrl),
+            onPressed: () async => await openUrl(seeMyWorkUrl),
           ),
           MainButton.icon(
             context: context,

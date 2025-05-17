@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
-import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
-import 'package:personal_portfolio/src/models/project.dart';
+
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_assets.dart';
+import '../../core/utils/app_constants.dart';
+import '../../core/utils/app_strings.dart';
+import '../../core/utils/functions/open_url.dart';
+import '../../core/widgets/custom_cached_network_img.dart';
+import '../../core/widgets/my_sized_box.dart';
+import '../../models/about.dart';
+
 
 class ProjectItem extends StatelessWidget {
   const ProjectItem({
@@ -48,13 +51,13 @@ class ProjectItem extends StatelessWidget {
               ),
               AspectRatio(
                 aspectRatio: 1.7,
-                child: Image.asset(project.image),
+                child: CustomCachedNetworkImg(imageUrl: project.imgPath),
               ),
             ],
           ),
           MySizedBox.height32,
           Text(
-            project.name,
+            project.title,
             style: AppTextStyles.font32Bold(context),
           ),
           Expanded(
@@ -74,21 +77,21 @@ class ProjectItem extends StatelessWidget {
             alignment: WrapAlignment.spaceEvenly,
             runAlignment: WrapAlignment.start,
             children: [
-              if (project.downloadUrl != null)
+              if (project.downloadLink != null)
                 ProjectItemTextButton(
-                  url: project.downloadUrl!,
+                  url: project.downloadLink!,
                   titleText: AppStrings.downloadApp,
                   svgPath: Assets.svgsDownloadIcon,
                 ),
-              if (project.githubUrl != null)
+              if (project.gitHubLink != null)
                 ProjectItemTextButton(
-                  url: project.githubUrl!,
+                  url: project.gitHubLink!,
                   titleText: AppStrings.viewOnGitHub,
                   svgPath: Assets.svgsGithubIcon,
                 ),
-              if (project.promoUrl != null)
+              if (project.promoLink != null)
                 ProjectItemTextButton(
-                  url: project.promoUrl!,
+                  url: project.promoLink!,
                   titleText: AppStrings.seeThePromo,
                   svgPath: Assets.svgsPlay,
                 ),
