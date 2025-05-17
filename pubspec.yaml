@@ -15,7 +15,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   # A flutter plugin for adapting screen and font size.Guaranteed to look good on different models
   flutter_screenutil: ^5.9.3
-  # For beautiful animations 
+  # For beautiful animations
   animate_do: ^3.3.4
   # For launching a URL
   url_launcher: ^6.3.0
@@ -27,14 +27,24 @@ dependencies:
   flutter_staggered_animations: ^1.1.1
   # Detects the visibility of its child and notifies a callback
   visibility_detector: ^0.4.0+2
+  # Flutter integration for Supabase
+  supabase_flutter: ^2.8.4
+  # Easily configure global variables using .env
+  flutter_dotenv: ^5.2.1
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
-  
+
   launcher_name: ^1.0.2
   icons_launcher: ^3.0.0
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_serializable: ^6.9.5
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.14
 
 flutter:
   uses-material-design: true
