@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 
-import '../../models/work_experience.dart';
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_constants.dart';
+import '../../core/utils/functions/get_work_experience_img.dart';
+import '../../models/about.dart';
 
 class ExperienceItem extends StatelessWidget {
   const ExperienceItem({super.key, required this.workExperience});
 
-  final WorkExperience workExperience;
+  final WorkExperienceModel workExperience;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class ExperienceItem extends StatelessWidget {
         alignment: MainAxisAlignment.center,
         overflowAlignment: OverflowBarAlignment.start,
         children: [
-          Image.asset(workExperience.imgPath),
+          Image.asset(getWorkExperienceImg(workExperience.experienceStatus)),
           Column(
             spacing: 12.h,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +48,7 @@ class ExperienceItem extends StatelessWidget {
                     style: AppTextStyles.font26Bold(context),
                   ),
                   Text(
-                    workExperience.period,
+                    '${workExperience.startDate} - ${workExperience.endDate}',
                     style: AppTextStyles.font16Regular(context),
                   ),
                 ],
@@ -61,13 +61,13 @@ class ExperienceItem extends StatelessWidget {
                     style: AppTextStyles.font13Medium(context),
                   ),
                   Text(
-                    workExperience.jobMode,
+                    workExperience.experienceStatus,
                     style: AppTextStyles.font13Medium(context),
                   ),
                 ],
               ),
               Text(
-                AppStrings.myInternDescription,
+                _getWorkExperienceDescription(),
                 style: AppTextStyles.font16Medium(context).copyWith(
                   color: AppColors.colorBEC1DD,
                 ),
@@ -78,5 +78,9 @@ class ExperienceItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _getWorkExperienceDescription() {
+    return workExperience.description.map((item) => '• $item').join('\n');
   }
 }
