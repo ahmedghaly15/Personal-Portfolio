@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/models/project.dart';
-import 'package:personal_portfolio/src/views/widgets/animated_project_item.dart';
+
+import '../../models/about.dart';
+import 'animated_project_item.dart';
+
 
 class SmallSelectionSliverGrid extends StatelessWidget {
   const SmallSelectionSliverGrid({
     super.key,
+    required this.projects,
     this.tabletLayoutChildAspectRatio,
   });
 
   final double? tabletLayoutChildAspectRatio;
+  final List<Project> projects;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class SmallSelectionSliverGrid extends StatelessWidget {
       children: List.generate(
         2,
         (index) => AnimatedProjectItem(
-          project: Project.portfolio[index],
+          project: projects[index],
           index: index,
         ),
         growable: false,

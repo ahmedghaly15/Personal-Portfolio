@@ -1,11 +1,12 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/core/widgets/my_sized_box.dart';
-import 'package:personal_portfolio/src/models/approach.dart';
+
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_constants.dart';
+import '../../core/widgets/my_sized_box.dart';
+import '../../models/about.dart';
 
 class ApproachItem extends StatefulWidget {
   const ApproachItem({
@@ -14,7 +15,7 @@ class ApproachItem extends StatefulWidget {
     required this.index,
   });
 
-  final Approach approach;
+  final ApproachModel approach;
   final int index;
 
   @override
@@ -70,7 +71,7 @@ class _ApproachItemState extends State<ApproachItem> {
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30.w),
                     child: Text(
-                      widget.approach.name,
+                      widget.approach.title,
                       style: AppTextStyles.font32Bold(context),
                       textAlign: TextAlign.center,
                     ),

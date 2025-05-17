@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/models/approach.dart';
-import 'package:personal_portfolio/src/views/widgets/approach_item.dart';
+
+import '../../models/about.dart';
+import 'approach_item.dart';
 
 class MyApproachSliverGrid extends StatelessWidget {
-  const MyApproachSliverGrid({super.key, this.tabletCrossAxisCount});
+  const MyApproachSliverGrid({
+    super.key,
+    required this.approaches,
+    this.tabletCrossAxisCount,
+  });
 
   final int? tabletCrossAxisCount;
+  final List<ApproachModel> approaches;
 
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
-      itemCount: Approach.myApproach.length,
+      itemCount: approaches.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: tabletCrossAxisCount ?? 3,
         childAspectRatio: 387 / 620,
@@ -20,7 +26,7 @@ class MyApproachSliverGrid extends StatelessWidget {
       ),
       itemBuilder: (_, index) => ApproachItem(
         index: index,
-        approach: Approach.myApproach[index],
+        approach: approaches[index],
       ),
     );
   }
