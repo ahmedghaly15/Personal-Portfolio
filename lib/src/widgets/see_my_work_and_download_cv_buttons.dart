@@ -5,7 +5,6 @@ import 'package:flutter/services.dart' show ByteData, Uint8List, rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 
 class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
@@ -34,7 +33,9 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
             svgIcon: Assets.svgsLinkArrow,
             gradient: gradient,
             width: areExpanded ? double.infinity : null,
-            onPressed: () async => await openUrl(AppStrings.gitHubUrl),
+            onPressed: () async {
+              // await openUrl(AppStrings.gitHubUrl);
+            },
           ),
           MainButton.icon(
             context: context,
