@@ -7,6 +7,9 @@ import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 
+import '../core/utils/functions/open_url.dart';
+
+
 class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
   const SeeMyWorkAndDownloadCVButtons({
     super.key,
@@ -33,10 +36,7 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
             svgIcon: Assets.svgsLinkArrow,
             gradient: gradient,
             width: areExpanded ? double.infinity : null,
-            onPressed: () async {
-
-              // await openUrl(AppStrings.gitHubUrl);
-            },
+            onPressed: () async => await openUrl(AppStrings.gitHubUrl),
           ),
           MainButton.icon(
             context: context,
@@ -55,7 +55,7 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
     final ByteData data = await rootBundle.load(Assets.cvAhmedGhaly);
     final Uint8List bytes = data.buffer.asUint8List();
     await FileSaver.instance.saveFile(
-      name: AppStrings.appTitle, // The name of the file
+      name: 'Ahmed Ghaly - Flutter Dev', // The name of the file
       bytes: bytes, // The bytes data to be saved
       ext: 'pdf', // The extension of the file
       mimeType: MimeType.pdf,
