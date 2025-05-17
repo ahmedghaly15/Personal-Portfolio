@@ -1,13 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../models/about.dart';
 
 class LandingViewBigText extends StatelessWidget {
-  const LandingViewBigText({super.key, this.textSpans});
+  const LandingViewBigText({super.key, required this.headerBigText});
 
-  final List<TextSpan>? textSpans;
+  final AboutHeaderTextModel headerBigText;
 
   @override
   Widget build(BuildContext context) {
@@ -17,22 +18,22 @@ class LandingViewBigText extends StatelessWidget {
         child: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            children: textSpans ??
+            children:
                 [
                   TextSpan(
-                    text: '${AppStrings.transformingConceptsInto}\n',
+                text: '${headerBigText.text1}\n',
                     style: AppTextStyles.font72Bold(context).copyWith(
                       color: Colors.white,
                     ),
                   ),
                   TextSpan(
-                    text: '${AppStrings.seamless} ',
+                text: '${headerBigText.text2} ',
                     style: AppTextStyles.font72Bold(context).copyWith(
                       color: Colors.white,
                     ),
                   ),
                   TextSpan(
-                    text: AppStrings.userExperience,
+                text: headerBigText.coloredString,
                     style: AppTextStyles.font72Bold(context).copyWith(
                       color: AppColors.colorCBACF9,
                     ),

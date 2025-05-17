@@ -1,8 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/models/social_icon.dart';
-import 'package:personal_portfolio/src/views/widgets/social_icon_item.dart';
+
+import '../../models/social_icon.dart';
+import 'social_icon_item.dart';
 
 class SocialIcons extends StatelessWidget {
   const SocialIcons({super.key});
