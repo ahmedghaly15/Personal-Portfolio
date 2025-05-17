@@ -6,7 +6,7 @@ import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/widgets/slide_animated_widget.dart';
-import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
+import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
 
 class TabsNav extends StatelessWidget {
   const TabsNav({super.key});

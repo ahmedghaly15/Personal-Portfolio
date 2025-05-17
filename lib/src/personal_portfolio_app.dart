@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/themes/app_themes.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
+import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
 import 'package:personal_portfolio/src/views/landing_view.dart';
 
 class PersonalPortfolioApp extends StatelessWidget {

@@ -1,9 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:visibility_detector/visibility_detector.dart';
-
 import 'package:personal_portfolio/src/models/project.dart';
-import 'package:personal_portfolio/src/widgets/project_item.dart';
+import 'package:personal_portfolio/src/views/widgets/project_item.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimatedProjectItem extends StatefulWidget {
   const AnimatedProjectItem({

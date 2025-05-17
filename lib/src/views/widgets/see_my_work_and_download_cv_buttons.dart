@@ -7,8 +7,7 @@ import 'package:personal_portfolio/src/core/utils/app_assets.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 
-import '../core/utils/functions/open_url.dart';
-
+import '../../core/utils/functions/open_url.dart';
 
 class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
   const SeeMyWorkAndDownloadCVButtons({

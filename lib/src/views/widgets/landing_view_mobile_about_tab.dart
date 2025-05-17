@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../core/utils/app_constants.dart';
-import '../core/utils/app_strings.dart';
-import '../core/widgets/main_button.dart';
-import '../core/widgets/my_sized_box.dart';
-import '../cubit/landing_cubit.dart';
-import '../models/approach.dart';
-import '../models/project.dart';
-import '../models/work_experience.dart';
+import '../../core/utils/app_constants.dart';
+import '../../core/utils/app_strings.dart';
+import '../../core/widgets/main_button.dart';
+import '../../core/widgets/my_sized_box.dart';
+import '../../models/approach.dart';
+import '../../models/project.dart';
+import '../../models/work_experience.dart';
+import '../../view_model/landing_cubit.dart';
 import 'animated_project_item.dart';
 import 'approach_item.dart';
 import 'contact_me_section.dart';
@@ -21,7 +21,6 @@ import 'prioritize_img.dart';
 import 'see_my_work_and_download_cv_buttons.dart';
 import 'tabs_nav.dart';
 import 'tech_enthusiast_card.dart';
-
 
 class LandingViewMobileAboutTab extends StatelessWidget {
   const LandingViewMobileAboutTab({super.key});

@@ -5,7 +5,7 @@ import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 
-import '../models/work_experience.dart';
+import '../../models/work_experience.dart';
 
 class ExperienceItem extends StatelessWidget {
   const ExperienceItem({super.key, required this.workExperience});

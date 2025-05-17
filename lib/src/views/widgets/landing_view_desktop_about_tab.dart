@@ -4,19 +4,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
 import 'package:personal_portfolio/src/core/widgets/main_button.dart';
-import 'package:personal_portfolio/src/cubit/landing_cubit.dart';
-import 'package:personal_portfolio/src/widgets/contact_me_section.dart';
-import 'package:personal_portfolio/src/widgets/custom_section_title.dart';
-import 'package:personal_portfolio/src/widgets/experience_item.dart';
-import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
-import 'package:personal_portfolio/src/widgets/my_approach_sliver_grid.dart';
-import 'package:personal_portfolio/src/widgets/desktop_passion_and_purpose_section.dart';
-import 'package:personal_portfolio/src/widgets/see_my_work_and_download_cv_buttons.dart';
-import 'package:personal_portfolio/src/widgets/small_selection_sliver_grid.dart';
-import 'package:personal_portfolio/src/widgets/tabs_nav.dart';
+import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
+import 'package:personal_portfolio/src/views/widgets/contact_me_section.dart';
+import 'package:personal_portfolio/src/views/widgets/custom_section_title.dart';
+import 'package:personal_portfolio/src/views/widgets/desktop_passion_and_purpose_section.dart';
+import 'package:personal_portfolio/src/views/widgets/experience_item.dart';
+import 'package:personal_portfolio/src/views/widgets/landing_view_big_text.dart';
+import 'package:personal_portfolio/src/views/widgets/my_approach_sliver_grid.dart';
+import 'package:personal_portfolio/src/views/widgets/see_my_work_and_download_cv_buttons.dart';
+import 'package:personal_portfolio/src/views/widgets/small_selection_sliver_grid.dart';
+import 'package:personal_portfolio/src/views/widgets/tabs_nav.dart';
 
-import '../core/widgets/my_sized_box.dart';
-import '../models/work_experience.dart';
+import '../../core/widgets/my_sized_box.dart';
+import '../../models/work_experience.dart';
 
 class LandingViewDesktopAboutTab extends StatelessWidget {
   const LandingViewDesktopAboutTab({

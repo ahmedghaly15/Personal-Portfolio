@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:personal_portfolio/src/models/project.dart';
-import 'package:personal_portfolio/src/widgets/project_item.dart';
+import 'package:personal_portfolio/src/views/widgets/project_item.dart';
 
 class DesktopProjectsSliverGrid extends StatelessWidget {
   const DesktopProjectsSliverGrid({

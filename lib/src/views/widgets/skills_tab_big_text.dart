@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_portfolio/src/core/themes/app_colors.dart';
 import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
 import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/widgets/landing_view_big_text.dart';
+import 'package:personal_portfolio/src/views/widgets/landing_view_big_text.dart';
 
 class SkillsTabBigText extends StatelessWidget {
   const SkillsTabBigText({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_portfolio/src/models/approach.dart';
-import 'package:personal_portfolio/src/widgets/approach_item.dart';
+import 'package:personal_portfolio/src/views/widgets/approach_item.dart';
 
 class MyApproachSliverGrid extends StatelessWidget {
   const MyApproachSliverGrid({super.key, this.tabletCrossAxisCount});
