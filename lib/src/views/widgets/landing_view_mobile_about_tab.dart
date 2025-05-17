@@ -6,6 +6,7 @@ import '../../core/utils/app_constants.dart';
 import '../../core/utils/app_strings.dart';
 import '../../core/widgets/main_button.dart';
 import '../../core/widgets/my_sized_box.dart';
+import '../../models/about.dart';
 import '../../models/approach.dart';
 import '../../models/project.dart';
 import '../../models/work_experience.dart';
@@ -23,7 +24,9 @@ import 'tabs_nav.dart';
 import 'tech_enthusiast_card.dart';
 
 class LandingViewMobileAboutTab extends StatelessWidget {
-  const LandingViewMobileAboutTab({super.key});
+  const LandingViewMobileAboutTab({super.key, required this.about});
+
+  final About about;
 
   @override
   Widget build(BuildContext context) {

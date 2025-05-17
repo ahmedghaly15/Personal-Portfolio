@@ -6,8 +6,12 @@ import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_about_t
 import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_portfolio_tab.dart';
 import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_skills_tab.dart';
 
+import '../../models/fetch_data_response.dart';
+
 class LandingViewMobileLayout extends StatelessWidget {
-  const LandingViewMobileLayout({super.key});
+  const LandingViewMobileLayout({super.key, required this.data});
+
+  final FetchDataResponse data;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +25,11 @@ class LandingViewMobileLayout extends StatelessWidget {
           builder: (context, selectedTabNavIndex) {
             switch (selectedTabNavIndex) {
               case 0:
-                return const LandingViewMobileAboutTab();
+                return LandingViewMobileAboutTab(about: data.about);
               case 1:
-                return const LandingViewMobileSkillsTab();
+                return LandingViewMobileSkillsTab(skills: data.skills);
               case 2:
-                return const LandingViewMobilePortfolioTab();
+                return LandingViewMobilePortfolioTab(projects: data.portfolio);
               default:
                 return Container();
             }

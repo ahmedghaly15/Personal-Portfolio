@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/models/project.dart';
 import 'package:personal_portfolio/src/views/widgets/project_item.dart';
 import 'package:personal_portfolio/src/views/widgets/tabs_nav.dart';
 
+import '../../models/about.dart';
+
 class LandingViewMobilePortfolioTab extends StatelessWidget {
-  const LandingViewMobilePortfolioTab({super.key});
+  const LandingViewMobilePortfolioTab({super.key, required this.projects});
+
+  final List<Project> projects;
 
   @override
   Widget build(BuildContext context) {

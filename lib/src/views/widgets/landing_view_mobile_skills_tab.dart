@@ -7,8 +7,12 @@ import 'package:personal_portfolio/src/views/widgets/skills_progress_list.dart';
 import 'package:personal_portfolio/src/views/widgets/skills_tab_big_text.dart';
 import 'package:personal_portfolio/src/views/widgets/tabs_nav.dart';
 
+import '../../models/skill_tab_model.dart';
+
 class LandingViewMobileSkillsTab extends StatelessWidget {
-  const LandingViewMobileSkillsTab({super.key});
+  const LandingViewMobileSkillsTab({super.key, required this.skills});
+
+  final SkillTabModel skills;
 
   @override
   Widget build(BuildContext context) {
