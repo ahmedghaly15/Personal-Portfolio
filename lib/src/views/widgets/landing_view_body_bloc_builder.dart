@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 import '../../core/utils/app_assets.dart';
 import '../../core/widgets/responsive_layout.dart';
 import '../../view_model/landing_cubit.dart';
+import 'custom_error_widget.dart';
 import 'landing_view_desktop_layout.dart';
 import 'landing_view_mobile_layout.dart';
 
@@ -29,12 +30,11 @@ class LandingViewBodyBlocBuilder extends StatelessWidget {
               desktopLayout: (_) => const LandingViewDesktopLayout(),
             );
           case LandingStatus.fetchDataError:
-            return Center(
-              child: Text(state.error ??
-                  'Something went wrong. Please try again later.'),
-            );
+            return const CustomErrorWidget();
           default:
-            return Center(child: Lottie.asset(Assets.lottieLoadingAnimation));
+            return Center(
+              child: Lottie.asset(Assets.lottieLoadingAnimation),
+            );
         }
       },
     );
