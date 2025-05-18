@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_big_text.dart';
-import 'package:personal_portfolio/src/views/widgets/skills_progress_list.dart';
-import 'package:personal_portfolio/src/views/widgets/skills_tab_big_text.dart';
-import 'package:personal_portfolio/src/views/widgets/tabs_nav.dart';
+
+import '../../core/utils/app_strings.dart';
+import '../../models/skill_tab_model.dart';
+import 'landing_view_big_text.dart';
+import 'skills_progress_list.dart';
+import 'skills_tab_big_text.dart';
+import 'tabs_nav.dart';
 
 class LandingViewDesktopSkillsTab extends StatelessWidget {
-  const LandingViewDesktopSkillsTab({super.key});
+  const LandingViewDesktopSkillsTab({super.key, required this.skills});
+
+  final SkillTabModel skills;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +30,9 @@ class LandingViewDesktopSkillsTab extends StatelessWidget {
             ),
           ),
         ),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Align(
-            child: SkillsTabBigText(),
+            child: SkillsTabBigText(headerBigText: skills.headerBigText),
           ),
         ),
         SliverToBoxAdapter(
@@ -39,7 +43,7 @@ class LandingViewDesktopSkillsTab extends StatelessWidget {
               right: 100.w,
               bottom: 32.h,
             ),
-            child: const SkillsProgressList(),
+            child: SkillsProgressList(skills: skills.skills),
           ),
         ),
       ],

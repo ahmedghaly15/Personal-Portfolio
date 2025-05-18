@@ -47,7 +47,7 @@ class LandingViewDesktopLayout extends StatelessWidget {
                 );
 
               case 1:
-                return const LandingViewDesktopSkillsTab();
+                return LandingViewDesktopSkillsTab(skills: data.skills);
 
               case 2:
                 return LandingViewDesktopPortfolioTab(
