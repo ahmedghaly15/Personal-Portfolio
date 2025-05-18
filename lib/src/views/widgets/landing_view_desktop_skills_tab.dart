@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/utils/app_strings.dart';
 import '../../models/skill_tab_model.dart';
 import 'landing_view_big_text.dart';
 import 'skills_progress_list.dart';
@@ -25,8 +24,7 @@ class LandingViewDesktopSkillsTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.only(top: 73.h, bottom: 22.h),
-            child: const HeaderSmallText(
-              text: AppStrings.masteringTheArtOfFlutter,
+            child: HeaderSmallText(text: skills.headerSmallText
             ),
           ),
         ),

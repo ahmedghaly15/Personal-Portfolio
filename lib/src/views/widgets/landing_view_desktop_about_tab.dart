@@ -42,7 +42,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.only(top: 73.h, bottom: 22.h),
-            child: const HeaderSmallText(text: AppStrings.dynamicAppMagic),
+            child: HeaderSmallText(text: about.headerSmallText),
           ),
         ),
         SliverToBoxAdapter(
@@ -53,8 +53,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 30.h),
-            child: const HeaderDescriptionText(
-              text: AppStrings.introduction,
+            child: HeaderDescriptionText(text: about.description
             ),
           ),
         ),
