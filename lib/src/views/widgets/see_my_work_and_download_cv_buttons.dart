@@ -3,11 +3,11 @@ import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show ByteData, Uint8List, rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/widgets/main_button.dart';
 
+import '../../core/utils/app_assets.dart';
+import '../../core/utils/app_strings.dart';
 import '../../core/utils/functions/open_url.dart';
+import '../../core/widgets/main_button.dart';
 
 class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
   const SeeMyWorkAndDownloadCVButtons({
@@ -15,12 +15,11 @@ class SeeMyWorkAndDownloadCVButtons extends StatelessWidget {
     this.areExpanded = false,
     this.gradient,
     required this.seeMyWorkUrl,
-    required this.downloadCVUrl,
   });
 
   final bool areExpanded;
   final Gradient? gradient;
-  final String seeMyWorkUrl, downloadCVUrl;
+  final String seeMyWorkUrl;
 
   @override
   Widget build(BuildContext context) {

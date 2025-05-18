@@ -66,7 +66,6 @@ class LandingViewMobileAboutTab extends StatelessWidget {
             ),
             child: SeeMyWorkAndDownloadCVButtons(
               seeMyWorkUrl: about.seeMyWorkLink,
-              downloadCVUrl: about.downloadCVLink,
               areExpanded: true,
               gradient: AppConstants.boxSecondaryLinearGradient,
             ),

@@ -11,7 +11,9 @@ part 'landing_state.dart';
 class LandingCubit extends Cubit<LandingState> {
   final SupabaseClient _supabaseClient;
 
-  LandingCubit(this._supabaseClient) : super(LandingState.initial());
+
+  LandingCubit(this._supabaseClient)
+      : super(LandingState.initial());
 
   void selectTabNav(int index) {
     if (state.selectedTabNavIndex != index) {

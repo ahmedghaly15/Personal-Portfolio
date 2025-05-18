@@ -60,7 +60,6 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: SeeMyWorkAndDownloadCVButtons(
             seeMyWorkUrl: about.seeMyWorkLink,
-            downloadCVUrl: about.downloadCVLink,
           ),
         ),
         SliverToBoxAdapter(
