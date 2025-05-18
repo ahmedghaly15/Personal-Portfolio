@@ -47,7 +47,6 @@ class LandingCubit extends Cubit<LandingState> {
         .select()
         .eq('user_id', dotenv.env[ConstStrings.myIdKey]!)
         .single();
-    final data = FetchDataResponse.fromJson(jsonData);
-    return data;
+    return FetchDataResponse.fromJson(jsonData);
   }
 }

@@ -29,7 +29,7 @@ class LandingViewBodyBlocBuilder extends StatelessWidget {
                 : const CustomErrorWidget();
           default:
             return Center(
-              child: Lottie.asset(Assets.lottieLoadingAnimation),
+              child: Lottie.asset(Assets.lottieLoadingAnimation)
             );
         }
       },
