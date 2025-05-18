@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_text_styles.dart';
-import '../../core/utils/app_strings.dart';
+import '../../models/skill_tab_model.dart';
 
 
 class SkillsTabBigText extends StatelessWidget {
-  const SkillsTabBigText({super.key});
+  const SkillsTabBigText({super.key, required this.headerBigText});
+
+  final SkillHeaderTextModel headerBigText;
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +21,19 @@ class SkillsTabBigText extends StatelessWidget {
           text: TextSpan(
             children: [
         TextSpan(
-          text: '${AppStrings.elevating} ',
+                text: '${headerBigText.text1} ',
           style: AppTextStyles.font72Bold(context).copyWith(
             color: Colors.white,
           ),
         ),
         TextSpan(
-          text: AppStrings.mySkills,
+                text: headerBigText.colorfulString,
           style: AppTextStyles.font72Bold(context).copyWith(
             color: AppColors.colorCBACF9,
           ),
         ),
         TextSpan(
-          text: '\n${AppStrings.oneLineCode}',
+                text: '\n${headerBigText.text3}',
           style: AppTextStyles.font72Bold(context).copyWith(
             color: Colors.white,
           ),
