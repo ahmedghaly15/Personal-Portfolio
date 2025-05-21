@@ -71,7 +71,6 @@ class ExperienceItem extends StatelessWidget {
                 style: AppTextStyles.font16Medium(context).copyWith(
                   color: AppColors.colorBEC1DD,
                 ),
-                textAlign: TextAlign.justify,
               ),
             ],
           ),
@@ -81,6 +80,6 @@ class ExperienceItem extends StatelessWidget {
   }
 
   String _getWorkExperienceDescription() {
-    return workExperience.description.map((item) => '• $item').join('\n');
+    return workExperience.description.map((item) => '• $item').join('\n\n');
   }
 }
