@@ -1,0 +1,42 @@
+name: Build and Deploy Flutter Web
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    if: contains(github.event.head_commit.message, 'deploy')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.22.0"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Create .env file from GitHub Secret
+        run: |
+          echo "$ENV_FILE" > .env
+        shell: bash
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+
+      - name: Build Flutter Web
+        run: flutter build web
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
+          channelId: live
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks

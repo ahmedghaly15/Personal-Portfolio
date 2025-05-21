@@ -39,7 +39,6 @@ dependencies:
   lottie: ^3.3.1
   # Used to load and cache network images
   cached_network_image: ^3.4.1
-  dio_web_adapter: ^2.1.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0

@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "ahmedghaly15-portfolio"
-  }
+    "default": "ahmedghaly15-portfolio",
+    "portfolio": "ahmedghaly15-portfolio"
+  },
+  "targets": {},
+  "etags": {}
 }
