@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
 import '../utils/app_constants.dart';
-import '../utils/functions/get_responsive_font_size.dart';
+
 
 
 class MainButton extends StatelessWidget {
@@ -70,8 +71,7 @@ class MainButton extends StatelessWidget {
               text!,
               style: textStyle ??
                   AppTextStyles.font18Medium(context).copyWith(
-                    fontSize: getResponsiveFontSize(context,
-                        fontSize: fontSize ?? 18),
+                    fontSize: context.getResponsiveFontSize(18),
                     color: Colors.white,
                   ),
             ),
