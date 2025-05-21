@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/core/utils/functions/get_responsive_font_size.dart';
+
+import '../themes/app_colors.dart';
+import '../themes/app_text_styles.dart';
+import '../utils/app_constants.dart';
+import '../utils/functions/get_responsive_font_size.dart';
+
 
 class MainButton extends StatelessWidget {
   const MainButton({

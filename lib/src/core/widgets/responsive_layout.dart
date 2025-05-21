@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/src/core/utils/size_config.dart';
+
+import '../utils/size_config.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({

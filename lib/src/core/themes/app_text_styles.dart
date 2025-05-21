@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/src/core/utils/functions/get_responsive_font_size.dart';
+
+import '../utils/functions/get_responsive_font_size.dart';
 
 class AppTextStyles {
   AppTextStyles._();

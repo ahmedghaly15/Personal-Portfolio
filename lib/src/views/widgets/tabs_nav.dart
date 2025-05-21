@@ -2,11 +2,13 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_constants.dart';
-import 'package:personal_portfolio/src/core/widgets/slide_animated_widget.dart';
-import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
+
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_constants.dart';
+import '../../core/widgets/slide_animated_widget.dart';
+import '../../view_model/landing_cubit.dart';
+
 
 class TabsNav extends StatelessWidget {
   const TabsNav({super.key});

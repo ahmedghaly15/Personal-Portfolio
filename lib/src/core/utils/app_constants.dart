@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+
+import '../themes/app_colors.dart';
+import 'app_strings.dart';
+
 
 class AppConstants {
   AppConstants._();

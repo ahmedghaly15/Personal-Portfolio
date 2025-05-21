@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/core/themes/app_themes.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
-import 'package:personal_portfolio/src/views/landing_view.dart';
 
+import 'core/themes/app_themes.dart';
+import 'core/utils/app_strings.dart';
 import 'core/utils/functions/setup_di.dart';
+import 'view_model/landing_cubit.dart';
+import 'views/landing_view.dart';
 
 class PersonalPortfolioApp extends StatelessWidget {
   const PersonalPortfolioApp({super.key});

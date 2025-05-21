@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/view_model/landing_cubit.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_about_tab.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_portfolio_tab.dart';
-import 'package:personal_portfolio/src/views/widgets/landing_view_mobile_skills_tab.dart';
 
+import '../../core/utils/app_assets.dart';
 import '../../models/fetch_data_response.dart';
+import '../../view_model/landing_cubit.dart';
+import 'landing_view_mobile_about_tab.dart';
+import 'landing_view_mobile_portfolio_tab.dart';
+import 'landing_view_mobile_skills_tab.dart';
 
 class LandingViewMobileLayout extends StatelessWidget {
   const LandingViewMobileLayout({super.key, required this.data});

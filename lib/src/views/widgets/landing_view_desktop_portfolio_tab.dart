@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:personal_portfolio/src/views/widgets/desktop_projects_sliver_grid.dart';
-import 'package:personal_portfolio/src/views/widgets/tabs_nav.dart';
 
 import '../../models/about.dart';
+import 'desktop_projects_sliver_grid.dart';
+import 'tabs_nav.dart';
 
 class LandingViewDesktopPortfolioTab extends StatelessWidget {
   const LandingViewDesktopPortfolioTab({

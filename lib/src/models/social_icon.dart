@@ -1,5 +1,5 @@
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import '../core/utils/app_assets.dart';
+import '../core/utils/app_strings.dart';
 
 class SocialIcon {
   final String icon, url;

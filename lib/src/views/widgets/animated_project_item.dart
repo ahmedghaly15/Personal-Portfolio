@@ -5,8 +5,6 @@ import 'package:visibility_detector/visibility_detector.dart';
 import '../../models/about.dart';
 import 'project_item.dart';
 
-
-
 class AnimatedProjectItem extends StatefulWidget {
   const AnimatedProjectItem({
     super.key,

@@ -5,11 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
-import 'package:personal_portfolio/src/core/widgets/main_button.dart';
+import '../../core/themes/app_colors.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_assets.dart';
+import '../../core/utils/app_strings.dart';
+import '../../core/widgets/main_button.dart';
+
+
 
 class CopyMyEmailCard extends StatelessWidget {
   const CopyMyEmailCard({super.key});

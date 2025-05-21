@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:personal_portfolio/src/core/themes/app_colors.dart';
-import 'package:personal_portfolio/src/core/utils/functions/open_url.dart';
-import 'package:personal_portfolio/src/models/social_icon.dart';
+import '../../core/themes/app_colors.dart';
+import '../../core/utils/functions/open_url.dart';
+import '../../models/social_icon.dart';
 
 class SocialIconItem extends StatelessWidget {
   const SocialIconItem({

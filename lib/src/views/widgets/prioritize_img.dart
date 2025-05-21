@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import 'package:personal_portfolio/src/core/themes/app_text_styles.dart';
-import 'package:personal_portfolio/src/core/utils/app_assets.dart';
-import 'package:personal_portfolio/src/core/utils/app_strings.dart';
+import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/app_assets.dart';
+import '../../core/utils/app_strings.dart';
+
 
 class PrioritizeImg extends StatelessWidget {
   const PrioritizeImg({super.key});
