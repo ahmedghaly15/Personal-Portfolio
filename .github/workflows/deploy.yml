@@ -23,12 +23,8 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Create .env file from GitHub Secret
-        run: |
-          echo "$ENV_FILE" > .env
-        shell: bash
-        env:
-          ENV_FILE: ${{ secrets.ENV_FILE }}
+      - name: Create .env File using GitHub Secrets
+        run: echo ${{ secrets.ENV_FILE_CONTENT }} > .env
 
       - name: Build Flutter Web
         run: flutter build web
