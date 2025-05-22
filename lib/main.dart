@@ -18,6 +18,7 @@ void main() async {
   await setupDI();
   await ScreenUtil.ensureScreenSize();
   await Supabase.initialize(
+    //
     url: dotenv.env[ConstStrings.supabaseUrlKey]!,
     anonKey: dotenv.env[ConstStrings.supabaseAnonKey]!,
   );
