@@ -1,18 +1,22 @@
-name: Build and Deploy Flutter Web
+name: Build and Deploy Personal-Portfolio
 
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
-  build-deploy:
+  deploy:
     if: contains(github.event.head_commit.message, 'deploy')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Create .env File using GitHub Secrets
+        run: echo ${{ secrets.ENV_FILE_CONTENT }} > .env
 
       - name: Install Flutter Version 3.27.0
         uses: subosito/flutter-action@v2
@@ -22,9 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Create .env File using GitHub Secrets
-        run: echo ${{ secrets.ENV_FILE_CONTENT }} > .env
 
       - name: Build Flutter Web
         run: flutter build web
