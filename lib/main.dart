@@ -6,7 +6,6 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import 'src/core/utils/bloc_observer.dart';
-import 'src/core/utils/const_strings.dart';
 import 'src/core/utils/functions/setup_di.dart';
 import 'src/personal_portfolio_app.dart';
 
@@ -18,8 +17,9 @@ void main() async {
   await setupDI();
   await ScreenUtil.ensureScreenSize();
   await Supabase.initialize(
-    url: dotenv.env[ConstStrings.supabaseUrlKey]!,
-    anonKey: dotenv.env[ConstStrings.supabaseAnonKey]!,
+    url: "https://gsbdfmndkveqlqxenrtf.supabase.co",
+    anonKey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzYmRmbW5ka3ZlcWxxeGVucnRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0NjY4NTgsImV4cCI6MjA2MzA0Mjg1OH0.Bn-aq08RZmdSpYwFA5Pw2JO5RskcjXD4lsaOi8GCoCU",
   );
   runApp(const PersonalPortfolioApp());
 }
