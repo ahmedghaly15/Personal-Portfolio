@@ -21,5 +21,6 @@ void main() async {
     url: dotenv.env[ConstStrings.supabaseUrlKey]!,
     anonKey: dotenv.env[ConstStrings.supabaseAnonKey]!,
   );
+  //
   runApp(const PersonalPortfolioApp());
 }
