@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../core/utils/const_strings.dart';
+import '../core/utils/environment_helper.dart';
 import '../models/fetch_data_response.dart';
 
 part 'landing_state.dart';
@@ -42,10 +42,15 @@ class LandingCubit extends Cubit<LandingState> {
   }
 
   Future<FetchDataResponse> _fetchRemoteData() async {
+    final myId = EnvironmentHelper.getEnvironmentVariable(ConstStrings.myIdKey);
+    if (myId == null) {
+      throw Exception('MY_ID environment variable not found');
+    }
+
     final jsonData = await _supabaseClient
         .from(ConstStrings.dataTable)
         .select()
-        .eq('user_id', dotenv.env[ConstStrings.myIdKey]!)
+        .eq('user_id', myId)
         .single();
     return FetchDataResponse.fromJson(jsonData);
   }

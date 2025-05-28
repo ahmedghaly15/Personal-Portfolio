@@ -7,6 +7,7 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 import 'src/core/utils/bloc_observer.dart';
 import 'src/core/utils/const_strings.dart';
+import 'src/core/utils/environment_helper.dart';
 import 'src/core/utils/functions/setup_di.dart';
 import 'src/personal_portfolio_app.dart';
 
@@ -15,20 +16,22 @@ void main() async {
   VisibilityDetectorController.instance.updateInterval = Duration.zero;
   Bloc.observer = MyBlocObserver();
 
+  // Try to load .env file for local development
   try {
     await dotenv.load();
   } catch (e) {
-    print('Error loading .env file: $e');
-    // For web deployment, environment variables might not be available
-    // You can add fallback values or handle this case differently
+    print(
+        'Info: .env file not found, using dart-define values for web deployment');
   }
 
   await setupDI();
   await ScreenUtil.ensureScreenSize();
 
-  // Add null checks and better error handling
-  final supabaseUrl = dotenv.env[ConstStrings.supabaseUrlKey];
-  final supabaseAnonKey = dotenv.env[ConstStrings.supabaseAnonKey];
+  // Get environment variables from either .env file or dart-define
+  final supabaseUrl =
+      EnvironmentHelper.getEnvironmentVariable(ConstStrings.supabaseUrlKey);
+  final supabaseAnonKey =
+      EnvironmentHelper.getEnvironmentVariable(ConstStrings.supabaseAnonKey);
 
   if (supabaseUrl == null || supabaseAnonKey == null) {
     print('Missing Supabase configuration:');
