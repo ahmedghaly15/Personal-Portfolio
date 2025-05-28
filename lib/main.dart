@@ -15,36 +15,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   VisibilityDetectorController.instance.updateInterval = Duration.zero;
   Bloc.observer = MyBlocObserver();
-
-  // Try to load .env file for local development
-  try {
-    await dotenv.load();
-  } catch (e) {
-    print(
-        'Info: .env file not found, using dart-define values for web deployment');
-  }
-
+  await dotenv.load();
   await setupDI();
   await ScreenUtil.ensureScreenSize();
-
   // Get environment variables from either .env file or dart-define
-  final supabaseUrl =
-      EnvironmentHelper.getEnvironmentVariable(ConstStrings.supabaseUrlKey);
-  final supabaseAnonKey =
-      EnvironmentHelper.getEnvironmentVariable(ConstStrings.supabaseAnonKey);
-
-  if (supabaseUrl == null || supabaseAnonKey == null) {
-    print('Missing Supabase configuration:');
-    print('SUPABASE_URL: ${supabaseUrl ?? 'NOT FOUND'}');
-    print('SUPABASE_ANON_KEY: ${supabaseAnonKey ?? 'NOT FOUND'}');
-    print('Available env vars: ${dotenv.env.keys.toList()}');
-    throw Exception('Missing required environment variables for Supabase');
-  }
-
   await Supabase.initialize(
-    url: supabaseUrl,
-    anonKey: supabaseAnonKey,
+    url: EnvironmentHelper.getEnvironmentVariable(ConstStrings.supabaseUrlKey)!,
+    anonKey:
+        EnvironmentHelper.getEnvironmentVariable(ConstStrings.supabaseAnonKey)!,
   );
-  //
   runApp(const PersonalPortfolioApp());
 }
