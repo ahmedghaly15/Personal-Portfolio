@@ -1,7 +1,7 @@
 name: personal_portfolio
 description: "Jr Flutter developer Ahmed Ghaly's portfolio website"
 publish_to: 'none'
-version: 0.1.4
+version: 0.1.5
 
 environment:
   sdk: ^3.5.1

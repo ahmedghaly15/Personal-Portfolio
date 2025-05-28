@@ -11,7 +11,7 @@ void _setupForExternal() {
 
 void _setupForeCubits() {
   getIt.registerFactory<LandingCubit>(
-    () => LandingCubit(getIt<SupabaseClient>()),
+    () => LandingCubit(getIt.get<SupabaseClient>()),
   );
 }
 

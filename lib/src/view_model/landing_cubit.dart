@@ -11,9 +11,7 @@ part 'landing_state.dart';
 class LandingCubit extends Cubit<LandingState> {
   final SupabaseClient _supabaseClient;
 
-
-  LandingCubit(this._supabaseClient)
-      : super(LandingState.initial());
+  LandingCubit(this._supabaseClient) : super(LandingState.initial());
 
   void selectTabNav(int index) {
     if (state.selectedTabNavIndex != index) {
@@ -35,7 +33,7 @@ class LandingCubit extends Cubit<LandingState> {
         data: data,
       ));
     } catch (e) {
-      debugPrint(e.toString());
+      debugPrint('ERROR: ${e.toString()}');
       emit(state.copyWith(
         status: LandingStatus.fetchDataError,
         error: "Something went wrong. Please try again later.",
