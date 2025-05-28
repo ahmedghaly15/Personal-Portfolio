@@ -14,12 +14,33 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   VisibilityDetectorController.instance.updateInterval = Duration.zero;
   Bloc.observer = MyBlocObserver();
-  await dotenv.load();
+
+  try {
+    await dotenv.load();
+  } catch (e) {
+    print('Error loading .env file: $e');
+    // For web deployment, environment variables might not be available
+    // You can add fallback values or handle this case differently
+  }
+
   await setupDI();
   await ScreenUtil.ensureScreenSize();
+
+  // Add null checks and better error handling
+  final supabaseUrl = dotenv.env[ConstStrings.supabaseUrlKey];
+  final supabaseAnonKey = dotenv.env[ConstStrings.supabaseAnonKey];
+
+  if (supabaseUrl == null || supabaseAnonKey == null) {
+    print('Missing Supabase configuration:');
+    print('SUPABASE_URL: ${supabaseUrl ?? 'NOT FOUND'}');
+    print('SUPABASE_ANON_KEY: ${supabaseAnonKey ?? 'NOT FOUND'}');
+    print('Available env vars: ${dotenv.env.keys.toList()}');
+    throw Exception('Missing required environment variables for Supabase');
+  }
+
   await Supabase.initialize(
-    url: dotenv.env[ConstStrings.supabaseUrlKey]!,
-    anonKey: dotenv.env[ConstStrings.supabaseAnonKey]!,
+    url: supabaseUrl,
+    anonKey: supabaseAnonKey,
   );
   //
   runApp(const PersonalPortfolioApp());
