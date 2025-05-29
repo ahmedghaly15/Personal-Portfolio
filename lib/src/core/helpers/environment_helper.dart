@@ -1,6 +1,6 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'const_strings.dart';
+import '../utils/const_strings.dart';
 
 /// Helper class for getting environment variables from either .env file or dart-define
 class EnvironmentHelper {
