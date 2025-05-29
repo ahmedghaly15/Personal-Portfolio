@@ -12,7 +12,6 @@ About _$AboutFromJson(Map<String, dynamic> json) => About(
           json['headerBigText'] as Map<String, dynamic>),
       description: json['description'] as String,
       seeMyWorkLink: json['seeMyWorkLink'] as String,
-      downloadCVLink: json['downloadCVLink'] as String,
       projects: (json['projects'] as List<dynamic>)
           .map((e) => Project.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -28,7 +27,6 @@ Map<String, dynamic> _$AboutToJson(About instance) => <String, dynamic>{
       'headerSmallText': instance.headerSmallText,
       'description': instance.description,
       'seeMyWorkLink': instance.seeMyWorkLink,
-      'downloadCVLink': instance.downloadCVLink,
       'headerBigText': instance.headerBigText.toJson(),
       'projects': instance.projects.map((e) => e.toJson()).toList(),
       'workExperience': instance.workExperience.map((e) => e.toJson()).toList(),
@@ -75,7 +73,8 @@ WorkExperienceModel _$WorkExperienceModelFromJson(Map<String, dynamic> json) =>
       startDate: json['startDate'] as String,
       endDate: json['endDate'] as String,
       company: json['company'] as String,
-      experienceStatus: json['experienceStatus'] as String,
+      experienceStatus:
+          $enumDecode(_$ExperienceStatusEnumMap, json['experienceStatus']),
       description: (json['description'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -88,9 +87,16 @@ Map<String, dynamic> _$WorkExperienceModelToJson(
       'startDate': instance.startDate,
       'endDate': instance.endDate,
       'company': instance.company,
-      'experienceStatus': instance.experienceStatus,
+      'experienceStatus': _$ExperienceStatusEnumMap[instance.experienceStatus]!,
       'description': instance.description,
     };
+
+const _$ExperienceStatusEnumMap = {
+  ExperienceStatus.fullTime: 'Full-time',
+  ExperienceStatus.partTime: 'Part-time',
+  ExperienceStatus.remote: 'Remote',
+  ExperienceStatus.freelance: 'Freelance',
+};
 
 ApproachModel _$ApproachModelFromJson(Map<String, dynamic> json) =>
     ApproachModel(

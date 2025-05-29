@@ -1,10 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../core/enums/experience_status.dart';
+
 part 'about.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class About {
-  final String headerSmallText, description, seeMyWorkLink, downloadCVLink;
+  final String headerSmallText, description, seeMyWorkLink;
   final AboutHeaderTextModel headerBigText;
   final List<Project> projects;
   final List<WorkExperienceModel> workExperience;
@@ -15,7 +17,6 @@ class About {
     required this.headerBigText,
     required this.description,
     required this.seeMyWorkLink,
-    required this.downloadCVLink,
     required this.projects,
     required this.workExperience,
     required this.approaches,
@@ -62,7 +63,8 @@ class Project {
 
 @JsonSerializable()
 class WorkExperienceModel {
-  final String title, startDate, endDate, company, experienceStatus;
+  final String title, startDate, endDate, company;
+  final ExperienceStatus experienceStatus;
   final List<String> description;
 
   WorkExperienceModel({
