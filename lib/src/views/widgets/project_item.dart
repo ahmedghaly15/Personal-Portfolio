@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_text_styles.dart';
@@ -8,6 +9,8 @@ import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_constants.dart';
 import '../../core/utils/app_strings.dart';
 import '../../core/utils/functions/open_url.dart';
+import '../../core/utils/functions/setup_di.dart';
+import '../../core/widgets/adaptive_circular_progress_indicator.dart';
 import '../../core/widgets/custom_cached_network_img.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
@@ -53,7 +56,18 @@ class ProjectItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                CustomCachedNetworkImg(imageUrl: project.imgPath),
+                Image.network(
+                  getIt.get<SupabaseClient>().storage.from('data').getPublicUrl(
+                        'images/icare_icon.png',
+                      ),
+                  fit: BoxFit.contain,
+                  errorBuilder: (_, __, ___) => const Icon(
+                    Icons.error,
+                    color: Colors.red,
+                  ),
+                  loadingBuilder: (_, __, ___) =>
+                      const AdaptiveCircularProgressIndicator(),
+                ),
               ],
             ),
           ),
@@ -62,13 +76,10 @@ class ProjectItem extends StatelessWidget {
             project.title,
             style: AppTextStyles.font32Bold(context),
           ),
-          isDescriptionTextExpanded
-              ? Expanded(
-                  child: _DescriptionText(project: project),
-                )
-              : Flexible(
-                  child: _DescriptionText(project: project),
-                ),
+          Flexible(
+            fit: isDescriptionTextExpanded ? FlexFit.tight : FlexFit.loose,
+            child: _DescriptionText(project: project),
+          ),
           Wrap(
             spacing: 16.w,
             direction: Axis.horizontal,
