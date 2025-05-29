@@ -11,8 +11,6 @@ import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_strings.dart';
 import '../../core/widgets/main_button.dart';
 
-
-
 class CopyMyEmailCard extends StatelessWidget {
   const CopyMyEmailCard({super.key});
 

@@ -51,9 +51,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 24.h, horizontal: 56.w),
             child: FittedBox(
-              child: HeaderDescriptionText(
-                text: about.description
-              ),
+              child: HeaderDescriptionText(text: about.description),
             ),
           ),
         ),
@@ -113,21 +111,13 @@ class LandingViewMobileAboutTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: AppConstants.mobileHorizontalPadVal.w,
           ),
-          sliver: SliverToBoxAdapter(
-            child: Column(
-              spacing: 20.h,
-              children: List.generate(
-                2,
-                (index) => AspectRatio(
-                  aspectRatio: 0.7,
-                  child: AnimatedProjectItem(
-                    project: about.projects[index],
-                    index: index,
-                  ),
-                ),
-                growable: false,
-              ),
+          sliver: SliverList.separated(
+            itemCount: 2,
+            itemBuilder: (_, index) => AnimatedProjectItem(
+              project: about.projects[index],
+              index: index,
             ),
+            separatorBuilder: (_, __) => MySizedBox.height20,
           ),
         ),
         SliverToBoxAdapter(

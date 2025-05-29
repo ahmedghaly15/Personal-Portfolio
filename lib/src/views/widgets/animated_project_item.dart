@@ -10,9 +10,11 @@ class AnimatedProjectItem extends StatefulWidget {
     super.key,
     required this.project,
     required this.index,
+    this.isDescriptionTextExpanded = false,
   });
 
   final Project project;
+  final bool isDescriptionTextExpanded;
   final int index;
 
   @override
@@ -39,12 +41,16 @@ class _AnimatedProjectItemState extends State<AnimatedProjectItem> {
                     key:
                         ValueKey('small_selection_sliver_grid_${widget.index}'),
                     project: widget.project,
+                    isDescriptionTextExpanded: widget.isDescriptionTextExpanded,
                   ),
                 )
               : FadeInRight(
                   key: ValueKey('small_selection_sliver_grid_${widget.index}'),
                   duration: const Duration(milliseconds: 500),
-                  child: ProjectItem(project: widget.project),
+                  child: ProjectItem(
+                      project: widget.project,
+                      isDescriptionTextExpanded:
+                          widget.isDescriptionTextExpanded),
                 ))
           : Opacity(
               opacity: 0,

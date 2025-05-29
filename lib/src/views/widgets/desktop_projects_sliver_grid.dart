@@ -31,6 +31,7 @@ class DesktopProjectsSliverGrid extends StatelessWidget {
         child: FadeInAnimation(
           child: ScaleAnimation(
             child: ProjectItem(
+              isDescriptionTextExpanded: true,
               project: projects[index],
             ),
           ),

@@ -12,14 +12,15 @@ import '../../core/widgets/custom_cached_network_img.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
 
-
 class ProjectItem extends StatelessWidget {
   const ProjectItem({
     super.key,
     required this.project,
+    this.isDescriptionTextExpanded = false,
   });
 
   final Project project;
+  final bool isDescriptionTextExpanded;
 
   @override
   Widget build(BuildContext context) {
@@ -34,43 +35,40 @@ class ProjectItem extends StatelessWidget {
         ),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Positioned.fill(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14.r),
-                  child: Image.asset(
-                    Assets.imagesProjectItemBackground,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => const Icon(Icons.error),
+          AspectRatio(
+            aspectRatio: 1.7,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned.fill(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(14.r),
+                    child: Image.asset(
+                      Assets.imagesProjectItemBackground,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, __, ___) => const Icon(Icons.error),
+                    ),
                   ),
                 ),
-              ),
-              AspectRatio(
-                aspectRatio: 1.7,
-                child: CustomCachedNetworkImg(imageUrl: project.imgPath),
-              ),
-            ],
+                CustomCachedNetworkImg(imageUrl: project.imgPath),
+              ],
+            ),
           ),
           MySizedBox.height32,
           Text(
             project.title,
             style: AppTextStyles.font32Bold(context),
           ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.only(top: 18.h),
-              child: Text(
-                project.description,
-                style: AppTextStyles.font20Regular(context),
-                textAlign: TextAlign.justify,
-              ),
-            ),
-          ),
-          MySizedBox.height14,
+          isDescriptionTextExpanded
+              ? Expanded(
+                  child: _DescriptionText(project: project),
+                )
+              : Flexible(
+                  child: _DescriptionText(project: project),
+                ),
           Wrap(
             spacing: 16.w,
             direction: Axis.horizontal,
@@ -78,19 +76,19 @@ class ProjectItem extends StatelessWidget {
             runAlignment: WrapAlignment.start,
             children: [
               if (project.downloadLink != null)
-                ProjectItemTextButton(
+                _ProjectItemTextButton(
                   url: project.downloadLink!,
                   titleText: AppStrings.downloadApp,
                   svgPath: Assets.svgsDownloadIcon,
                 ),
               if (project.gitHubLink != null)
-                ProjectItemTextButton(
+                _ProjectItemTextButton(
                   url: project.gitHubLink!,
                   titleText: AppStrings.viewOnGitHub,
                   svgPath: Assets.svgsGithubIcon,
                 ),
               if (project.promoLink != null)
-                ProjectItemTextButton(
+                _ProjectItemTextButton(
                   url: project.promoLink!,
                   titleText: AppStrings.seeThePromo,
                   svgPath: Assets.svgsPlay,
@@ -103,9 +101,27 @@ class ProjectItem extends StatelessWidget {
   }
 }
 
-class ProjectItemTextButton extends StatelessWidget {
-  const ProjectItemTextButton({
-    super.key,
+class _DescriptionText extends StatelessWidget {
+  const _DescriptionText({
+    required this.project,
+  });
+
+  final Project project;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 18.h, bottom: 14.h),
+      child: Text(
+        project.description,
+        style: AppTextStyles.font20Regular(context),
+      ),
+    );
+  }
+}
+
+class _ProjectItemTextButton extends StatelessWidget {
+  const _ProjectItemTextButton({
     required this.url,
     required this.titleText,
     required this.svgPath,

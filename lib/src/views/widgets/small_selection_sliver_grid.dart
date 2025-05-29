@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../models/about.dart';
 import 'animated_project_item.dart';
 
-
 class SmallSelectionSliverGrid extends StatelessWidget {
   const SmallSelectionSliverGrid({
     super.key,
@@ -26,6 +25,7 @@ class SmallSelectionSliverGrid extends StatelessWidget {
         (index) => AnimatedProjectItem(
           project: projects[index],
           index: index,
+          isDescriptionTextExpanded: true,
         ),
         growable: false,
       ),
