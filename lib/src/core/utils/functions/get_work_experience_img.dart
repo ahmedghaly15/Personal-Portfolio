@@ -1,10 +1,11 @@
+import '../../enums/experience_status.dart';
 import '../app_assets.dart';
 
-String getWorkExperienceImg(String workExperienceStatus) {
-  switch (workExperienceStatus) {
-    case 'Freelance':
+String getWorkExperienceImg(ExperienceStatus status) {
+  switch (status) {
+    case ExperienceStatus.freelance:
       return Assets.imagesFreelanceIcon;
-    case 'Full-time':
+    case ExperienceStatus.fullTime:
       return Assets.imagesJobIcon;
     default:
       return Assets.imagesInternExperienceImg;

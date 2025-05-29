@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
+import '../enums/experience_status.dart';
 import '../themes/app_text_styles.dart';
 import '../utils/app_assets.dart';
 
@@ -71,6 +72,21 @@ extension GetResponsiveFontSize on BuildContext {
       return width / 1000;
     } else {
       return width / 1920;
+    }
+  }
+}
+
+extension ExperienceStatusEnumName on ExperienceStatus {
+  String get getName {
+    switch (this) {
+      case ExperienceStatus.fullTime:
+        return 'Full-time';
+      case ExperienceStatus.partTime:
+        return 'Part-time';
+      case ExperienceStatus.remote:
+        return 'Remote';
+      case ExperienceStatus.freelance:
+        return 'Freelance';
     }
   }
 }

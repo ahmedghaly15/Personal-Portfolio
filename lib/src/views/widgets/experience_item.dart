@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_portfolio/src/core/helpers/extensions.dart';
 
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_text_styles.dart';
@@ -61,7 +62,7 @@ class ExperienceItem extends StatelessWidget {
                     style: AppTextStyles.font13Medium(context),
                   ),
                   Text(
-                    workExperience.experienceStatus,
+                    workExperience.experienceStatus.getName,
                     style: AppTextStyles.font13Medium(context),
                   ),
                 ],
