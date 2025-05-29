@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../themes/app_colors.dart';
 import 'app_strings.dart';
 
-
 class AppConstants {
   AppConstants._();
 
@@ -21,12 +20,12 @@ class AppConstants {
           width: 1.w,
         ),
       );
-  static const LinearGradient boxPrimaryLinearGradient = LinearGradient(
+  static LinearGradient boxPrimaryLinearGradient = LinearGradient(
     colors: [
-      AppColors.color04071D,
+      AppColors.color04071D.withAlpha(204),
       AppColors.color0C0E23,
     ],
-    stops: [0, 1],
+    stops: const [0, 1],
     begin: AlignmentDirectional.topStart,
     end: AlignmentDirectional.bottomEnd,
   );

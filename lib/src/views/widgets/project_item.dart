@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../core/helpers/asset_helper.dart';
 import '../../core/themes/app_colors.dart';
@@ -40,19 +41,32 @@ class ProjectItem extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1.7,
-            child: Stack(alignment: Alignment.center, children: [
-              Positioned.fill(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14.r),
-                  child: Image.asset(
-                    Assets.imagesProjectItemBackground,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => const Icon(Icons.error),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned.fill(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(14.r),
+                    child: Lottie.asset(
+                      Assets.lottieProjectBackgroundCircles,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              Image.asset(AssetHelper.getProjectImg(project.title)),
-            ]),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(14.r),
+                    child: Image.asset(
+                      Assets.imagesProjectItemBackground,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, __, ___) => const Icon(Icons.error),
+                    ),
+                  ),
+                ),
+                Image.asset(AssetHelper.getProjectImg(project.title)),
+              ],
+            ),
           ),
           MySizedBox.height32,
           Text(
