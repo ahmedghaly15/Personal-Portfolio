@@ -53,7 +53,9 @@ class ProjectItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                CustomCachedNetworkImg(imageUrl: project.imgPath),
+                const CustomCachedNetworkImg(
+                    imageUrl:
+                        "https://www.freepik.com/free-psd/3d-illustration-person-with-sunglasses_27470334.htm#fromView=search&page=1&position=1&uuid=de4aba8c-2ed1-4f23-a70c-59f0759c02be&query=avatar"),
               ],
             ),
           ),
