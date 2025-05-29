@@ -95,10 +95,20 @@ class Assets {
   static const String lottieErrorAnimation =
       "assets/lottie/error_animation.json";
 
+  /// Assets for lottieExperienceBackground
+  /// assets/lottie/experience_background.json
+  static const String lottieExperienceBackground =
+      "assets/lottie/experience_background.json";
+
   /// Assets for lottieLoadingAnimation
   /// assets/lottie/loading_animation.json
   static const String lottieLoadingAnimation =
       "assets/lottie/loading_animation.json";
+
+  /// Assets for lottieProjectBackgroundCircles
+  /// assets/lottie/project_background_circles.json
+  static const String lottieProjectBackgroundCircles =
+      "assets/lottie/project_background_circles.json";
 
   /// Assets for svgsCopyIcon
   /// assets/svgs/copy-icon.svg
