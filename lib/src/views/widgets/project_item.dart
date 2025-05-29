@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../core/helpers/asset_helper.dart';
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_text_styles.dart';
 import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_constants.dart';
 import '../../core/utils/app_strings.dart';
 import '../../core/utils/functions/open_url.dart';
-import '../../core/widgets/custom_cached_network_img.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
 
@@ -40,24 +40,19 @@ class ProjectItem extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1.7,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Positioned.fill(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(14.r),
-                    child: Image.asset(
-                      Assets.imagesProjectItemBackground,
-                      fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => const Icon(Icons.error),
-                    ),
+            child: Stack(alignment: Alignment.center, children: [
+              Positioned.fill(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(14.r),
+                  child: Image.asset(
+                    Assets.imagesProjectItemBackground,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => const Icon(Icons.error),
                   ),
                 ),
-                const CustomCachedNetworkImg(
-                    imageUrl:
-                        "https://www.freepik.com/free-psd/3d-illustration-person-with-sunglasses_27470334.htm#fromView=search&page=1&position=1&uuid=de4aba8c-2ed1-4f23-a70c-59f0759c02be&query=avatar"),
-              ],
-            ),
+              ),
+              Image.asset(AssetHelper.getProjectImg(project.title)),
+            ]),
           ),
           MySizedBox.height32,
           Text(
