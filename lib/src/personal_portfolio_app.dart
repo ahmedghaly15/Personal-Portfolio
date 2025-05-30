@@ -20,6 +20,7 @@ class PersonalPortfolioApp extends StatelessWidget {
       builder: (_, __) => BlocProvider<LandingCubit>(
         create: (_) => getIt.get<LandingCubit>()..fetchData(),
         child: MaterialApp(
+          //
           debugShowCheckedModeBanner: false,
           title: AppStrings.appTitle,
           theme: AppThemes.dark,
