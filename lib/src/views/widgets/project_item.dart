@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../core/helpers/asset_helper.dart';
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_text_styles.dart';
 import '../../core/utils/app_assets.dart';
 import '../../core/utils/app_constants.dart';
 import '../../core/utils/app_strings.dart';
 import '../../core/utils/functions/open_url.dart';
-import '../../core/widgets/custom_cached_network_img.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
 
@@ -64,7 +64,7 @@ class ProjectItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                CustomCachedNetworkImg(imageUrl: project.imgPath),
+                Image.asset(AssetHelper.getProjectImg(project.title)),
               ],
             ),
           ),

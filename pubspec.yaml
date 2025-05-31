@@ -37,8 +37,6 @@ dependencies:
   get_it: ^8.0.3
   # Renders After Effects animations natively on Flutter
   lottie: ^3.3.1
-  # To load and cache network images
-  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
