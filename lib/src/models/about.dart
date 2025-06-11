@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../core/enums/experience_status.dart';
+import 'project.dart';
 
 part 'about.g.dart';
 
@@ -40,25 +41,6 @@ class AboutHeaderTextModel {
       _$AboutHeaderTextModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$AboutHeaderTextModelToJson(this);
-}
-
-@JsonSerializable()
-class Project {
-  final String imgPath, title, description;
-  final String? downloadLink, promoLink, gitHubLink;
-
-  Project({
-    required this.imgPath,
-    required this.title,
-    required this.description,
-    this.downloadLink,
-    this.promoLink,
-    this.gitHubLink,
-  });
-
-  factory Project.fromJson(Map<String, dynamic> json) =>
-      _$ProjectFromJson(json);
-  Map<String, dynamic> toJson() => _$ProjectToJson(this);
 }
 
 @JsonSerializable()
