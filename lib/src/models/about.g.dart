@@ -25,12 +25,11 @@ About _$AboutFromJson(Map<String, dynamic> json) => About(
 
 Map<String, dynamic> _$AboutToJson(About instance) => <String, dynamic>{
       'headerSmallText': instance.headerSmallText,
-      'headerBigText': instance.headerBigText.toJson(),
       'description': instance.description,
       'seeMyWorkLink': instance.seeMyWorkLink,
+      'headerBigText': instance.headerBigText.toJson(),
       'projects': instance.projects.map((e) => e.toJson()).toList(),
-      'workExperience':
-          instance.workExperience.map((e) => e.toJson()).toList(),
+      'workExperience': instance.workExperience.map((e) => e.toJson()).toList(),
       'approaches': instance.approaches.map((e) => e.toJson()).toList(),
     };
 
@@ -86,8 +85,7 @@ Map<String, dynamic> _$ApproachModelToJson(ApproachModel instance) =>
       'description': instance.description,
     };
 
-WorkExperienceModel _$WorkExperienceModelFromJson(
-        Map<String, dynamic> json) =>
+WorkExperienceModel _$WorkExperienceModelFromJson(Map<String, dynamic> json) =>
     WorkExperienceModel(
       id: json['id'] as String,
       title: json['title'] as String,
@@ -109,12 +107,13 @@ Map<String, dynamic> _$WorkExperienceModelToJson(
       'startDate': instance.startDate,
       'endDate': instance.endDate,
       'company': instance.company,
-      'experienceStatus':
-          _$ExperienceStatusEnumMap[instance.experienceStatus]!,
+      'experienceStatus': _$ExperienceStatusEnumMap[instance.experienceStatus]!,
       'description': instance.description,
     };
 
 const _$ExperienceStatusEnumMap = {
-  ExperienceStatus.ongoing: 'ongoing',
-  ExperienceStatus.completed: 'completed',
+  ExperienceStatus.fullTime: 'Full-time',
+  ExperienceStatus.partTime: 'Part-time',
+  ExperienceStatus.remote: 'Remote',
+  ExperienceStatus.freelance: 'Freelance',
 };
