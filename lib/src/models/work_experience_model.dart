@@ -1,3 +1,5 @@
+import 'package:json_annotation/json_annotation.dart';
+
 part 'work_experience_model.g.dart';
 
 @JsonSerializable()
