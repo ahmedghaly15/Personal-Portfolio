@@ -2,7 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../core/enums/experience_status.dart';
 import 'project.dart';
-import 'work_experience.dart';
+import 'work_experience_model.dart';
+import 'approach_model.dart';
 
 part 'about.g.dart';
 
@@ -42,15 +43,4 @@ class AboutHeaderTextModel {
       _$AboutHeaderTextModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$AboutHeaderTextModelToJson(this);
-}
-
-@JsonSerializable()
-class ApproachModel {
-  final String title, description;
-
-  ApproachModel({required this.title, required this.description});
-
-  factory ApproachModel.fromJson(Map<String, dynamic> json) =>
-      _$ApproachModelFromJson(json);
-  Map<String, dynamic> toJson() => _$ApproachModelToJson(this);
 }
