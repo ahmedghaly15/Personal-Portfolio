@@ -25,11 +25,12 @@ About _$AboutFromJson(Map<String, dynamic> json) => About(
 
 Map<String, dynamic> _$AboutToJson(About instance) => <String, dynamic>{
       'headerSmallText': instance.headerSmallText,
+      'headerBigText': instance.headerBigText.toJson(),
       'description': instance.description,
       'seeMyWorkLink': instance.seeMyWorkLink,
-      'headerBigText': instance.headerBigText.toJson(),
       'projects': instance.projects.map((e) => e.toJson()).toList(),
-      'workExperience': instance.workExperience.map((e) => e.toJson()).toList(),
+      'workExperience':
+          instance.workExperience.map((e) => e.toJson()).toList(),
       'approaches': instance.approaches.map((e) => e.toJson()).toList(),
     };
 
@@ -50,25 +51,45 @@ Map<String, dynamic> _$AboutHeaderTextModelToJson(
     };
 
 Project _$ProjectFromJson(Map<String, dynamic> json) => Project(
+      id: json['id'] as String,
       imgPath: json['imgPath'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
+      shownInAbout: json['shownInAbout'] as bool,
       downloadLink: json['downloadLink'] as String?,
       promoLink: json['promoLink'] as String?,
       gitHubLink: json['gitHubLink'] as String?,
     );
 
 Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
+      'id': instance.id,
       'imgPath': instance.imgPath,
       'title': instance.title,
       'description': instance.description,
       'downloadLink': instance.downloadLink,
       'promoLink': instance.promoLink,
       'gitHubLink': instance.gitHubLink,
+      'shownInAbout': instance.shownInAbout,
     };
 
-WorkExperienceModel _$WorkExperienceModelFromJson(Map<String, dynamic> json) =>
+ApproachModel _$ApproachModelFromJson(Map<String, dynamic> json) =>
+    ApproachModel(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+    );
+
+Map<String, dynamic> _$ApproachModelToJson(ApproachModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'description': instance.description,
+    };
+
+WorkExperienceModel _$WorkExperienceModelFromJson(
+        Map<String, dynamic> json) =>
     WorkExperienceModel(
+      id: json['id'] as String,
       title: json['title'] as String,
       startDate: json['startDate'] as String,
       endDate: json['endDate'] as String,
@@ -83,29 +104,17 @@ WorkExperienceModel _$WorkExperienceModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$WorkExperienceModelToJson(
         WorkExperienceModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'startDate': instance.startDate,
       'endDate': instance.endDate,
       'company': instance.company,
-      'experienceStatus': _$ExperienceStatusEnumMap[instance.experienceStatus]!,
+      'experienceStatus':
+          _$ExperienceStatusEnumMap[instance.experienceStatus]!,
       'description': instance.description,
     };
 
 const _$ExperienceStatusEnumMap = {
-  ExperienceStatus.fullTime: 'Full-time',
-  ExperienceStatus.partTime: 'Part-time',
-  ExperienceStatus.remote: 'Remote',
-  ExperienceStatus.freelance: 'Freelance',
+  ExperienceStatus.ongoing: 'ongoing',
+  ExperienceStatus.completed: 'completed',
 };
-
-ApproachModel _$ApproachModelFromJson(Map<String, dynamic> json) =>
-    ApproachModel(
-      title: json['title'] as String,
-      description: json['description'] as String,
-    );
-
-Map<String, dynamic> _$ApproachModelToJson(ApproachModel instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'description': instance.description,
-    };
