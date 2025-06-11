@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-
 import '../core/enums/experience_status.dart';
 
 part 'about.g.dart';
