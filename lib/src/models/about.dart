@@ -1,9 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../core/enums/experience_status.dart';
-import 'project.dart';
-import 'work_experience_model.dart';
-import 'approach_model.dart';
 
 part 'about.g.dart';
 
@@ -43,4 +40,62 @@ class AboutHeaderTextModel {
       _$AboutHeaderTextModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$AboutHeaderTextModelToJson(this);
+}
+
+@JsonSerializable()
+class Project {
+  final String id, imgPath, title, description;
+  final String? downloadLink, promoLink, gitHubLink;
+  final bool shownInAbout;
+
+  Project({
+    required this.id,
+    required this.imgPath,
+    required this.title,
+    required this.description,
+    required this.shownInAbout,
+    this.downloadLink,
+    this.promoLink,
+    this.gitHubLink,
+  });
+
+  factory Project.fromJson(Map<String, dynamic> json) =>
+      _$ProjectFromJson(json);
+  Map<String, dynamic> toJson() => _$ProjectToJson(this);
+}
+
+@JsonSerializable()
+class ApproachModel {
+  final String id, title, description;
+
+  ApproachModel({
+    required this.id,
+    required this.title,
+    required this.description,
+    });
+
+  factory ApproachModel.fromJson(Map<String, dynamic> json) =>
+      _$ApproachModelFromJson(json);
+  Map<String, dynamic> toJson() => _$ApproachModelToJson(this);
+}
+
+@JsonSerializable()
+class WorkExperienceModel {
+  final String id, title, startDate, endDate, company;
+  final ExperienceStatus experienceStatus;
+  final List<String> description;
+
+  WorkExperienceModel({
+    required this.id,
+    required this.title,
+    required this.startDate,
+    required this.endDate,
+    required this.company,
+    required this.experienceStatus,
+    required this.description,
+  });
+
+  factory WorkExperienceModel.fromJson(Map<String, dynamic> json) =>
+      _$WorkExperienceModelFromJson(json);
+  Map<String, dynamic> toJson() => _$WorkExperienceModelToJson(this);
 }
