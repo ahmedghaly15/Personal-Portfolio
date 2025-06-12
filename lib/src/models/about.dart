@@ -82,7 +82,7 @@ class ApproachModel {
 class WorkExperienceModel {
   final String id, title, startDate, endDate, company;
   final ExperienceStatus experienceStatus;
-  final List<String> description;
+  final String description;
 
   WorkExperienceModel({
     required this.id,

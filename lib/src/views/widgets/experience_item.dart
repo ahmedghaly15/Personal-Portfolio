@@ -92,6 +92,11 @@ class ExperienceItem extends StatelessWidget {
   }
 
   String _getWorkExperienceDescription() {
-    return workExperience.description.map((item) => '• $item').join('\n\n');
+    return workExperience.description
+        .split('.')
+        .map((e) => e.trim()) // Remove leading/trailing whitespace
+        .where((e) => e.isNotEmpty) // Filter out empty strings
+        .map((e) => '• $e.')
+        .join('\n\n');
   }
 }

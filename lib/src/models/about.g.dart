@@ -94,9 +94,7 @@ WorkExperienceModel _$WorkExperienceModelFromJson(Map<String, dynamic> json) =>
       company: json['company'] as String,
       experienceStatus:
           $enumDecode(_$ExperienceStatusEnumMap, json['experienceStatus']),
-      description: (json['description'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      description: json['description'] as String,
     );
 
 Map<String, dynamic> _$WorkExperienceModelToJson(
