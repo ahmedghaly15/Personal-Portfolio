@@ -71,7 +71,7 @@ class ApproachModel {
     required this.id,
     required this.title,
     required this.description,
-    });
+  });
 
   factory ApproachModel.fromJson(Map<String, dynamic> json) =>
       _$ApproachModelFromJson(json);
