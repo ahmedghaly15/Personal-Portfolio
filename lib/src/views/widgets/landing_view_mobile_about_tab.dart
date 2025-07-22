@@ -112,11 +112,15 @@ class LandingViewMobileAboutTab extends StatelessWidget {
             horizontal: AppConstants.mobileHorizontalPadVal.w,
           ),
           sliver: SliverList.separated(
-            itemCount: 2,
-            itemBuilder: (_, index) => AnimatedProjectItem(
-              project: about.projects[index],
-              index: index,
-            ),
+            itemCount: about.projects.where((p) => p.shownInAbout).length,
+            itemBuilder: (_, index) {
+              final shownInAboutProjects =
+                  about.projects.where((p) => p.shownInAbout).toList();
+              return AnimatedProjectItem(
+                project: shownInAboutProjects[index],
+                index: index,
+              );
+            },
             separatorBuilder: (_, __) => MySizedBox.height20,
           ),
         ),

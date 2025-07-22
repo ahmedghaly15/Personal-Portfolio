@@ -53,8 +53,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 30.h),
-            child: HeaderDescriptionText(text: about.description
-            ),
+            child: HeaderDescriptionText(text: about.description),
           ),
         ),
         SliverToBoxAdapter(
@@ -84,7 +83,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 100.w),
           sliver: SmallSelectionSliverGrid(
-            projects: about.projects,
+            projects: about.projects.where((p) => p.shownInAbout).toList(),
             tabletLayoutChildAspectRatio: tabletLayoutProjectAspectRatio,
           ),
         ),

@@ -16,18 +16,18 @@ class SmallSelectionSliverGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverGrid.count(
-      crossAxisCount: 2,
-      crossAxisSpacing: 40.w,
-      childAspectRatio: tabletLayoutChildAspectRatio ?? 1,
-      children: List.generate(
-        2,
-        (index) => AnimatedProjectItem(
-          project: projects[index],
-          index: index,
-          isDescriptionTextExpanded: true,
-        ),
-        growable: false,
+    return SliverGrid.builder(
+      itemCount: projects.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: tabletLayoutChildAspectRatio ?? 1.0,
+        mainAxisSpacing: 20.h,
+        crossAxisSpacing: 20.w,
+      ),
+      itemBuilder: (_, index) => AnimatedProjectItem(
+        project: projects[index],
+        index: index,
+        isDescriptionTextExpanded: false,
       ),
     );
   }
