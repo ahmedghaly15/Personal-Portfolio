@@ -7,6 +7,34 @@ class Assets {
   static const String cvAhmedGhalyFlutterDev =
       "assets/cv/Ahmed Ghaly - Flutter Dev.pdf";
 
+  /// Assets for fontsInterInter24ptBold
+  /// assets/fonts/Inter/Inter_24pt-Bold.ttf
+  static const String fontsInterInter24ptBold =
+      "assets/fonts/Inter/Inter_24pt-Bold.ttf";
+
+  /// Assets for fontsInterInter24ptMedium
+  /// assets/fonts/Inter/Inter_24pt-Medium.ttf
+  static const String fontsInterInter24ptMedium =
+      "assets/fonts/Inter/Inter_24pt-Medium.ttf";
+
+  /// Assets for fontsInterInter24ptRegular
+  /// assets/fonts/Inter/Inter_24pt-Regular.ttf
+  static const String fontsInterInter24ptRegular =
+      "assets/fonts/Inter/Inter_24pt-Regular.ttf";
+
+  /// Assets for fontsInterInter24ptSemiBold
+  /// assets/fonts/Inter/Inter_24pt-SemiBold.ttf
+  static const String fontsInterInter24ptSemiBold =
+      "assets/fonts/Inter/Inter_24pt-SemiBold.ttf";
+
+  /// Assets for fontsInterOFL
+  /// assets/fonts/Inter/OFL.txt
+  static const String fontsInterOFL = "assets/fonts/Inter/OFL.txt";
+
+  /// Assets for fontsInterREADME
+  /// assets/fonts/Inter/README.txt
+  static const String fontsInterREADME = "assets/fonts/Inter/README.txt";
+
   /// Assets for imagesBackgroundGridPattern
   /// assets/images/background_grid-pattern.png
   static const String imagesBackgroundGridPattern =
@@ -109,6 +137,10 @@ class Assets {
   /// assets/lottie/project_background_circles.json
   static const String lottieProjectBackgroundCircles =
       "assets/lottie/project_background_circles.json";
+
+  /// Assets for lottieShyLottie
+  /// assets/lottie/shy-lottie.json
+  static const String lottieShyLottie = "assets/lottie/shy-lottie.json";
 
   /// Assets for svgsCopyIcon
   /// assets/svgs/copy-icon.svg

@@ -72,4 +72,6 @@ class AppStrings {
   static const String mySkills = 'my skills';
   static const String onJourney =
       "On a journey of constant growth—honing my expertise in crafting seamless apps, solving complex challenges, and delivering excellence.";
+  static const String dontWorry =
+      "It's not your fault!. These things happen sometimes.\nDon't worry, we're working on it.";
 }
