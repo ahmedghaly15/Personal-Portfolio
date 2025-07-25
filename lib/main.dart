@@ -8,7 +8,7 @@ import 'package:visibility_detector/visibility_detector.dart';
 import 'src/core/utils/bloc_observer.dart';
 import 'src/core/utils/const_strings.dart';
 import 'src/core/helpers/environment_helper.dart';
-import 'src/core/utils/functions/setup_di.dart';
+import 'src/core/utils/functions/setup_service_locator.dart';
 import 'src/core/widgets/flutter_error_details_view.dart';
 import 'src/personal_portfolio_app.dart';
 

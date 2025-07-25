@@ -1,17 +1,17 @@
-import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../view_model/landing_cubit.dart';
+import '../service_locator.dart';
 
-final GetIt getIt = GetIt.instance;
+final locator = ServiceLocator();
 
 void _setupForExternal() {
-  getIt.registerLazySingleton<SupabaseClient>(() => Supabase.instance.client);
+  locator.registerLazySingleton<SupabaseClient>(() => Supabase.instance.client);
 }
 
 void _setupForeCubits() {
-  getIt.registerFactory<LandingCubit>(
-    () => LandingCubit(getIt.get<SupabaseClient>()),
+  locator.registerFactory<LandingCubit>(
+    () => LandingCubit(locator.get<SupabaseClient>()),
   );
 }
 
