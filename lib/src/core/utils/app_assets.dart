@@ -63,10 +63,6 @@ class Assets {
   /// assets/images/freelance-icon.png
   static const String imagesFreelanceIcon = "assets/images/freelance-icon.png";
 
-  /// Assets for imagesIcareIcon
-  /// assets/images/icare_icon.png
-  static const String imagesIcareIcon = "assets/images/icare_icon.png";
-
   /// Assets for imagesInternExperienceImg
   /// assets/images/intern-experience-img.png
   static const String imagesInternExperienceImg =
@@ -75,10 +71,6 @@ class Assets {
   /// Assets for imagesJobIcon
   /// assets/images/job-icon.png
   static const String imagesJobIcon = "assets/images/job-icon.png";
-
-  /// Assets for imagesLinkupIcon
-  /// assets/images/linkup_icon.png
-  static const String imagesLinkupIcon = "assets/images/linkup_icon.png";
 
   /// Assets for imagesMobileGridPattern
   /// assets/images/mobile-grid-pattern.png
@@ -95,18 +87,10 @@ class Assets {
   static const String imagesProjectItemBackground =
       "assets/images/project-item-background.png";
 
-  /// Assets for imagesRoomeIcon
-  /// assets/images/roome_icon.png
-  static const String imagesRoomeIcon = "assets/images/roome_icon.png";
-
   /// Assets for imagesStartSpotlight
   /// assets/images/start_spotlight.png
   static const String imagesStartSpotlight =
       "assets/images/start_spotlight.png";
-
-  /// Assets for imagesStoreifyIcon
-  /// assets/images/storeify_icon.png
-  static const String imagesStoreifyIcon = "assets/images/storeify_icon.png";
 
   /// Assets for imagesTechEnthusiastBackground
   /// assets/images/tech-enthusiast-background.png

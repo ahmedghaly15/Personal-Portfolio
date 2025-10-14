@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
+import 'package:personal_portfolio/src/core/widgets/custom_cached_network_img.dart';
 
-import '../../core/helpers/asset_helper.dart';
 import '../../core/themes/app_colors.dart';
 import '../../core/themes/app_text_styles.dart';
 import '../../core/utils/app_assets.dart';
@@ -64,7 +64,7 @@ class ProjectItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                Image.asset(AssetHelper.getProjectImg(project.title)),
+                CustomCachedNetworkImage(imageUrl: project.imgPath)
               ],
             ),
           ),
