@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/utils/app_constants.dart';
@@ -7,7 +6,6 @@ import '../../core/utils/app_strings.dart';
 import '../../core/widgets/main_button.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
-import '../../view_model/landing_cubit.dart';
 import 'animated_project_item.dart';
 import 'approach_item.dart';
 import 'contact_me_section.dart';
@@ -21,9 +19,16 @@ import 'tabs_nav.dart';
 import 'tech_enthusiast_card.dart';
 
 class LandingViewMobileAboutTab extends StatelessWidget {
-  const LandingViewMobileAboutTab({super.key, required this.about});
+  const LandingViewMobileAboutTab({
+    super.key,
+    required this.about,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
+  });
 
   final About about;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,12 @@ class LandingViewMobileAboutTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: AppConstants.mobileHorizontalPadVal.w,
           ),
-          sliver: const SliverToBoxAdapter(child: TabsNav()),
+          sliver: SliverToBoxAdapter(
+            child: TabsNav(
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          ),
         ),
         SliverToBoxAdapter(
           child: Container(
@@ -127,7 +137,7 @@ class LandingViewMobileAboutTab extends StatelessWidget {
         SliverToBoxAdapter(
           child: MainButton(
             width: double.infinity,
-            onPressed: () => context.read<LandingCubit>().selectTabNav(2),
+            onPressed: () => onTabSelected(2),
             gradient: AppConstants.boxSecondaryLinearGradient,
             margin: EdgeInsets.only(
               bottom: 64.h,

@@ -9,9 +9,16 @@ import 'project_item.dart';
 import 'tabs_nav.dart';
 
 class LandingViewMobilePortfolioTab extends StatelessWidget {
-  const LandingViewMobilePortfolioTab({super.key, required this.projects});
+  const LandingViewMobilePortfolioTab({
+    super.key,
+    required this.projects,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
+  });
 
   final List<Project> projects;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,12 @@ class LandingViewMobilePortfolioTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: AppConstants.mobileHorizontalPadVal.w,
           ),
-          sliver: const SliverToBoxAdapter(child: TabsNav()),
+          sliver: SliverToBoxAdapter(
+            child: TabsNav(
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          ),
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(

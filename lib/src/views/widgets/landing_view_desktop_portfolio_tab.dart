@@ -10,17 +10,26 @@ class LandingViewDesktopPortfolioTab extends StatelessWidget {
     super.key,
     required this.projects,
     this.tabletProjectAspectRatio,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
   });
 
   final double? tabletProjectAspectRatio;
   final List<Project> projects;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
-          child: Align(child: TabsNav()),
+        SliverToBoxAdapter(
+          child: Align(
+            child: TabsNav(
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          ),
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 56.h, horizontal: 100.w),

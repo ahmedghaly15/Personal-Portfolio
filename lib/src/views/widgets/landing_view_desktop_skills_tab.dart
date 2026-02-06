@@ -8,17 +8,27 @@ import 'skills_tab_big_text.dart';
 import 'tabs_nav.dart';
 
 class LandingViewDesktopSkillsTab extends StatelessWidget {
-  const LandingViewDesktopSkillsTab({super.key, required this.skills});
+  const LandingViewDesktopSkillsTab({
+    super.key,
+    required this.skills,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
+  });
 
   final SkillTabModel skills;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Align(
-            child: TabsNav(),
+            child: TabsNav(
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
           ),
         ),
         SliverToBoxAdapter(
