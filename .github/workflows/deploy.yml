@@ -12,25 +12,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Create .env File for Asset Bundle
-        run: |
-          echo 'SUPABASE_URL="${{ secrets.SUPABASE_URL }}"' > .env
-          echo 'SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}"' >> .env
-          echo 'MY_ID="${{ secrets.MY_ID }}"' >> .env
-
-      - name: Install Flutter Version 3.27.0
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.27.0'
-          channel: 'stable'
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@v1
 
       - name: Install dependencies
-        run: flutter pub get
+        run: dart pub get
 
-      - name: Build Flutter Web
-        run: flutter build web --dart-define=SUPABASE_URL="${{ secrets.SUPABASE_URL }}" --dart-define=SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}" --dart-define=MY_ID="${{ secrets.MY_ID }}"
+      - name: Build Jaspr site
+        run: dart run jaspr_builder build
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -38,5 +29,3 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
           channelId: live
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks

@@ -1,54 +1,59 @@
-# Personal Portfolio - Flutter Web
+# Personal Portfolio - Jaspr Web
 
-This is my personal portfolio website, built using Flutter for the web. The portfolio showcases my skills, experiences, and projects, and consists of three main sections: **About**, **Skills**, and **Portfolio**.
+This repository is now configured as a **Jaspr-first web deployment**.
 
-## Table of Contents
+## Architecture
 
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
+- **Runtime/UI framework:** `jaspr`
+- **Data/API client:** `supabase`
+- **Build pipeline:** `jaspr_builder`
+- **Hosting target:** Firebase Hosting static site
+- **Static assets source:** `web/`
+- **Generated deployment output:** `build/jaspr/`
 
+`jaspr_builder` compiles the app and places deployable files in `build/jaspr`. Web assets from `web/` (such as `index.html`, icons, and manifest files) are expected to be integrated into that output during build.
 
-## Overview
+## Migration decisions
 
-This portfolio is a professional way to introduce myself and demonstrate my abilities in software development. It’s designed to highlight:
-- **About**: A brief introduction to who I am, including my background and professional journey.
-- **Skills**: A detailed view of the technical skills and tools I have mastered.
-- **Portfolio**: A gallery of projects that I have worked on, with descriptions and links to their live versions or source code.
+- Removed Flutter-only deployment scaffolding for platform builds (`android/`, `ios/`, `macos/`) because this repo is now targeting web-only Jaspr deployment.
+- Kept only shared Dart packages required by the current app/deployment flow.
 
-## Features
+## Local development
 
-- **Responsive Design**: Fully responsive, providing a great user experience on both desktop and mobile devices.
-- **Interactive Tabs**: Easy navigation between About, Skills, and Portfolio sections.
-- **Dark Mode**: Toggle between light and dark themes for better accessibility and user preference.
-- **Localization**: The app supports multiple languages, with **English** as the default and **Arabic** as an additional language.
-- **Built with Flutter**: A smooth and fast web experience using Flutter.
+Install dependencies:
 
-## Technologies Used
+```bash
+dart pub get
+```
 
-- **Flutter**: Front-end framework for building the web app.
-- **Dart**: Programming language for Flutter.
-- **HTML/CSS**: Used by Flutter for rendering web content.
-- **Firebase**: Firebase hosting.
+Run local Jaspr dev server:
 
-## Usage
+```bash
+./scripts/jaspr_dev.sh
+```
 
-Once the app is running or deployed, you can navigate through the portfolio by switching between the tabs:
-- **About**: Learn more about me, my career, and my goals.
-- **Skills**: Check out the technologies and tools I specialize in.
-- **Portfolio**: Browse the projects I’ve worked on and see live demos or source code.
+## Production build
 
-The portfolio also includes:
-- **Dark Mode**: Toggle the theme to switch between light and dark modes.
-- **Language Switch**: You can switch between English (default) and Arabic.
+Build static output:
 
-## Screenshots
+```bash
+./scripts/jaspr_build.sh
+```
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/d8d6bb48-ddbe-4d24-95fd-bf0296a53819" alt="tablet" width="100%" />
-  <img src="https://github.com/user-attachments/assets/918bbba6-d351-4053-b142-5c5b779efb62" alt="desktop" width="100%" />
-  <img src="https://github.com/user-attachments/assets/b89e8b21-0f91-4942-9a28-808748675c07" alt="mobile" width="100%" />
-</div>
+Output directory:
 
+```text
+build/jaspr/
+```
+
+## Hosting flow (Firebase)
+
+1. Build site with `jaspr_builder`.
+2. Firebase Hosting serves `build/jaspr/` (configured in `firebase.json`).
+3. Deploy with Firebase CLI or CI workflow (`.github/workflows/deploy.yml`).
+
+Example deploy command:
+
+```bash
+firebase deploy --only hosting
+```
