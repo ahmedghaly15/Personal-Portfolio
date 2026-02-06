@@ -1,154 +1,36 @@
-import 'package:animate_do/animate_do.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jaspr/jaspr.dart';
 
-import '../../core/utils/app_strings.dart';
-import '../../core/widgets/main_button.dart';
-import '../../core/widgets/my_sized_box.dart';
-import '../../models/about.dart';
-import 'contact_me_section.dart';
-import 'custom_section_title.dart';
-import 'desktop_passion_and_purpose_section.dart';
 import 'experience_item.dart';
-import 'landing_view_big_text.dart';
-import 'my_approach_sliver_grid.dart';
-import 'see_my_work_and_download_cv_buttons.dart';
-import 'small_selection_sliver_grid.dart';
-import 'tabs_nav.dart';
+import 'project_item.dart';
 
-class LandingViewDesktopAboutTab extends StatelessWidget {
+class LandingViewDesktopAboutTab extends StatelessComponent {
   const LandingViewDesktopAboutTab({
     super.key,
-    this.tabletLayoutProjectAspectRatio,
-    this.tabletApproachGridCrossAxisCount,
-    required this.about,
-    required this.selectedTabNavIndex,
-    required this.onTabSelected,
+    required this.headline,
+    required this.description,
+    required this.experiences,
+    required this.featuredProjects,
   });
 
-  final double? tabletLayoutProjectAspectRatio;
-  final int? tabletApproachGridCrossAxisCount;
-  final About about;
-  final int selectedTabNavIndex;
-  final ValueChanged<int> onTabSelected;
+  final String headline;
+  final String description;
+  final List<ExperienceViewModel> experiences;
+  final List<ProjectViewModel> featuredProjects;
 
   @override
-  Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Align(
-            child: TabsNav(
-              selectedTabNavIndex: selectedTabNavIndex,
-              onTabSelected: onTabSelected,
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(top: 73.h, bottom: 22.h),
-            child: HeaderSmallText(text: about.headerSmallText),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Align(
-            child: LandingViewBigText(headerBigText: about.headerBigText),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 30.h),
-            child: HeaderDescriptionText(text: about.description),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: SeeMyWorkAndDownloadCVButtons(
-            seeMyWorkUrl: about.seeMyWorkLink,
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(
-              top: 206.h,
-              bottom: 150.h,
-              left: 24.w,
-              right: 24.w,
-            ),
-            child: const DesktopPassionAndPurposeSection(),
-          ),
-        ),
-        const SliverToBoxAdapter(
-          child: Align(
-            child: CustomSectionTitle(
-              whiteSpan: '${AppStrings.smallSelectionOf} ',
-              colorfulSpan: AppStrings.recentProjects,
-            ),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 100.w),
-          sliver: SmallSelectionSliverGrid(
-            projects: about.projects.where((p) => p.shownInAbout).toList(),
-            tabletLayoutChildAspectRatio: tabletLayoutProjectAspectRatio,
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Align(
-            child: MainButton(
-              margin: EdgeInsets.only(bottom: 150.h),
-              onPressed: () => onTabSelected(2),
-              text: AppStrings.seeMyPortfolio,
-            ),
-          ),
-        ),
-        const SliverToBoxAdapter(
-          child: Align(
-            child: CustomSectionTitle(
-              whiteSpan: '${AppStrings.my} ',
-              colorfulSpan: AppStrings.workExperience,
-            ),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.only(
-            top: 70.h,
-            bottom: 130.h,
-            left: 90.w,
-            right: 90.w,
-          ),
-          sliver: SliverList.separated(
-            itemCount: about.workExperience.length,
-            itemBuilder: (_, index) => FadeInLeft(
-              delay: Duration(milliseconds: 300 * index),
-              child: ExperienceItem(
-                workExperience: about.workExperience[index],
-              ),
-            ),
-            separatorBuilder: (_, __) => MySizedBox.height14,
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Align(
-            child: Container(
-              margin: EdgeInsets.only(bottom: 60.h),
-              child: const CustomSectionTitle(
-                whiteSpan: '${AppStrings.my} ',
-                colorfulSpan: AppStrings.approach,
-              ),
-            ),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 90.w),
-          sliver: MyApproachSliverGrid(
-            tabletCrossAxisCount: tabletApproachGridCrossAxisCount,
-            approaches: about.approaches,
-          ),
-        ),
-        const SliverToBoxAdapter(
-          child: ContactMeSection(aspectRatio: 2),
-        ),
-      ],
-    );
+  Iterable<Component> build(BuildContext context) sync* {
+    yield section([
+      p([text('About')], classes: 'section-subtitle'),
+      h2([text(headline)], classes: 'section-title'),
+      p([text(description)], classes: 'section-copy'),
+      h3([text('Experience')]),
+      div([
+        ...experiences.map((item) => ExperienceItem(experience: item)),
+      ], classes: 'cards-grid'),
+      h3([text('Featured projects')]),
+      div([
+        ...featuredProjects.map((item) => ProjectItem(project: item)),
+      ], classes: 'cards-grid'),
+    ], classes: 'shell-card');
   }
 }

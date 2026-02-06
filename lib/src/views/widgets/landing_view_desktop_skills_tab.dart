@@ -1,60 +1,35 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jaspr/jaspr.dart';
 
-import '../../models/skill_tab_model.dart';
-import 'landing_view_big_text.dart';
-import 'skills_progress_list.dart';
-import 'skills_tab_big_text.dart';
-import 'tabs_nav.dart';
+class SkillViewModel {
+  const SkillViewModel({required this.name, required this.percent});
 
-class LandingViewDesktopSkillsTab extends StatelessWidget {
+  final String name;
+  final int percent;
+}
+
+class LandingViewDesktopSkillsTab extends StatelessComponent {
   const LandingViewDesktopSkillsTab({
     super.key,
+    required this.title,
     required this.skills,
-    required this.selectedTabNavIndex,
-    required this.onTabSelected,
   });
 
-  final SkillTabModel skills;
-  final int selectedTabNavIndex;
-  final ValueChanged<int> onTabSelected;
+  final String title;
+  final List<SkillViewModel> skills;
 
   @override
-  Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Align(
-            child: TabsNav(
-              selectedTabNavIndex: selectedTabNavIndex,
-              onTabSelected: onTabSelected,
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(top: 73.h, bottom: 22.h),
-            child: HeaderSmallText(text: skills.headerSmallText
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Align(
-            child: SkillsTabBigText(headerBigText: skills.headerBigText),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            margin: EdgeInsets.only(
-              top: 32.h,
-              left: 100.w,
-              right: 100.w,
-              bottom: 32.h,
-            ),
-            child: SkillsProgressList(skills: skills.skills),
-          ),
-        ),
-      ],
-    );
+  Iterable<Component> build(BuildContext context) sync* {
+    yield section([
+      p([text('Skills')], classes: 'section-subtitle'),
+      h2([text(title)], classes: 'section-title'),
+      ...skills.map(
+        (skill) => div([
+          p([text('${skill.name} · ${skill.percent}%')]),
+          div([
+            div([], classes: 'skill-fill', attributes: {'style': 'width: ${skill.percent}%'}),
+          ], classes: 'skill-track'),
+        ], classes: 'skill'),
+      ),
+    ], classes: 'shell-card');
   }
 }

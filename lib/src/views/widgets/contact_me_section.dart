@@ -1,43 +1,24 @@
-import 'package:flutter/material.dart';
+import 'package:jaspr/jaspr.dart';
 
-import '../../core/utils/app_assets.dart';
-import 'contact_me_content.dart';
-
-
-
-class ContactMeSection extends StatelessWidget {
-  const ContactMeSection({
-    super.key,
-    required this.aspectRatio,
-    this.contactMeButtonWidth,
-  });
-
-  final double aspectRatio;
-  final double? contactMeButtonWidth;
+class ContactMeSection extends StatelessComponent {
+  const ContactMeSection({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: aspectRatio,
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(
-              Assets.imagesFooterGridPattern,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            top: 0,
-            child: AnimatedContactMeContent(
-              contactMeButtonWidth: contactMeButtonWidth,
-            ),
-          ),
-        ],
+  Iterable<Component> build(BuildContext context) sync* {
+    yield section([
+      p([text('Contact')], classes: 'section-subtitle'),
+      h2([text('Let\'s build something together')], classes: 'section-title'),
+      p(
+        [text('Reach out for collaboration, freelance work, or a quick intro call.')],
+        classes: 'section-copy',
       ),
-    );
+      div([
+        a([text('Email me')], href: 'mailto:ahmedghaly0767@gmail.com', classes: 'cta-btn'),
+        a([text('GitHub')],
+            href: 'https://github.com/ahmedghaly15',
+            target: Target.blank,
+            classes: 'cta-btn'),
+      ], classes: 'contact-actions'),
+    ], classes: 'shell-card');
   }
 }
