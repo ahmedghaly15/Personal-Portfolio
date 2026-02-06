@@ -1,39 +1,56 @@
-part of 'landing_cubit.dart';
+import '../models/fetch_data_response.dart';
 
-enum LandingStatus {
-  initial,
-  selectTabNav,
-  fetchDataLoading,
-  fetchDataSuccess,
-  fetchDataError,
-}
+enum LandingDataStatus { initial, loading, success, error }
 
-class LandingState {
-  final LandingStatus status;
-  final int selectedTabNavIndex;
-  final FetchDataResponse? data;
-  final String? error;
-
-  const LandingState({
+class LandingDataState {
+  const LandingDataState({
     required this.status,
-    this.selectedTabNavIndex = 0,
-    this.data,
-    this.error,
+    this.payload,
+    this.errorMessage,
   });
 
-  LandingState copyWith({
-    LandingStatus? status,
-    int? selectedTabNavIndex,
-    FetchDataResponse? data,
-    String? error,
-  }) =>
-      LandingState(
-        status: status ?? this.status,
-        selectedTabNavIndex: selectedTabNavIndex ?? this.selectedTabNavIndex,
-        data: data ?? this.data,
-        error: error ?? this.error,
-      );
+  final LandingDataStatus status;
+  final FetchDataResponse? payload;
+  final String? errorMessage;
 
-  factory LandingState.initial() =>
-      const LandingState(status: LandingStatus.initial);
+  bool get isLoading => status == LandingDataStatus.loading;
+
+  factory LandingDataState.initial() =>
+      const LandingDataState(status: LandingDataStatus.initial);
+
+  factory LandingDataState.loading({FetchDataResponse? payload}) =>
+      LandingDataState(status: LandingDataStatus.loading, payload: payload);
+
+  factory LandingDataState.success(FetchDataResponse payload) =>
+      LandingDataState(status: LandingDataStatus.success, payload: payload);
+
+  factory LandingDataState.error({
+    required String errorMessage,
+    FetchDataResponse? payload,
+  }) =>
+      LandingDataState(
+        status: LandingDataStatus.error,
+        payload: payload,
+        errorMessage: errorMessage,
+      );
+}
+
+class LandingViewState {
+  const LandingViewState({
+    this.selectedTabIndex = 0,
+    this.dataState = const LandingDataState(status: LandingDataStatus.initial),
+  });
+
+  final int selectedTabIndex;
+  final LandingDataState dataState;
+
+  LandingViewState copyWith({
+    int? selectedTabIndex,
+    LandingDataState? dataState,
+  }) {
+    return LandingViewState(
+      selectedTabIndex: selectedTabIndex ?? this.selectedTabIndex,
+      dataState: dataState ?? this.dataState,
+    );
+  }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/landing_view_body_bloc_builder.dart';
+import 'widgets/landing_view_body_state_builder.dart';
 
 
 
@@ -10,7 +10,7 @@ class LandingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: LandingViewBodyBlocBuilder(),
+      body: LandingViewBodyStateBuilder(),
     );
   }
 }

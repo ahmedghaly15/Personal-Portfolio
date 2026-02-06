@@ -1,13 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/utils/app_strings.dart';
 import '../../core/widgets/main_button.dart';
 import '../../core/widgets/my_sized_box.dart';
 import '../../models/about.dart';
-import '../../view_model/landing_cubit.dart';
 import 'contact_me_section.dart';
 import 'custom_section_title.dart';
 import 'desktop_passion_and_purpose_section.dart';
@@ -24,19 +22,26 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
     this.tabletLayoutProjectAspectRatio,
     this.tabletApproachGridCrossAxisCount,
     required this.about,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
   });
 
   final double? tabletLayoutProjectAspectRatio;
   final int? tabletApproachGridCrossAxisCount;
   final About about;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Align(
-            child: TabsNav(),
+            child: TabsNav(
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
           ),
         ),
         SliverToBoxAdapter(
@@ -91,7 +96,7 @@ class LandingViewDesktopAboutTab extends StatelessWidget {
           child: Align(
             child: MainButton(
               margin: EdgeInsets.only(bottom: 150.h),
-              onPressed: () => context.read<LandingCubit>().selectTabNav(2),
+              onPressed: () => onTabSelected(2),
               text: AppStrings.seeMyPortfolio,
             ),
           ),

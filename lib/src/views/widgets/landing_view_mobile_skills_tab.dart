@@ -9,9 +9,16 @@ import 'skills_tab_big_text.dart';
 import 'tabs_nav.dart';
 
 class LandingViewMobileSkillsTab extends StatelessWidget {
-  const LandingViewMobileSkillsTab({super.key, required this.skills});
+  const LandingViewMobileSkillsTab({
+    super.key,
+    required this.skills,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
+  });
 
   final SkillTabModel skills;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,12 @@ class LandingViewMobileSkillsTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: AppConstants.mobileHorizontalPadVal.w,
           ),
-          sliver: const SliverToBoxAdapter(child: TabsNav()),
+          sliver: SliverToBoxAdapter(
+            child: TabsNav(
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          ),
         ),
         SliverToBoxAdapter(
           child: Container(

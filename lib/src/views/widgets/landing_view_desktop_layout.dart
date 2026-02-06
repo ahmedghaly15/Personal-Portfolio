@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/utils/app_assets.dart';
 import '../../models/fetch_data_response.dart';
-import '../../view_model/landing_cubit.dart';
 import 'landing_view_desktop_about_tab.dart';
 import 'landing_view_desktop_portfolio_tab.dart';
 import 'landing_view_desktop_skills_tab.dart';
@@ -12,6 +10,8 @@ class LandingViewDesktopLayout extends StatelessWidget {
   const LandingViewDesktopLayout({
     super.key,
     required this.data,
+    required this.selectedTabNavIndex,
+    required this.onTabSelected,
     this.tabletProjectAspectRatio,
     this.tabletApproachGridCrossAxisCount,
   });
@@ -19,6 +19,8 @@ class LandingViewDesktopLayout extends StatelessWidget {
   final double? tabletProjectAspectRatio;
   final int? tabletApproachGridCrossAxisCount;
   final FetchDataResponse data;
+  final int selectedTabNavIndex;
+  final ValueChanged<int> onTabSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -34,32 +36,32 @@ class LandingViewDesktopLayout extends StatelessWidget {
           end: 0,
           child: Image.asset(Assets.imagesEndSpotlight),
         ),
-        BlocSelector<LandingCubit, LandingState, int>(
-          selector: (state) => state.selectedTabNavIndex,
-          builder: (context, selectedTabNavIndex) {
-            switch (selectedTabNavIndex) {
-              case 0:
-                return LandingViewDesktopAboutTab(
-                  tabletLayoutProjectAspectRatio: tabletProjectAspectRatio,
-                  tabletApproachGridCrossAxisCount:
-                      tabletApproachGridCrossAxisCount,
-                  about: data.about,
-                );
-
-              case 1:
-                return LandingViewDesktopSkillsTab(skills: data.skills);
-
-              case 2:
-                return LandingViewDesktopPortfolioTab(
-                  tabletProjectAspectRatio: tabletProjectAspectRatio,
-                  projects: data.portfolio,
-                );
-
-              default:
-                return LandingViewDesktopAboutTab(about: data.about);
-            }
-          },
-        ),
+        switch (selectedTabNavIndex) {
+          0 => LandingViewDesktopAboutTab(
+              tabletLayoutProjectAspectRatio: tabletProjectAspectRatio,
+              tabletApproachGridCrossAxisCount:
+                  tabletApproachGridCrossAxisCount,
+              about: data.about,
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          1 => LandingViewDesktopSkillsTab(
+              skills: data.skills,
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          2 => LandingViewDesktopPortfolioTab(
+              tabletProjectAspectRatio: tabletProjectAspectRatio,
+              projects: data.portfolio,
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+          _ => LandingViewDesktopAboutTab(
+              about: data.about,
+              selectedTabNavIndex: selectedTabNavIndex,
+              onTabSelected: onTabSelected,
+            ),
+        },
       ],
     );
   }
