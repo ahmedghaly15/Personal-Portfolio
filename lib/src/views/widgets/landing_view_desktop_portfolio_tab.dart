@@ -1,44 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jaspr/jaspr.dart';
 
-import '../../models/about.dart';
-import 'desktop_projects_sliver_grid.dart';
-import 'tabs_nav.dart';
+import 'project_item.dart';
 
-class LandingViewDesktopPortfolioTab extends StatelessWidget {
+class LandingViewDesktopPortfolioTab extends StatelessComponent {
   const LandingViewDesktopPortfolioTab({
     super.key,
     required this.projects,
-    this.tabletProjectAspectRatio,
-    required this.selectedTabNavIndex,
-    required this.onTabSelected,
   });
 
-  final double? tabletProjectAspectRatio;
-  final List<Project> projects;
-  final int selectedTabNavIndex;
-  final ValueChanged<int> onTabSelected;
+  final List<ProjectViewModel> projects;
 
   @override
-  Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Align(
-            child: TabsNav(
-              selectedTabNavIndex: selectedTabNavIndex,
-              onTabSelected: onTabSelected,
-            ),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(vertical: 56.h, horizontal: 100.w),
-          sliver: DesktopProjectsSliverGrid(
-            projects: projects,
-            childAspectRatio: tabletProjectAspectRatio,
-          ),
-        ),
-      ],
-    );
+  Iterable<Component> build(BuildContext context) sync* {
+    yield section([
+      p([text('Portfolio')], classes: 'section-subtitle'),
+      h2([text('Recent projects and product work')], classes: 'section-title'),
+      div([
+        ...projects.map((project) => ProjectItem(project: project)),
+      ], classes: 'cards-grid'),
+    ], classes: 'shell-card');
   }
 }
