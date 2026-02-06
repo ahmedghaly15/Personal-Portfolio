@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:jaspr/browser.dart';
 
+import 'src/core/utils/functions/setup_service_locator.dart';
 import 'src/personal_portfolio_app.dart';
 
 Future<void> main() async {
@@ -9,8 +10,7 @@ Future<void> main() async {
   StackTrace? startupStackTrace;
 
   await runZonedGuarded(() async {
-    // Reserved for async startup configuration (env loading, service setup, etc.).
-    await Future<void>.value();
+    await setupDI();
   }, (error, stackTrace) {
     startupError = error;
     startupStackTrace = stackTrace;
