@@ -11,4 +11,5 @@ dependencies:
   supabase: ^2.9.0
 
 dev_dependencies:
+  jaspr_builder: ^0.16.0
   lints: ^5.1.1
