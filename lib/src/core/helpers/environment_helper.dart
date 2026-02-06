@@ -1,36 +1,30 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 import '../utils/const_strings.dart';
 
-/// Helper class for getting environment variables from either .env file or dart-define
+/// Helper class for getting environment variables from compile-time defines.
 class EnvironmentHelper {
   EnvironmentHelper._();
 
-  /// Get environment variable from either .env file or dart-define
   static String? getEnvironmentVariable(String key) {
-    // First try to get from dart-define (for web builds)
-    String dartDefineValue = '';
-
-    // Check for each specific key since String.fromEnvironment requires compile-time constants
     switch (key) {
       case ConstStrings.supabaseUrlKey:
-        dartDefineValue =
-            const String.fromEnvironment(ConstStrings.supabaseUrlKey);
-        break;
+        final value = const String.fromEnvironment(ConstStrings.supabaseUrlKey);
+        return value.isEmpty ? null : value;
       case ConstStrings.supabaseAnonKey:
-        dartDefineValue =
-            const String.fromEnvironment(ConstStrings.supabaseAnonKey);
-        break;
+        final value = const String.fromEnvironment(ConstStrings.supabaseAnonKey);
+        return value.isEmpty ? null : value;
       case ConstStrings.myIdKey:
-        dartDefineValue = const String.fromEnvironment(ConstStrings.myIdKey);
-        break;
+        final value = const String.fromEnvironment(ConstStrings.myIdKey);
+        return value.isEmpty ? null : value;
+      default:
+        return null;
     }
+  }
 
-    if (dartDefineValue.isNotEmpty) {
-      return dartDefineValue;
+  static String requiredEnvironmentVariable(String key) {
+    final value = getEnvironmentVariable(key);
+    if (value == null || value.isEmpty) {
+      throw StateError('Missing required compile-time define: $key');
     }
-
-    // Fallback to .env file (for local development)
-    return dotenv.env[key];
+    return value;
   }
 }

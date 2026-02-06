@@ -2,6 +2,12 @@ import 'dart:async';
 
 import 'package:jaspr/jaspr.dart';
 
+import '../../core/utils/functions/setup_service_locator.dart';
+import '../../models/about.dart';
+import '../../models/fetch_data_response.dart';
+import '../../models/skill_tab_model.dart';
+import '../../view_model/landing_data_loader.dart';
+import '../../view_model/landing_state.dart';
 import 'contact_me_section.dart';
 import 'experience_item.dart';
 import 'landing_view_desktop_about_tab.dart';
@@ -9,8 +15,6 @@ import 'landing_view_desktop_portfolio_tab.dart';
 import 'landing_view_desktop_skills_tab.dart';
 import 'project_item.dart';
 import 'tabs_nav.dart';
-
-enum LandingDataStatus { loading, success, error }
 
 class LandingViewBodyBlocBuilder extends StatefulComponent {
   const LandingViewBodyBlocBuilder({super.key});
@@ -20,38 +24,35 @@ class LandingViewBodyBlocBuilder extends StatefulComponent {
 }
 
 class _LandingViewBodyBlocBuilderState extends State<LandingViewBodyBlocBuilder> {
-  LandingDataStatus _status = LandingDataStatus.loading;
-  int _selectedTabIndex = 0;
-  String? _error;
-  _LandingData? _data;
+  late final LandingDataLoader _dataLoader;
+  LandingViewState _state = const LandingViewState();
 
   @override
   void initState() {
     super.initState();
+    _dataLoader = locator.get<LandingDataLoader>();
     unawaited(_loadData());
   }
 
   Future<void> _loadData() async {
     setState(() {
-      _status = LandingDataStatus.loading;
-      _error = null;
+      _state = _state.copyWith(
+        dataState: LandingDataState.loading(payload: _state.dataState.payload),
+      );
     });
 
-    try {
-      await Future<void>.delayed(const Duration(milliseconds: 450));
-      _data = _LandingData.sample();
-      setState(() => _status = LandingDataStatus.success);
-    } catch (_) {
-      setState(() {
-        _status = LandingDataStatus.error;
-        _error = 'Unable to load portfolio sections.';
-      });
-    }
+    final nextDataState = await _dataLoader.fetchData();
+    setState(() {
+      _state = _state.copyWith(dataState: nextDataState);
+    });
   }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    if (_status == LandingDataStatus.loading) {
+    final dataState = _state.dataState;
+
+    if (dataState.status == LandingDataStatus.loading ||
+        dataState.status == LandingDataStatus.initial) {
       yield section([
         h2([text('Loading portfolio...')]),
         p([text('Fetching About, Skills, Portfolio and Contact sections.')],
@@ -60,103 +61,75 @@ class _LandingViewBodyBlocBuilderState extends State<LandingViewBodyBlocBuilder>
       return;
     }
 
-    if (_status == LandingDataStatus.error) {
+    if (dataState.status == LandingDataStatus.error && dataState.payload == null) {
       yield section([
         h2([text('Something went wrong')]),
-        p([text(_error ?? 'Please retry.')], classes: 'section-copy'),
+        p([text(dataState.errorMessage ?? 'Please retry.')], classes: 'section-copy'),
         button([text('Retry')], events: {'click': (_) => unawaited(_loadData())}),
       ], classes: 'shell-card');
       return;
     }
 
-    final data = _data!;
+    final data = dataState.payload!;
+
     yield TabsNav(
       tabs: const ['About', 'Skills', 'Portfolio', 'Contact'],
-      selectedTabIndex: _selectedTabIndex,
-      onTabSelected: (index) => setState(() => _selectedTabIndex = index),
+      selectedTabIndex: _state.selectedTabIndex,
+      onTabSelected: (index) {
+        setState(() {
+          _state = _state.copyWith(selectedTabIndex: index);
+        });
+      },
     );
 
-    if (_selectedTabIndex == 0) {
+    if (_state.selectedTabIndex == 0) {
       yield LandingViewDesktopAboutTab(
-        headline: data.aboutHeadline,
-        description: data.aboutDescription,
-        experiences: data.experiences,
-        featuredProjects: data.projects.take(2).toList(),
+        headline: _aboutHeadline(data.about.headerBigText),
+        description: data.about.description,
+        experiences: data.about.workExperience.map(_mapExperience).toList(),
+        featuredProjects: data.about.projects.map(_mapProject).toList(),
       );
-    } else if (_selectedTabIndex == 1) {
-      yield LandingViewDesktopSkillsTab(title: data.skillsTitle, skills: data.skills);
-    } else if (_selectedTabIndex == 2) {
-      yield LandingViewDesktopPortfolioTab(projects: data.projects);
+    } else if (_state.selectedTabIndex == 1) {
+      yield LandingViewDesktopSkillsTab(
+        title: _skillsHeadline(data.skills.headerBigText),
+        skills: data.skills.skills.map(_mapSkill).toList(),
+      );
+    } else if (_state.selectedTabIndex == 2) {
+      yield LandingViewDesktopPortfolioTab(
+        projects: data.portfolio.map(_mapProject).toList(),
+      );
     } else {
       yield const ContactMeSection();
     }
   }
-}
 
-class _LandingData {
-  const _LandingData({
-    required this.aboutHeadline,
-    required this.aboutDescription,
-    required this.skillsTitle,
-    required this.skills,
-    required this.projects,
-    required this.experiences,
-  });
+  String _aboutHeadline(AboutHeaderTextModel headline) {
+    return '${headline.text1} ${headline.coloredString} ${headline.text2}'.trim();
+  }
 
-  final String aboutHeadline;
-  final String aboutDescription;
-  final String skillsTitle;
-  final List<SkillViewModel> skills;
-  final List<ProjectViewModel> projects;
-  final List<ExperienceViewModel> experiences;
+  String _skillsHeadline(SkillHeaderTextModel headline) {
+    return '${headline.text1} ${headline.colorfulString} ${headline.text3}'.trim();
+  }
 
-  factory _LandingData.sample() => const _LandingData(
-        aboutHeadline: 'Transforming concepts into seamless user experiences',
-        aboutDescription:
-            'Flutter-focused engineer passionate about high quality cross-platform products, maintainable architecture, and thoughtful UI/UX details.',
-        skillsTitle: 'Mastering the art of Flutter development',
-        skills: [
-          SkillViewModel(name: 'Flutter', percent: 93),
-          SkillViewModel(name: 'Dart', percent: 91),
-          SkillViewModel(name: 'Firebase', percent: 84),
-          SkillViewModel(name: 'REST APIs', percent: 87),
-        ],
-        projects: [
-          ProjectViewModel(
-            title: 'TaskFlow',
-            description: 'A productivity app with advanced reminders and offline sync support.',
-            promoLink: 'https://example.com/taskflow',
-            gitHubLink: 'https://github.com/ahmedghaly15',
-          ),
-          ProjectViewModel(
-            title: 'Coach AI',
-            description:
-                'AI-assisted fitness and habit tracking app with personalized recommendations.',
-            promoLink: 'https://example.com/coachai',
-            gitHubLink: 'https://github.com/ahmedghaly15',
-          ),
-          ProjectViewModel(
-            title: 'Finlytics',
-            description:
-                'Personal finance dashboard with expense predictions and smart categorization.',
-            promoLink: 'https://example.com/finlytics',
-          ),
-        ],
-        experiences: [
-          ExperienceViewModel(
-            role: 'Flutter Developer Intern',
-            company: 'CloudX',
-            period: '2024',
-            summary:
-                'Developed AI-powered mobile features, collaborated in agile sprints, and improved app performance.',
-          ),
-          ExperienceViewModel(
-            role: 'Freelance Mobile Developer',
-            company: 'Self-employed',
-            period: '2023 - Present',
-            summary:
-                'Built and delivered production-ready mobile apps with clean architecture and responsive UIs.',
-          ),
-        ],
-      );
+  ExperienceViewModel _mapExperience(WorkExperienceModel experience) {
+    return ExperienceViewModel(
+      role: experience.title,
+      company: experience.company,
+      period: '${experience.startDate} - ${experience.endDate}',
+      summary: experience.description,
+    );
+  }
+
+  ProjectViewModel _mapProject(Project project) {
+    return ProjectViewModel(
+      title: project.title,
+      description: project.description,
+      promoLink: project.promoLink,
+      gitHubLink: project.gitHubLink,
+    );
+  }
+
+  SkillViewModel _mapSkill(SkillModel skill) {
+    return SkillViewModel(name: skill.name, percent: skill.percentage.round());
+  }
 }
